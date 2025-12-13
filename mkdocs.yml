@@ -3,6 +3,7 @@ site_url: https://faneX-ID.github.io/
 site_description: Official documentation for faneX-ID - Next-Generation Identity & Access Management
 repo_url: https://github.com/faneX-ID/core
 repo_name: faneX-ID/core
+edit_uri: edit/main/docs/
 edit_uri: ""
 
 theme:
@@ -44,15 +45,25 @@ plugins:
 
 nav:
   - Home: index.md
+  - Downloads: downloads.md
   - Releases: releases.md
   - Status: status.md
   - User Guide:
-    - Getting Started: users/index.md
+    - Getting Started: users/getting-started.md
     - Dashboard: users/dashboard.md
     - Security: users/security.md
+    - Configuration: users/configuration.md
+    - Troubleshooting: users/troubleshooting.md
+  - IT Administrator Guide:
+    - Introduction: it/index.md
+    - Installation: it/installation.md
+    - Deployment: it/deployment.md
+    - Maintenance: it/maintenance.md
+    - Security: it/security.md
   - Developer Guide:
     - Introduction: developers/index.md
     - Architecture: developers/architecture.md
+    - Repository Architecture: developers/repositories.md
     - Integrations: developers/integrations.md
     - API Reference: developers/api.md
 

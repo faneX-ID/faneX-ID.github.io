@@ -1,6 +1,5 @@
 ---
 hide:
-  - navigation
   - toc
 ---
 
@@ -250,9 +249,11 @@ hide:
     <h1 class="hero-title">🚀 faneX-ID</h1>
     <p class="hero-subtitle">Next-Generation Identity & Access Management for Modern Enterprises</p>
     <div class="hero-buttons">
-      <a href="users/" class="btn btn-primary">📖 User Guide</a>
+      <a href="downloads/" class="btn btn-primary">📥 Downloads</a>
+      <a href="releases/" class="btn btn-primary">📦 Releases</a>
+      <a href="users/" class="btn btn-accent">👤 User Guide</a>
       <a href="developers/" class="btn btn-accent">💻 Developer Docs</a>
-      <a href="https://github.com/faneX-ID/faneX-ID" class="btn btn-secondary">⭐ GitHub</a>
+      <a href="it/" class="btn btn-secondary">⚙️ IT Admin</a>
     </div>
   </div>
 </div>
@@ -277,7 +278,7 @@ hide:
 </div>
 
 <script>
-  fetch("https://api.github.com/repos/faneX-ID/faneX-ID/releases")
+  fetch("https://api.github.com/repos/faneX-ID/core/releases")
     .then(response => response.json())
     .then(releases => {
       const stable = releases.find(r => !r.prerelease);
@@ -290,7 +291,7 @@ hide:
        document.getElementById("latest-beta").innerText = "v1.1.0-beta";
     });
 
-  fetch("https://api.github.com/repos/faneX-ID/faneX-ID")
+  fetch("https://api.github.com/repos/faneX-ID/core")
     .then(response => response.json())
     .then(repo => {
         document.getElementById("star-count").innerText = repo.stargazers_count || "0";
@@ -318,10 +319,24 @@ hide:
   </div>
 
   <div class="quick-card">
-    <span class="quick-icon">🏠</span>
-    <h3 class="quick-title">Home Assistant</h3>
-    <p class="quick-desc">Deploy faneX-ID as a Home Assistant add-on for seamless integration.</p>
-    <a href="https://github.com/faneX-ID/homeassistant-addon" class="quick-link">Get Add-on →</a>
+    <span class="quick-icon">⚙️</span>
+    <h3 class="quick-title">For IT Administrators</h3>
+    <p class="quick-desc">Deployment guides, security best practices, and maintenance procedures.</p>
+    <a href="it/" class="quick-link">View IT Guide →</a>
+  </div>
+
+  <div class="quick-card">
+    <span class="quick-icon">📥</span>
+    <h3 class="quick-title">Downloads</h3>
+    <p class="quick-desc">Download the latest releases for Windows, Android, iOS, Linux, and Docker.</p>
+    <a href="downloads/" class="quick-link">Browse Downloads →</a>
+  </div>
+
+  <div class="quick-card">
+    <span class="quick-icon">📦</span>
+    <h3 class="quick-title">Releases</h3>
+    <p class="quick-desc">View all releases from all faneX-ID projects with detailed information.</p>
+    <a href="releases/" class="quick-link">View Releases →</a>
   </div>
 </div>
 
@@ -361,7 +376,7 @@ hide:
   <div class="repo-card">
     <h3 class="repo-name">faneX-ID Core</h3>
     <p class="repo-desc">The main platform featuring full IAM capabilities, modern UI, and REST API.</p>
-    <a href="https://github.com/faneX-ID/faneX-ID" class="repo-link">View Repository →</a>
+    <a href="https://github.com/faneX-ID/core" class="repo-link">View Repository →</a>
   </div>
 
   <div class="repo-card">
@@ -407,6 +422,15 @@ hide:
   </div>
 </div>
 
+<div style="text-align: center; margin: 2rem 0;">
+  <p style="font-size: 1.1rem; color: var(--md-default-fg-color--light);">
+    Want to understand how all repositories work together?
+  </p>
+  <a href="developers/repositories/" class="btn btn-primary" style="margin-top: 1rem;">
+    📚 Learn About Repository Architecture →
+  </a>
+</div>
+
 ## 💻 Technology Stack
 
 <div class="grid cards" markdown>
@@ -442,10 +466,83 @@ hide:
 Ready to dive in? Choose your path:
 
 <div class="hero-buttons" style="margin: 2rem 0;">
-  <a href="users/" class="btn btn-primary">👤 I'm a User</a>
-  <a href="developers/" class="btn btn-accent">👨‍💻 I'm a Developer</a>
-  <a href="https://github.com/faneX-ID/homeassistant-addon" class="btn btn-secondary">🏠 Install Add-on</a>
+  <a href="downloads/" class="btn btn-primary">📥 Downloads</a>
+  <a href="users/" class="btn btn-accent">👤 User Guide</a>
+  <a href="developers/" class="btn btn-accent">👨‍💻 Developer Docs</a>
+  <a href="it/" class="btn btn-secondary">⚙️ IT Admin Guide</a>
 </div>
+
+## 📥 Latest Downloads
+
+<div id="quick-downloads" style="margin: 2rem 0;">
+  <p style="text-align: center; color: #666;">Loading latest downloads...</p>
+</div>
+
+<script>
+// Fetch and display quick downloads
+fetch('/docs/data/releases.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('quick-downloads');
+    const coreRepo = data.repositories.core;
+
+    if (!coreRepo || (!coreRepo.latest_stable && !coreRepo.latest_prerelease)) {
+      container.innerHTML = '<p style="text-align: center; color: #999;">No downloads available yet.</p>';
+      return;
+    }
+
+    const latestRelease = coreRepo.latest_stable || coreRepo.latest_prerelease;
+    const isPrerelease = !coreRepo.latest_stable;
+
+    if (latestRelease.assets && latestRelease.assets.length > 0) {
+      container.innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          ${latestRelease.assets.slice(0, 6).map(asset => {
+            const platform = asset.name.toLowerCase();
+            let icon = '📦';
+            if (platform.includes('windows') || platform.includes('msix')) icon = '🪟';
+            else if (platform.includes('android') || platform.includes('apk')) icon = '🤖';
+            else if (platform.includes('ios') || platform.includes('ipa')) icon = '🍎';
+            else if (platform.includes('linux') || platform.includes('deb') || platform.includes('rpm')) icon = '🐧';
+            else if (platform.includes('docker')) icon = '🐳';
+            else if (platform.includes('macos') || platform.includes('dmg')) icon = '💻';
+
+            return `
+              <a href="${asset.download_url}"
+                 target="_blank"
+                 style="display: block; padding: 1.5rem; background: white; border: 2px solid #e0e0e0; border-radius: 12px; text-decoration: none; transition: all 0.3s; text-align: center;"
+                 onmouseover="this.style.borderColor='#667eea'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(102,126,234,0.2)'"
+                 onmouseout="this.style.borderColor='#e0e0e0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">${icon}</div>
+                <div style="font-weight: 600; color: #333; margin-bottom: 0.25rem;">${asset.name}</div>
+                <div style="font-size: 0.85rem; color: #666;">${(asset.size / 1024 / 1024).toFixed(2)} MB</div>
+                ${isPrerelease ? '<div style="margin-top: 0.5rem; font-size: 0.75rem; color: #ff9800; font-weight: 600;">PRE-RELEASE</div>' : ''}
+              </a>
+            `;
+          }).join('')}
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <a href="downloads/" style="color: #667eea; text-decoration: none; font-weight: 600;">
+            View all downloads →
+          </a>
+        </div>
+      `;
+    } else {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 2rem; background: #f5f5f5; border-radius: 12px;">
+          <p style="color: #666; margin-bottom: 1rem;">Latest version: <strong>${latestRelease.tag}</strong></p>
+          <a href="${latestRelease.url}" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">
+            View on GitHub →
+          </a>
+        </div>
+      `;
+    }
+  })
+  .catch(error => {
+    document.getElementById('quick-downloads').innerHTML =
+      '<p style="text-align: center; color: #999;">Unable to load downloads. <a href="downloads/">View downloads page</a></p>';
+  });
+</script>
 
 ---
 

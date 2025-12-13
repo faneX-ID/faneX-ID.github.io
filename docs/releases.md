@@ -1,6 +1,9 @@
 # Releases
 
-This page displays the latest releases from all faneX-ID projects, including both **stable** and **pre-releases**.
+This page displays comprehensive release information from all faneX-ID projects, including both **stable** and **pre-releases**, with detailed version information, dates, and download links.
+
+!!! tip "Quick Downloads"
+    Looking for direct download links? Check out the [Downloads page](downloads.md) for all available platform downloads.
 
 <div style="margin: 16px 0;">
   <label>
@@ -78,7 +81,24 @@ function renderReleases(filter) {
         <div style="margin-left: 20px;">
           <p><strong>Version:</strong> <a href="${repoData.latest_stable.url}" target="_blank">${repoData.latest_stable.tag}</a></p>
           <p><strong>Published:</strong> ${new Date(repoData.latest_stable.published_at).toLocaleString()}</p>
-          ${repoData.latest_stable.body ? `<p style="margin-top: 8px;">${repoData.latest_stable.body}</p>` : ''}
+          <p><strong>Release Date:</strong> ${new Date(repoData.latest_stable.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          ${repoData.latest_stable.assets && repoData.latest_stable.assets.length > 0 ? `
+            <div style="margin-top: 12px;">
+              <strong>Downloads (${repoData.latest_stable.assets.length}):</strong>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                ${repoData.latest_stable.assets.map(asset => `
+                  <a href="${asset.download_url}" 
+                     style="display: inline-block; padding: 6px 12px; background: #667eea; color: white; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600;"
+                     onmouseover="this.style.background='#5568d3'" 
+                     onmouseout="this.style.background='#667eea'"
+                     target="_blank">
+                    📥 ${asset.name} (${(asset.size / 1024 / 1024).toFixed(2)} MB)
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+          ${repoData.latest_stable.body ? `<div style="margin-top: 12px; padding: 12px; background: #f5f5f5; border-radius: 6px;"><p style="margin: 0;">${repoData.latest_stable.body}</p></div>` : ''}
         </div>
       `;
       card.appendChild(stableSection);
@@ -114,8 +134,25 @@ function renderReleases(filter) {
         <div style="margin-left: 20px;">
           <p><strong>Version:</strong> <a href="${repoData.latest_prerelease.url}" target="_blank">${repoData.latest_prerelease.tag}</a></p>
           <p><strong>Published:</strong> ${new Date(repoData.latest_prerelease.published_at).toLocaleString()}</p>
-          <p style="color: #ff9800; font-size: 14px; margin-top: 4px;">⚠️ This is a pre-release. Use with caution.</p>
-          ${repoData.latest_prerelease.body ? `<p style="margin-top: 8px;">${repoData.latest_prerelease.body}</p>` : ''}
+          <p><strong>Release Date:</strong> ${new Date(repoData.latest_prerelease.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p style="color: #ff9800; font-size: 14px; margin-top: 4px; font-weight: 600;">⚠️ This is a pre-release. Use with caution.</p>
+          ${repoData.latest_prerelease.assets && repoData.latest_prerelease.assets.length > 0 ? `
+            <div style="margin-top: 12px;">
+              <strong>Downloads (${repoData.latest_prerelease.assets.length}):</strong>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                ${repoData.latest_prerelease.assets.map(asset => `
+                  <a href="${asset.download_url}" 
+                     style="display: inline-block; padding: 6px 12px; background: #ff9800; color: white; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600;"
+                     onmouseover="this.style.background='#f57c00'" 
+                     onmouseout="this.style.background='#ff9800'"
+                     target="_blank">
+                    📥 ${asset.name} (${(asset.size / 1024 / 1024).toFixed(2)} MB)
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+          ${repoData.latest_prerelease.body ? `<div style="margin-top: 12px; padding: 12px; background: #fff3e0; border-radius: 6px;"><p style="margin: 0;">${repoData.latest_prerelease.body}</p></div>` : ''}
         </div>
       `;
       card.appendChild(prereleaseSection);

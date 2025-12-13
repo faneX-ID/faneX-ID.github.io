@@ -21,7 +21,7 @@ Visit the live site: **[https://faneX-ID.github.io](https://faneX-ID.github.io)*
 
 ## 🗂️ Repositories
 
-- **Main Platform**: [faneX-ID/faneX-ID](https://github.com/faneX-ID/faneX-ID) - Core IAM platform
+- **Main Platform**: [faneX-ID/core](https://github.com/faneX-ID/core) - Core IAM platform
 - **Official Integrations**: [faneX-ID/integrations](https://github.com/faneX-ID/integrations) - Enterprise integrations
 - **Integration Examples**: [faneX-ID/integrations-example](https://github.com/faneX-ID/integrations-example) - Sample templates
 - **Standard Workflows**: [faneX-ID/workflows](https://github.com/faneX-ID/workflows) - Automation templates

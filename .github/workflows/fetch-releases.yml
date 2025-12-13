@@ -80,6 +80,19 @@ jobs:
                       prereleases = []
 
                       for release in releases:
+                          # Fetch release assets (downloads)
+                          assets = []
+                          try:
+                              for asset in release.get_assets():
+                                  assets.append({
+                                      'name': asset.name,
+                                      'size': asset.size,
+                                      'download_url': asset.browser_download_url,
+                                      'content_type': asset.content_type
+                                  })
+                          except Exception as e:
+                              print(f"    ⚠️  Could not fetch assets: {e}")
+                          
                           release_data = {
                               'name': release.title or release.tag_name,
                               'tag': release.tag_name,
@@ -87,7 +100,8 @@ jobs:
                               'url': release.html_url,
                               'prerelease': release.prerelease,
                               'body': release.body[:500] if release.body else None,  # Truncate
-                              'draft': release.draft
+                              'draft': release.draft,
+                              'assets': assets
                           }
 
                           if release.prerelease:
