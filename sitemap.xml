@@ -5,6 +5,10 @@
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
+         <loc>https://faneX-ID.github.io/downloads/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
          <loc>https://faneX-ID.github.io/releases/</loc>
          <lastmod>2025-12-13</lastmod>
     </url>
@@ -29,7 +33,35 @@
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
+         <loc>https://faneX-ID.github.io/developers/repositories/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://faneX-ID.github.io/it/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://faneX-ID.github.io/it/deployment/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://faneX-ID.github.io/it/installation/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://faneX-ID.github.io/it/maintenance/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://faneX-ID.github.io/it/security/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
          <loc>https://faneX-ID.github.io/users/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://faneX-ID.github.io/users/configuration/</loc>
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
@@ -37,7 +69,15 @@
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
+         <loc>https://faneX-ID.github.io/users/getting-started/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
          <loc>https://faneX-ID.github.io/users/security/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://faneX-ID.github.io/users/troubleshooting/</loc>
          <lastmod>2025-12-13</lastmod>
     </url>
 </urlset>
