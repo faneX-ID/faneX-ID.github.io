@@ -26,12 +26,12 @@ fetch('/docs/data/versions.json')
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('versions-container');
-    
+
     if (data.error) {
       container.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
       return;
     }
-    
+
     const lastUpdated = new Date(data.last_updated).toLocaleString();
     container.innerHTML = `
       <p><em>Last updated: ${lastUpdated}</em></p>
@@ -47,7 +47,7 @@ fetch('/docs/data/versions.json')
     `;
   })
   .catch(error => {
-    document.getElementById('versions-container').innerHTML = 
+    document.getElementById('versions-container').innerHTML =
       `<p style="color: red;">Error loading version info: ${error.message}</p>`;
   });
 
@@ -56,28 +56,28 @@ fetch('/docs/data/builds.json')
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('builds-container');
-    
+
     const lastUpdated = new Date(data.last_updated).toLocaleString();
     container.innerHTML = `<p><em>Last updated: ${lastUpdated}</em></p>`;
-    
+
     if (data.workflows.length === 0) {
       container.innerHTML += '<p>No build information available.</p>';
       return;
     }
-    
+
     data.workflows.forEach(workflow => {
       const card = document.createElement('div');
       card.className = 'build-card';
       card.style.cssText = 'border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0;';
-      
+
       const title = document.createElement('h4');
       title.textContent = workflow.name;
       card.appendChild(title);
-      
+
       const runsList = document.createElement('ul');
       workflow.runs.forEach(run => {
         const runItem = document.createElement('li');
-        const statusColor = run.conclusion === 'success' ? 'green' : 
+        const statusColor = run.conclusion === 'success' ? 'green' :
                            run.conclusion === 'failure' ? 'red' : 'orange';
         runItem.innerHTML = `
           <a href="${run.html_url}" target="_blank">${run.head_branch || 'main'}</a>
@@ -86,13 +86,13 @@ fetch('/docs/data/builds.json')
         `;
         runsList.appendChild(runItem);
       });
-      
+
       card.appendChild(runsList);
       container.appendChild(card);
     });
   })
   .catch(error => {
-    document.getElementById('builds-container').innerHTML = 
+    document.getElementById('builds-container').innerHTML =
       `<p style="color: red;">Error loading build status: ${error.message}</p>`;
   });
 
@@ -101,13 +101,13 @@ fetch('/docs/data/releases.json')
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('releases-summary');
-    
+
     const repos = Object.entries(data.repositories);
     let summaryHtml = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 16px;">';
-    
+
     repos.forEach(([repoName, repoData]) => {
       if (!repoData.latest_stable && !repoData.latest_prerelease) return;
-      
+
       summaryHtml += `
         <div style="border: 1px solid #ddd; border-radius: 8px; padding: 12px;">
           <h4 style="margin-top: 0;">${repoName}</h4>
@@ -126,13 +126,12 @@ fetch('/docs/data/releases.json')
         </div>
       `;
     });
-    
+
     summaryHtml += '</div>';
     container.innerHTML = summaryHtml;
   })
   .catch(error => {
-    document.getElementById('releases-summary').innerHTML = 
+    document.getElementById('releases-summary').innerHTML =
       `<p style="color: red;">Error loading releases summary: ${error.message}</p>`;
   });
 </script>
-

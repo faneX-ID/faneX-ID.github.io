@@ -32,7 +32,7 @@ fetch('/docs/data/releases.json')
     renderReleases('all');
   })
   .catch(error => {
-    document.getElementById('releases-container').innerHTML = 
+    document.getElementById('releases-container').innerHTML =
       `<p style="color: red;">Error loading releases: ${error.message}</p>`;
   });
 
@@ -43,29 +43,29 @@ function filterReleases() {
 
 function renderReleases(filter) {
   if (!releasesData) return;
-  
+
   const container = document.getElementById('releases-container');
   container.innerHTML = '';
-  
+
   const lastUpdated = new Date(releasesData.last_updated).toLocaleString();
   container.innerHTML += `<p><em>Last updated: ${lastUpdated}</em></p>`;
-  
+
   const repos = Object.entries(releasesData.repositories);
-  
+
   repos.forEach(([repoName, repoData]) => {
     // Skip if no releases match filter
     if (filter === 'stable' && !repoData.latest_stable) return;
     if (filter === 'prerelease' && !repoData.latest_prerelease) return;
     if (filter === 'all' && !repoData.latest_stable && !repoData.latest_prerelease) return;
-    
+
     const card = document.createElement('div');
     card.className = 'release-card';
     card.style.cssText = 'border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0;';
-    
+
     const title = document.createElement('h3');
     title.textContent = repoName;
     card.appendChild(title);
-    
+
     // Display stable releases
     if (repoData.latest_stable && (filter === 'all' || filter === 'stable')) {
       const stableSection = document.createElement('div');
@@ -82,7 +82,7 @@ function renderReleases(filter) {
         </div>
       `;
       card.appendChild(stableSection);
-      
+
       // Show additional stable releases if available
       if (repoData.stable_releases && repoData.stable_releases.length > 1 && filter === 'all') {
         const moreStable = document.createElement('details');
@@ -101,7 +101,7 @@ function renderReleases(filter) {
         card.appendChild(moreStable);
       }
     }
-    
+
     // Display pre-releases
     if (repoData.latest_prerelease && (filter === 'all' || filter === 'prerelease')) {
       const prereleaseSection = document.createElement('div');
@@ -119,7 +119,7 @@ function renderReleases(filter) {
         </div>
       `;
       card.appendChild(prereleaseSection);
-      
+
       // Show additional pre-releases if available
       if (repoData.prereleases && repoData.prereleases.length > 1 && filter === 'all') {
         const morePrereleases = document.createElement('details');
@@ -138,7 +138,7 @@ function renderReleases(filter) {
         card.appendChild(morePrereleases);
       }
     }
-    
+
     // Show summary if no releases match filter
     if (!repoData.latest_stable && !repoData.latest_prerelease) {
       const noRelease = document.createElement('p');
@@ -146,7 +146,7 @@ function renderReleases(filter) {
       noRelease.style.color = '#999';
       card.appendChild(noRelease);
     }
-    
+
     // Version info
     if (repoData.version_info) {
       const versionInfo = document.createElement('div');
@@ -160,10 +160,10 @@ function renderReleases(filter) {
       `;
       card.appendChild(versionInfo);
     }
-    
+
     container.appendChild(card);
   });
-  
+
   // Show summary
   if (filter === 'all') {
     const totalStable = repos.reduce((sum, [, r]) => sum + (r.total_stable || 0), 0);
@@ -179,4 +179,3 @@ function renderReleases(filter) {
   }
 }
 </script>
-
