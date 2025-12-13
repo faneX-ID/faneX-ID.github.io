@@ -44,6 +44,8 @@ plugins:
 
 nav:
   - Home: index.md
+  - Releases: releases.md
+  - Status: status.md
   - User Guide:
     - Getting Started: users/index.md
     - Dashboard: users/dashboard.md

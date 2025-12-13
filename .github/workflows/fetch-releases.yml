@@ -1,0 +1,325 @@
+name: Fetch Releases and Version Info
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+  workflow_dispatch:
+  repository_dispatch:
+    types: [release-published]
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # Token with access to private core repository
+  CORE_TOKEN: ${{ secrets.CORE_REPO_TOKEN }}
+
+jobs:
+  fetch-releases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Documentation Repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install Dependencies
+        run: |
+          pip install PyGithub requests pyyaml
+
+      - name: Fetch Releases from All Repositories
+        id: fetch-releases
+        run: |
+          python << 'EOF'
+          import json
+          import os
+          from datetime import datetime
+          from github import Github
+          import requests
+
+          # Initialize GitHub client
+          github_token = os.environ.get('GITHUB_TOKEN')
+          core_token = os.environ.get('CORE_TOKEN', github_token)  # Fallback to GITHUB_TOKEN
+          
+          # Use core token for private repo access
+          gh = Github(core_token)
+          
+          # List of all faneX-ID repositories
+          repos = [
+              'faneX-ID/core',
+              'faneX-ID/integrations',
+              'faneX-ID/integrations-example',
+              'faneX-ID/workflows',
+              'faneX-ID/workflows-example',
+              'faneX-ID/integration-validation',
+              'faneX-ID/github-bot',
+              'faneX-ID/homeassistant-addon',
+              'faneX-ID/faneX-ID.github.io'
+          ]
+          
+          all_releases = {}
+          all_versions = {}
+          
+          for repo_name in repos:
+              try:
+                  print(f"\n📦 Fetching releases from {repo_name}...")
+                  repo = gh.get_repo(repo_name)
+                  
+                  # Get all releases (stable and pre-releases)
+                  try:
+                      releases = repo.get_releases()
+                      stable_releases = []
+                      prereleases = []
+                      
+                      for release in releases:
+                          release_data = {
+                              'name': release.title or release.tag_name,
+                              'tag': release.tag_name,
+                              'published_at': release.published_at.isoformat() if release.published_at else None,
+                              'url': release.html_url,
+                              'prerelease': release.prerelease,
+                              'body': release.body[:500] if release.body else None,  # Truncate
+                              'draft': release.draft
+                          }
+                          
+                          if release.prerelease:
+                              prereleases.append(release_data)
+                          else:
+                              stable_releases.append(release_data)
+                      
+                      # Get latest stable and latest pre-release
+                      latest_stable = stable_releases[0] if stable_releases else None
+                      latest_prerelease = prereleases[0] if prereleases else None
+                      
+                      all_releases[repo_name] = {
+                          'latest_stable': latest_stable,
+                          'latest_prerelease': latest_prerelease,
+                          'stable_releases': stable_releases[:10],  # Last 10 stable releases
+                          'prereleases': prereleases[:10],  # Last 10 pre-releases
+                          'total_stable': len(stable_releases),
+                          'total_prereleases': len(prereleases)
+                      }
+                      
+                      if latest_stable:
+                          print(f"  ✅ Latest stable: {latest_stable['tag']}")
+                      if latest_prerelease:
+                          print(f"  ✅ Latest pre-release: {latest_prerelease['tag']}")
+                      print(f"  📊 Total: {len(stable_releases)} stable, {len(prereleases)} pre-releases")
+                      
+                  except Exception as e:
+                      print(f"  ⚠️  No releases found: {e}")
+                      all_releases[repo_name] = {
+                          'latest_stable': None,
+                          'latest_prerelease': None,
+                          'stable_releases': [],
+                          'prereleases': [],
+                          'total_stable': 0,
+                          'total_prereleases': 0
+                      }
+                  
+                  # Get version info from versions.json (for core repo)
+                  if repo_name == 'faneX-ID/core':
+                      try:
+                          # Try to get versions.json from main branch
+                          versions_content = repo.get_contents('.github/versions.json', ref='main')
+                          versions_data = json.loads(versions_content.decoded_content.decode())
+                          all_versions[repo_name] = versions_data
+                          print(f"  ✅ Fetched version info")
+                      except Exception as e:
+                          print(f"  ⚠️  Could not fetch versions.json: {e}")
+                  
+              except Exception as e:
+                  print(f"  ❌ Error fetching {repo_name}: {e}")
+                  all_releases[repo_name] = None
+          
+          # Save releases data
+          releases_file = 'docs/data/releases.json'
+          os.makedirs('docs/data', exist_ok=True)
+          
+          output_data = {
+              'last_updated': datetime.utcnow().isoformat() + 'Z',
+              'repositories': {}
+          }
+          
+          for repo_name, release_data in all_releases.items():
+              repo_short = repo_name.replace('faneX-ID/', '')
+              output_data['repositories'][repo_short] = {
+                  'full_name': repo_name,
+                  'latest_stable': release_data.get('latest_stable'),
+                  'latest_prerelease': release_data.get('latest_prerelease'),
+                  'stable_releases': release_data.get('stable_releases', []),
+                  'prereleases': release_data.get('prereleases', []),
+                  'total_stable': release_data.get('total_stable', 0),
+                  'total_prereleases': release_data.get('total_prereleases', 0),
+                  'version_info': all_versions.get(repo_name)
+              }
+          
+          with open(releases_file, 'w', encoding='utf-8') as f:
+              json.dump(output_data, f, indent=2, ensure_ascii=False)
+          
+          print(f"\n✅ Saved releases data to {releases_file}")
+          print(f"   Total repositories: {len(all_releases)}")
+          total_stable = sum(r.get('total_stable', 0) for r in all_releases.values())
+          total_prereleases = sum(r.get('total_prereleases', 0) for r in all_releases.values())
+          print(f"   Total stable releases: {total_stable}")
+          print(f"   Total pre-releases: {total_prereleases}")
+          
+          # Set output
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"repositories_count={len(all_releases)}\n")
+              f.write(f"releases_count={sum(1 for r in all_releases.values() if r is not None)}\n")
+          EOF
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CORE_TOKEN: ${{ secrets.CORE_REPO_TOKEN }}
+
+      - name: Fetch Build Status from Core Repository
+        id: fetch-builds
+        run: |
+          python << 'EOF'
+          import json
+          import os
+          from datetime import datetime, timedelta
+          from github import Github
+
+          core_token = os.environ.get('CORE_TOKEN', os.environ.get('GITHUB_TOKEN'))
+          gh = Github(core_token)
+          
+          try:
+              repo = gh.get_repo('faneX-ID/core')
+              
+              # Get recent workflow runs
+              workflows = repo.get_workflows()
+              build_info = {
+                  'last_updated': datetime.utcnow().isoformat() + 'Z',
+                  'workflows': []
+              }
+              
+              for workflow in workflows[:10]:  # Limit to 10 workflows
+                  try:
+                      runs = workflow.get_runs()[:5]  # Get last 5 runs
+                      workflow_data = {
+                          'name': workflow.name,
+                          'id': workflow.id,
+                          'runs': []
+                      }
+                      
+                      for run in runs:
+                          workflow_data['runs'].append({
+                              'status': run.status,
+                              'conclusion': run.conclusion,
+                              'created_at': run.created_at.isoformat() if run.created_at else None,
+                              'updated_at': run.updated_at.isoformat() if run.updated_at else None,
+                              'head_branch': run.head_branch,
+                              'html_url': run.html_url
+                          })
+                      
+                      if workflow_data['runs']:
+                          build_info['workflows'].append(workflow_data)
+                  except Exception as e:
+                      print(f"  ⚠️  Error fetching workflow {workflow.name}: {e}")
+              
+              # Save build info
+              build_file = 'docs/data/builds.json'
+              os.makedirs('docs/data', exist_ok=True)
+              
+              with open(build_file, 'w', encoding='utf-8') as f:
+                  json.dump(build_info, f, indent=2, ensure_ascii=False)
+              
+              print(f"✅ Saved build info to {build_file}")
+              print(f"   Workflows tracked: {len(build_info['workflows'])}")
+              
+          except Exception as e:
+              print(f"⚠️  Could not fetch build info: {e}")
+              # Create empty file
+              build_file = 'docs/data/builds.json'
+              os.makedirs('docs/data', exist_ok=True)
+              with open(build_file, 'w', encoding='utf-8') as f:
+                  json.dump({'last_updated': datetime.utcnow().isoformat() + 'Z', 'workflows': []}, f)
+          EOF
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CORE_TOKEN: ${{ secrets.CORE_REPO_TOKEN }}
+
+      - name: Fetch Version Info from Core Repository
+        id: fetch-versions
+        run: |
+          python << 'EOF'
+          import json
+          import os
+          from datetime import datetime
+          from github import Github
+
+          core_token = os.environ.get('CORE_TOKEN', os.environ.get('GITHUB_TOKEN'))
+          gh = Github(core_token)
+          
+          try:
+              repo = gh.get_repo('faneX-ID/core')
+              
+              # Get versions.json
+              versions_content = repo.get_contents('.github/versions.json', ref='main')
+              versions_data = json.loads(versions_content.decoded_content.decode())
+              
+              # Get project manifest if available
+              project_manifest = None
+              try:
+                  manifest_content = repo.get_contents('project_manifest.json', ref='main')
+                  project_manifest = json.loads(manifest_content.decoded_content.decode())
+              except Exception:
+                  pass
+              
+              version_info = {
+                  'last_updated': datetime.utcnow().isoformat() + 'Z',
+                  'versions': versions_data,
+                  'project_manifest': project_manifest
+              }
+              
+              # Save version info
+              version_file = 'docs/data/versions.json'
+              os.makedirs('docs/data', exist_ok=True)
+              
+              with open(version_file, 'w', encoding='utf-8') as f:
+                  json.dump(version_info, f, indent=2, ensure_ascii=False)
+              
+              print(f"✅ Saved version info to {version_file}")
+              print(f"   Schema Version: {versions_data.get('manifest_schema_version', 'N/A')}")
+              print(f"   Min Core Version: {versions_data.get('min_core_version', 'N/A')}")
+              
+          except Exception as e:
+              print(f"⚠️  Could not fetch version info: {e}")
+              # Create fallback file
+              version_file = 'docs/data/versions.json'
+              os.makedirs('docs/data', exist_ok=True)
+              with open(version_file, 'w', encoding='utf-8') as f:
+                  json.dump({
+                      'last_updated': datetime.utcnow().isoformat() + 'Z',
+                      'versions': {},
+                      'error': str(e)
+                  }, f)
+          EOF
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CORE_TOKEN: ${{ secrets.CORE_REPO_TOKEN }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if [[ -n $(git status -s) ]]; then
+            git add docs/data/*.json
+            git commit -m "chore: update releases and version info [skip ci]" || echo "No changes to commit"
+            git push || echo "Nothing to push"
+          else
+            echo "No changes to commit"
+          fi
+
+

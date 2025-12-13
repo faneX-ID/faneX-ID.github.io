@@ -1,0 +1,74 @@
+name: PR Assistant
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+  issues: write
+
+jobs:
+  pr-validation:
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Validate Documentation Structure
+        run: |
+          if [ ! -f "mkdocs.yml" ]; then
+            echo "❌ mkdocs.yml not found"
+            exit 1
+          fi
+          if [ ! -d "docs" ]; then
+            echo "❌ docs directory not found"
+            exit 1
+          fi
+          echo "✅ Documentation structure valid"
+
+      - name: Feedback Comment
+        if: always()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const outcome = '${{ job.status }}';
+            if (outcome === 'failure') {
+               github.rest.issues.createComment({
+                 issue_number: context.issue.number,
+                 owner: context.repo.owner,
+                 repo: context.repo.repo,
+                 body: "❌ **PR Validation Failed**\n\nPlease check the validation errors above."
+               });
+            } else if (outcome === 'success') {
+               github.rest.issues.createComment({
+                 issue_number: context.issue.number,
+                 owner: context.repo.owner,
+                 repo: context.repo.repo,
+                 body: "✅ **PR Validation Passed**\n\nAll checks passed successfully!"
+               });
+            }
+
+  thank-you:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const author = context.payload.pull_request.user.login;
+            const admins = ['FaserF', 'fabia', 'github-actions[bot]'];
+            if (admins.includes(author)) return;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🎉 **Thank you @${author}!**\n\nYour contribution to the **faneX-ID Documentation** repository is valuable! 🚀`
+            });
+
