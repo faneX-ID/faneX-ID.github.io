@@ -4,7 +4,6 @@ site_description: Official documentation for faneX-ID - Next-Generation Identity
 repo_url: https://github.com/faneX-ID/core
 repo_name: faneX-ID/core
 edit_uri: edit/main/docs/
-edit_uri: ""
 
 theme:
   name: material
@@ -66,6 +65,7 @@ nav:
     - Repository Architecture: developers/repositories.md
     - Integrations: developers/integrations.md
     - API Reference: developers/api.md
+    - CI/CD Infrastructure: developers/cicd.md
 
 markdown_extensions:
   - admonition

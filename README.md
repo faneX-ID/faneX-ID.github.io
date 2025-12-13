@@ -63,7 +63,7 @@ This repository uses GitHub Actions for automated deployment and quality checks:
 - **PR Validation**: Pull requests are validated with link checking and markdown linting
 - **Dependabot**: Dependencies are automatically updated weekly
 
-For detailed information, see the [CI/CD Infrastructure Documentation](.github/workflows/README.md).
+For detailed information, see the [CI/CD Infrastructure Documentation](docs/developers/cicd.md).
 
 ## 📖 Documentation Structure
 
