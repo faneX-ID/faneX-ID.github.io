@@ -166,4 +166,3 @@ Now that you're familiar with the basics:
 ---
 
 **Ready to dive deeper?** Check out the [Dashboard Guide](dashboard.md) or [Security Guide](security.md) for more detailed information.
-

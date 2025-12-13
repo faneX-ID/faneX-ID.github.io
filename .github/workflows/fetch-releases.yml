@@ -92,7 +92,7 @@ jobs:
                                   })
                           except Exception as e:
                               print(f"    ⚠️  Could not fetch assets: {e}")
-                          
+
                           release_data = {
                               'name': release.title or release.tag_name,
                               'tag': release.tag_name,

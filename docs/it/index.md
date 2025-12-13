@@ -97,4 +97,3 @@ If you're ready to get started immediately:
 ---
 
 **Ready to begin?** Start with the [Installation Guide](installation.md) to get faneX-ID up and running.
-

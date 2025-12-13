@@ -71,4 +71,3 @@ jobs:
               repo: context.repo.repo,
               body: `🎉 **Thank you @${author}!**\n\nYour contribution to the **faneX-ID Documentation** repository is valuable! 🚀`
             });
-

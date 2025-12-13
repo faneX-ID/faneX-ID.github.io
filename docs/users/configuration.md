@@ -401,4 +401,3 @@ Configure how you receive notifications:
 ---
 
 **Need help with configuration?** Check the [Troubleshooting Guide](troubleshooting.md) or contact your IT administrator.
-

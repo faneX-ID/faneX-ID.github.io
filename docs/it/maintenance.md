@@ -74,10 +74,10 @@ This guide covers regular maintenance tasks, updates, monitoring, and backup pro
    ```bash
    # Pull latest images
    docker-compose pull
-   
+
    # Test update
    docker-compose up -d
-   
+
    # Verify functionality
    # Run tests
    ```
@@ -86,19 +86,19 @@ This guide covers regular maintenance tasks, updates, monitoring, and backup pro
    ```bash
    # Schedule maintenance window
    # Notify users
-   
+
    # Backup current state
    docker-compose exec db pg_dump -U fanexid fanexiddb > backup.sql
-   
+
    # Pull updates
    docker-compose pull
-   
+
    # Update services
    docker-compose up -d
-   
+
    # Run migrations
    docker-compose exec backend alembic upgrade head
-   
+
    # Verify update
    # Monitor for issues
    ```
@@ -141,9 +141,9 @@ This guide covers regular maintenance tasks, updates, monitoring, and backup pro
    #!/bin/bash
    BACKUP_DIR="/backups/fanexid"
    DATE=$(date +%Y%m%d_%H%M%S)
-   
+
    docker-compose exec -T db pg_dump -U fanexid fanexiddb | gzip > "$BACKUP_DIR/db_$DATE.sql.gz"
-   
+
    # Keep last 30 days
    find $BACKUP_DIR -name "db_*.sql.gz" -mtime +30 -delete
    ```
@@ -371,4 +371,3 @@ This guide covers regular maintenance tasks, updates, monitoring, and backup pro
 ---
 
 **Need help?** Check the [Troubleshooting Guide](../users/troubleshooting.md) or contact support.
-
