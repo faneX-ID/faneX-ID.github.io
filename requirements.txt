@@ -1,6 +1,13 @@
+# MkDocs Material and plugins for faneX-ID Documentation
+# Updated: 2025-12-13
+
+# Core theme
 mkdocs-material>=9.5.0
-mkdocs-include-markdown-plugin>=4.0.0
-mkdocs-minify-plugin>=0.7.0
+
+# Plugins
+mkdocs-minify-plugin>=0.8.0
 mkdocs-git-revision-date-localized-plugin>=1.2.0
 mkdocs-awesome-pages-plugin>=2.9.0
-pymdown-extensions>=10.7
+
+# Extensions
+pymdown-extensions>=10.12

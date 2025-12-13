@@ -1,0 +1,7 @@
+# Dependency lockfile - auto-generated
+# Last updated: 2025-12-13
+# DO NOT EDIT MANUALLY - Use Dependabot or update requirements.txt
+
+# This file is intentionally empty
+# We use requirements.txt for dependency management
+# Dependabot will keep requirements.txt updated

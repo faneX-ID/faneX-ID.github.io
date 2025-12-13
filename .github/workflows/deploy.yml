@@ -12,24 +12,33 @@ permissions:
 
 jobs:
   deploy:
+    name: Build & Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Needed for git-revision-date-localized-plugin
 
-      - name: Configure Git Credentials
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed for git-revision-date-localized-plugin
+
+      - name: Configure Git credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: '3.12'
+          cache: 'pip'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build documentation
+        run: mkdocs build --strict
 
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
-
