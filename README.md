@@ -7,6 +7,14 @@ Official documentation for [faneX-ID](https://faneX-ID.github.io) - Next-Generat
 
 Visit the live site: **[https://faneX-ID.github.io](https://faneX-ID.github.io)**
 
+## 🎮 Try the Demo
+
+**Live Demo Available:** [https://fanex-id.fabiseitz.de](https://fanex-id.fabiseitz.de)
+
+> ⚠️ **Note:** The demo instance is not permanently online and may be unavailable at times. It's provided for testing and evaluation purposes.
+
+Experience faneX-ID in action with our live demo instance. Explore the features, test the interface, and see how faneX-ID can work for your organization.
+
 ## 📚 About faneX-ID
 
 **faneX-ID** is an enterprise-grade Identity & Access Management (IAM) platform built for modularity, security, and hybrid environments. It combines modern web technologies with robust legacy system integration capabilities.

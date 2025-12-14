@@ -242,6 +242,99 @@ hide:
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  .download-banner {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    border: 2px solid var(--md-primary-fg-color--lightest);
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .download-banner-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .download-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .download-btn-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: var(--md-default-bg-color);
+    border: 2px solid var(--md-default-fg-color--lightest);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+  }
+  .download-btn-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+    border-color: var(--md-primary-fg-color);
+  }
+  .download-btn-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .download-btn-label {
+    font-weight: 600;
+    color: var(--md-default-fg-color);
+    font-size: 1rem;
+  }
+  .download-btn-version {
+    font-size: 0.85rem;
+    color: var(--md-default-fg-color--light);
+  }
+  .download-url-list {
+    background: var(--md-code-bg-color);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin-top: 2rem;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .download-url-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  }
+  .download-url-item:last-child {
+    border-bottom: none;
+  }
+  .download-url-label {
+    font-weight: 600;
+    color: var(--md-default-fg-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .download-url-link {
+    color: var(--md-primary-fg-color) !important;
+    text-decoration: none !important;
+    font-size: 0.9rem;
+    word-break: break-all;
+    max-width: 60%;
+  }
+  .download-url-link:hover {
+    text-decoration: underline !important;
+  }
 </style>
 
 <div class="hero-section">
@@ -249,11 +342,17 @@ hide:
     <h1 class="hero-title">🚀 faneX-ID</h1>
     <p class="hero-subtitle">Next-Generation Identity & Access Management for Modern Enterprises</p>
     <div class="hero-buttons">
+      <a href="https://fanex-id.fabiseitz.de" target="_blank" rel="noopener" class="btn btn-accent" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">🎮 Try Demo</a>
       <a href="downloads/" class="btn btn-primary">📥 Downloads</a>
       <a href="releases/" class="btn btn-primary">📦 Releases</a>
       <a href="users/" class="btn btn-accent">👤 User Guide</a>
       <a href="developers/" class="btn btn-accent">💻 Developer Docs</a>
       <a href="it/" class="btn btn-secondary">⚙️ IT Admin</a>
+    </div>
+    <div style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 0.75rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+      <p style="margin: 0; font-size: 0.95rem; opacity: 0.9;">
+        ⚠️ <strong>Demo Notice:</strong> The demo instance at <a href="https://fanex-id.fabiseitz.de" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">fanex-id.fabiseitz.de</a> is not permanently online and may be unavailable at times. It's provided for testing and evaluation purposes.
+      </p>
     </div>
   </div>
 </div>
@@ -278,6 +377,98 @@ hide:
 </div>
 
 <script>
+  // Fetch releases and populate download buttons
+  async function loadDownloads() {
+    try {
+      const response = await fetch("https://api.github.com/repos/faneX-ID/core/releases");
+      if (!response.ok) throw new Error('Failed to fetch releases');
+      
+      const releases = await response.json();
+      const latestRelease = releases.find(r => !r.prerelease) || releases[0];
+      
+      if (!latestRelease || !latestRelease.assets) {
+        throw new Error('No release assets found');
+      }
+
+      const buttonsContainer = document.getElementById('download-buttons');
+      const urlsContainer = document.getElementById('download-urls');
+      const urlsContent = document.getElementById('download-urls-content');
+      
+      // Find assets by type
+      const findAsset = (patterns) => {
+        return latestRelease.assets.find(asset => {
+          const name = asset.name.toLowerCase();
+          return patterns.some(pattern => name.includes(pattern));
+        });
+      };
+
+      const dockerAsset = findAsset(['docker', 'image', '.tar.gz']);
+      const sourceAsset = findAsset(['source', 'src', '.zip', '.tar.gz']) || latestRelease.zipball_url;
+      const msixAsset = findAsset(['.msix', 'msixbundle', 'windows']);
+      const ipaAsset = findAsset(['.ipa', 'ios']);
+      const apkAsset = findAsset(['.apk', 'android']);
+
+      // Build download buttons
+      const downloadTypes = [
+        { icon: '🐳', label: 'Docker', asset: dockerAsset, url: dockerAsset?.browser_download_url, type: 'docker' },
+        { icon: '📦', label: 'Source Code', asset: sourceAsset, url: typeof sourceAsset === 'string' ? sourceAsset : sourceAsset?.browser_download_url, type: 'source' },
+        { icon: '🪟', label: 'Windows (MSIX)', asset: msixAsset, url: msixAsset?.browser_download_url, type: 'msix' },
+        { icon: '🍎', label: 'iOS (IPA)', asset: ipaAsset, url: ipaAsset?.browser_download_url, type: 'ipa' },
+        { icon: '🤖', label: 'Android (APK)', asset: apkAsset, url: apkAsset?.browser_download_url, type: 'apk' }
+      ];
+
+      buttonsContainer.innerHTML = downloadTypes.map(item => {
+        if (!item.url) {
+          return `
+            <div class="download-btn-item" style="opacity: 0.5; cursor: not-allowed;">
+              <span class="download-btn-icon">${item.icon}</span>
+              <span class="download-btn-label">${item.label}</span>
+              <span class="download-btn-version">Not available</span>
+            </div>
+          `;
+        }
+        return `
+          <a href="${item.url}" target="_blank" rel="noopener" class="download-btn-item">
+            <span class="download-btn-icon">${item.icon}</span>
+            <span class="download-btn-label">${item.label}</span>
+            <span class="download-btn-version">${latestRelease.tag_name}</span>
+          </a>
+        `;
+      }).join('');
+
+      // Build URL list
+      const availableDownloads = downloadTypes.filter(item => item.url);
+      if (availableDownloads.length > 0) {
+        urlsContent.innerHTML = availableDownloads.map(item => `
+          <div class="download-url-item">
+            <span class="download-url-label">
+              <span>${item.icon}</span>
+              <span>${item.label}</span>
+            </span>
+            <a href="${item.url}" target="_blank" rel="noopener" class="download-url-link">${item.url}</a>
+          </div>
+        `).join('');
+        urlsContainer.style.display = 'block';
+      }
+
+    } catch (error) {
+      console.error('Error loading downloads:', error);
+      const buttonsContainer = document.getElementById('download-buttons');
+      buttonsContainer.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+          <p style="color: var(--md-default-fg-color--light); margin-bottom: 1rem;">Unable to load downloads automatically.</p>
+          <a href="https://github.com/faneX-ID/core/releases/latest" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-block;">
+            View Releases on GitHub →
+          </a>
+        </div>
+      `;
+    }
+  }
+
+  // Load downloads on page load
+  loadDownloads();
+
+  // Fetch release stats
   fetch("https://api.github.com/repos/faneX-ID/core/releases")
     .then(response => response.json())
     .then(releases => {
@@ -300,6 +491,23 @@ hide:
         document.getElementById("star-count").innerText = "0";
     });
 </script>
+
+## 🎮 Try the Live Demo
+
+<div style="background: linear-gradient(135deg, #10b98115 0%, #05966915 100%); padding: 2rem; border-radius: 1rem; border: 2px solid #10b98140; margin: 2rem 0; text-align: center;">
+  <h3 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; background: linear-gradient(135deg, #10b981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+    🎮 Experience faneX-ID Live
+  </h3>
+  <p style="font-size: 1.1rem; color: var(--md-default-fg-color--light); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+    Test faneX-ID in action with our live demo instance. Explore features, test the interface, and see how faneX-ID can work for your organization.
+  </p>
+  <a href="https://fanex-id.fabiseitz.de" target="_blank" rel="noopener" class="btn btn-accent" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); margin: 0.5rem;">
+    🚀 Open Demo Instance →
+  </a>
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--md-default-fg-color--light);">
+    ⚠️ <strong>Note:</strong> Demo is not permanently online and may be unavailable at times.
+  </p>
+</div>
 
 ## 🎯 Quick Access
 
@@ -466,10 +674,29 @@ hide:
 Ready to dive in? Choose your path:
 
 <div class="hero-buttons" style="margin: 2rem 0;">
+  <a href="https://fanex-id.fabiseitz.de" target="_blank" rel="noopener" class="btn btn-accent" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">🎮 Try Demo</a>
   <a href="downloads/" class="btn btn-primary">📥 Downloads</a>
   <a href="users/" class="btn btn-accent">👤 User Guide</a>
   <a href="developers/" class="btn btn-accent">👨‍💻 Developer Docs</a>
   <a href="it/" class="btn btn-secondary">⚙️ IT Admin Guide</a>
+</div>
+
+## 📥 Quick Downloads
+
+<div class="download-banner">
+  <h2 class="download-banner-title">Download faneX-ID</h2>
+  <p style="color: var(--md-default-fg-color--light); margin-bottom: 1.5rem;">Get the latest release for your platform</p>
+  
+  <div class="download-buttons-grid" id="download-buttons">
+    <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--md-default-fg-color--light);">
+      Loading downloads...
+    </div>
+  </div>
+
+  <div class="download-url-list" id="download-urls" style="display: none;">
+    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; text-align: center;">Direct Download Links</h3>
+    <div id="download-urls-content"></div>
+  </div>
 </div>
 
 ## 📥 Latest Downloads

@@ -8,6 +8,13 @@ faneX-ID is a comprehensive identity management platform that bridges HR data (S
 
 ## First Steps
 
+### 0. Try the Demo (Optional)
+
+Before setting up your own instance, you can try faneX-ID with our live demo:
+
+- **Demo Instance:** [https://fanex-id.fabiseitz.de](https://fanex-id.fabiseitz.de)
+- **Note:** The demo is not permanently online and may be unavailable at times. It's provided for testing and evaluation purposes.
+
 ### 1. Accessing the Platform
 
 faneX-ID can be accessed in several ways:
@@ -15,6 +22,7 @@ faneX-ID can be accessed in several ways:
 - **Web Interface:** Navigate to your organization's faneX-ID URL (provided by your IT administrator)
 - **Home Assistant Add-on:** If deployed as a Home Assistant add-on, access via the Home Assistant sidebar
 - **Direct URL:** Access via the configured base URL
+- **Demo Instance:** Try the live demo at [https://fanex-id.fabiseitz.de](https://fanex-id.fabiseitz.de) (not permanently online)
 
 ### 2. Initial Login
 
@@ -166,4 +174,3 @@ Now that you're familiar with the basics:
 ---
 
 **Ready to dive deeper?** Check out the [Dashboard Guide](dashboard.md) or [Security Guide](security.md) for more detailed information.
-
