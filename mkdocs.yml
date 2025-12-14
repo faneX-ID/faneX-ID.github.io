@@ -44,6 +44,7 @@ plugins:
 
 nav:
   - Home: index.md
+  - Documentation Structure: structure.md
   - Downloads: downloads.md
   - Releases: releases.md
   - Status: status.md
@@ -57,6 +58,8 @@ nav:
     - Introduction: it/index.md
     - Installation: it/installation.md
     - Deployment: it/deployment.md
+    - SaaS & Hybrid Deployment: it/saas-deployment.md
+    - OnPrem Connector: it/onprem-connector.md
     - Maintenance: it/maintenance.md
     - Security: it/security.md
   - Developer Guide:

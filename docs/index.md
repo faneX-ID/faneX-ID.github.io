@@ -357,17 +357,23 @@ hide:
   </div>
 </div>
 
-<div class="stat-grid" id="github-stats">
+<div class="stat-grid">
   <div class="stat-card">
-    <div class="stat-value" id="latest-release">...</div>
+    <div class="stat-value">
+      <a href="releases/" style="text-decoration: none; color: inherit;">Latest</a>
+    </div>
     <div class="stat-label">Latest Release</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value" id="latest-beta">...</div>
+    <div class="stat-value">
+      <a href="releases/" style="text-decoration: none; color: inherit;">Beta</a>
+    </div>
     <div class="stat-label">Beta Version</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value" id="star-count">...</div>
+    <div class="stat-value">
+      <a href="https://github.com/faneX-ID/core" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">⭐</a>
+    </div>
     <div class="stat-label">GitHub Stars</div>
   </div>
   <div class="stat-card">
@@ -375,122 +381,6 @@ hide:
     <div class="stat-label">Active Repositories</div>
   </div>
 </div>
-
-<script>
-  // Fetch releases and populate download buttons
-  async function loadDownloads() {
-    try {
-      const response = await fetch("https://api.github.com/repos/faneX-ID/core/releases");
-      if (!response.ok) throw new Error('Failed to fetch releases');
-      
-      const releases = await response.json();
-      const latestRelease = releases.find(r => !r.prerelease) || releases[0];
-      
-      if (!latestRelease || !latestRelease.assets) {
-        throw new Error('No release assets found');
-      }
-
-      const buttonsContainer = document.getElementById('download-buttons');
-      const urlsContainer = document.getElementById('download-urls');
-      const urlsContent = document.getElementById('download-urls-content');
-      
-      // Find assets by type
-      const findAsset = (patterns) => {
-        return latestRelease.assets.find(asset => {
-          const name = asset.name.toLowerCase();
-          return patterns.some(pattern => name.includes(pattern));
-        });
-      };
-
-      const dockerAsset = findAsset(['docker', 'image', '.tar.gz']);
-      const sourceAsset = findAsset(['source', 'src', '.zip', '.tar.gz']) || latestRelease.zipball_url;
-      const msixAsset = findAsset(['.msix', 'msixbundle', 'windows']);
-      const ipaAsset = findAsset(['.ipa', 'ios']);
-      const apkAsset = findAsset(['.apk', 'android']);
-
-      // Build download buttons
-      const downloadTypes = [
-        { icon: '🐳', label: 'Docker', asset: dockerAsset, url: dockerAsset?.browser_download_url, type: 'docker' },
-        { icon: '📦', label: 'Source Code', asset: sourceAsset, url: typeof sourceAsset === 'string' ? sourceAsset : sourceAsset?.browser_download_url, type: 'source' },
-        { icon: '🪟', label: 'Windows (MSIX)', asset: msixAsset, url: msixAsset?.browser_download_url, type: 'msix' },
-        { icon: '🍎', label: 'iOS (IPA)', asset: ipaAsset, url: ipaAsset?.browser_download_url, type: 'ipa' },
-        { icon: '🤖', label: 'Android (APK)', asset: apkAsset, url: apkAsset?.browser_download_url, type: 'apk' }
-      ];
-
-      buttonsContainer.innerHTML = downloadTypes.map(item => {
-        if (!item.url) {
-          return `
-            <div class="download-btn-item" style="opacity: 0.5; cursor: not-allowed;">
-              <span class="download-btn-icon">${item.icon}</span>
-              <span class="download-btn-label">${item.label}</span>
-              <span class="download-btn-version">Not available</span>
-            </div>
-          `;
-        }
-        return `
-          <a href="${item.url}" target="_blank" rel="noopener" class="download-btn-item">
-            <span class="download-btn-icon">${item.icon}</span>
-            <span class="download-btn-label">${item.label}</span>
-            <span class="download-btn-version">${latestRelease.tag_name}</span>
-          </a>
-        `;
-      }).join('');
-
-      // Build URL list
-      const availableDownloads = downloadTypes.filter(item => item.url);
-      if (availableDownloads.length > 0) {
-        urlsContent.innerHTML = availableDownloads.map(item => `
-          <div class="download-url-item">
-            <span class="download-url-label">
-              <span>${item.icon}</span>
-              <span>${item.label}</span>
-            </span>
-            <a href="${item.url}" target="_blank" rel="noopener" class="download-url-link">${item.url}</a>
-          </div>
-        `).join('');
-        urlsContainer.style.display = 'block';
-      }
-
-    } catch (error) {
-      console.error('Error loading downloads:', error);
-      const buttonsContainer = document.getElementById('download-buttons');
-      buttonsContainer.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-          <p style="color: var(--md-default-fg-color--light); margin-bottom: 1rem;">Unable to load downloads automatically.</p>
-          <a href="https://github.com/faneX-ID/core/releases/latest" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-block;">
-            View Releases on GitHub →
-          </a>
-        </div>
-      `;
-    }
-  }
-
-  // Load downloads on page load
-  loadDownloads();
-
-  // Fetch release stats
-  fetch("https://api.github.com/repos/faneX-ID/core/releases")
-    .then(response => response.json())
-    .then(releases => {
-      const stable = releases.find(r => !r.prerelease);
-      const beta = releases.find(r => r.prerelease);
-      document.getElementById("latest-release").innerText = stable ? stable.tag_name : "v1.0.0";
-      document.getElementById("latest-beta").innerText = beta ? beta.tag_name : "v1.1.0-beta";
-    })
-    .catch(() => {
-       document.getElementById("latest-release").innerText = "v1.0.0";
-       document.getElementById("latest-beta").innerText = "v1.1.0-beta";
-    });
-
-  fetch("https://api.github.com/repos/faneX-ID/core")
-    .then(response => response.json())
-    .then(repo => {
-        document.getElementById("star-count").innerText = repo.stargazers_count || "0";
-    })
-    .catch(() => {
-        document.getElementById("star-count").innerText = "0";
-    });
-</script>
 
 ## 🎮 Try the Live Demo
 
@@ -545,6 +435,20 @@ hide:
     <h3 class="quick-title">Releases</h3>
     <p class="quick-desc">View all releases from all faneX-ID projects with detailed information.</p>
     <a href="releases/" class="quick-link">View Releases →</a>
+  </div>
+
+  <div class="quick-card">
+    <span class="quick-icon">☁️</span>
+    <h3 class="quick-title">SaaS & Hybrid</h3>
+    <p class="quick-desc">Deploy faneX-ID as SaaS or hybrid with on-premises connectors.</p>
+    <a href="it/saas-deployment/" class="quick-link">Learn More →</a>
+  </div>
+
+  <div class="quick-card">
+    <span class="quick-icon">🗺️</span>
+    <h3 class="quick-title">Documentation Map</h3>
+    <p class="quick-desc">Navigate the documentation structure and find what you need.</p>
+    <a href="structure/" class="quick-link">View Structure →</a>
   </div>
 </div>
 
@@ -609,6 +513,13 @@ hide:
     <h3 class="repo-name">Workflow Examples</h3>
     <p class="repo-desc">Community workflow examples demonstrating alerting and automation patterns.</p>
     <a href="https://github.com/faneX-ID/workflows-example" class="repo-link">See Examples →</a>
+  </div>
+
+  <div class="repo-card">
+    <h3 class="repo-name">OnPrem Connector</h3>
+    <p class="repo-desc">Lightweight connector for hybrid deployments, bridging on-premises infrastructure with faneX-ID cloud platform. Supports Windows and Linux.</p>
+    <a href="https://github.com/faneX-ID/onprem-connector" target="_blank" rel="noopener" class="repo-link">View Repository →</a>
+    <a href="it/onprem-connector/" class="repo-link" style="margin-left: 1rem;">View Documentation →</a>
   </div>
 
   <div class="repo-card">
@@ -681,95 +592,45 @@ Ready to dive in? Choose your path:
   <a href="it/" class="btn btn-secondary">⚙️ IT Admin Guide</a>
 </div>
 
-## 📥 Quick Downloads
+## 📥 Downloads
 
 <div class="download-banner">
   <h2 class="download-banner-title">Download faneX-ID</h2>
   <p style="color: var(--md-default-fg-color--light); margin-bottom: 1.5rem;">Get the latest release for your platform</p>
-  
-  <div class="download-buttons-grid" id="download-buttons">
-    <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--md-default-fg-color--light);">
-      Loading downloads...
-    </div>
+
+  <div class="download-buttons-grid">
+    <a href="https://github.com/faneX-ID/core/releases/latest" target="_blank" rel="noopener" class="download-btn-item">
+      <span class="download-btn-icon">🐳</span>
+      <span class="download-btn-label">Docker</span>
+      <span class="download-btn-version">Latest</span>
+    </a>
+    <a href="https://github.com/faneX-ID/core/archive/refs/heads/main.zip" target="_blank" rel="noopener" class="download-btn-item">
+      <span class="download-btn-icon">📦</span>
+      <span class="download-btn-label">Source Code</span>
+      <span class="download-btn-version">Main</span>
+    </a>
+    <a href="downloads/" class="download-btn-item">
+      <span class="download-btn-icon">🪟</span>
+      <span class="download-btn-label">Windows</span>
+      <span class="download-btn-version">View All</span>
+    </a>
+    <a href="downloads/" class="download-btn-item">
+      <span class="download-btn-icon">🍎</span>
+      <span class="download-btn-label">iOS</span>
+      <span class="download-btn-version">View All</span>
+    </a>
+    <a href="downloads/" class="download-btn-item">
+      <span class="download-btn-icon">🤖</span>
+      <span class="download-btn-label">Android</span>
+      <span class="download-btn-version">View All</span>
+    </a>
   </div>
 
-  <div class="download-url-list" id="download-urls" style="display: none;">
-    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; text-align: center;">Direct Download Links</h3>
-    <div id="download-urls-content"></div>
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="downloads/" class="btn btn-primary">View All Downloads →</a>
+    <a href="releases/" class="btn btn-secondary" style="margin-left: 1rem;">Browse Releases →</a>
   </div>
 </div>
-
-## 📥 Latest Downloads
-
-<div id="quick-downloads" style="margin: 2rem 0;">
-  <p style="text-align: center; color: #666;">Loading latest downloads...</p>
-</div>
-
-<script>
-// Fetch and display quick downloads
-fetch('/docs/data/releases.json')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('quick-downloads');
-    const coreRepo = data.repositories.core;
-
-    if (!coreRepo || (!coreRepo.latest_stable && !coreRepo.latest_prerelease)) {
-      container.innerHTML = '<p style="text-align: center; color: #999;">No downloads available yet.</p>';
-      return;
-    }
-
-    const latestRelease = coreRepo.latest_stable || coreRepo.latest_prerelease;
-    const isPrerelease = !coreRepo.latest_stable;
-
-    if (latestRelease.assets && latestRelease.assets.length > 0) {
-      container.innerHTML = `
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
-          ${latestRelease.assets.slice(0, 6).map(asset => {
-            const platform = asset.name.toLowerCase();
-            let icon = '📦';
-            if (platform.includes('windows') || platform.includes('msix')) icon = '🪟';
-            else if (platform.includes('android') || platform.includes('apk')) icon = '🤖';
-            else if (platform.includes('ios') || platform.includes('ipa')) icon = '🍎';
-            else if (platform.includes('linux') || platform.includes('deb') || platform.includes('rpm')) icon = '🐧';
-            else if (platform.includes('docker')) icon = '🐳';
-            else if (platform.includes('macos') || platform.includes('dmg')) icon = '💻';
-
-            return `
-              <a href="${asset.download_url}"
-                 target="_blank"
-                 style="display: block; padding: 1.5rem; background: white; border: 2px solid #e0e0e0; border-radius: 12px; text-decoration: none; transition: all 0.3s; text-align: center;"
-                 onmouseover="this.style.borderColor='#667eea'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(102,126,234,0.2)'"
-                 onmouseout="this.style.borderColor='#e0e0e0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">${icon}</div>
-                <div style="font-weight: 600; color: #333; margin-bottom: 0.25rem;">${asset.name}</div>
-                <div style="font-size: 0.85rem; color: #666;">${(asset.size / 1024 / 1024).toFixed(2)} MB</div>
-                ${isPrerelease ? '<div style="margin-top: 0.5rem; font-size: 0.75rem; color: #ff9800; font-weight: 600;">PRE-RELEASE</div>' : ''}
-              </a>
-            `;
-          }).join('')}
-        </div>
-        <div style="text-align: center; margin-top: 1.5rem;">
-          <a href="downloads/" style="color: #667eea; text-decoration: none; font-weight: 600;">
-            View all downloads →
-          </a>
-        </div>
-      `;
-    } else {
-      container.innerHTML = `
-        <div style="text-align: center; padding: 2rem; background: #f5f5f5; border-radius: 12px;">
-          <p style="color: #666; margin-bottom: 1rem;">Latest version: <strong>${latestRelease.tag}</strong></p>
-          <a href="${latestRelease.url}" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">
-            View on GitHub →
-          </a>
-        </div>
-      `;
-    }
-  })
-  .catch(error => {
-    document.getElementById('quick-downloads').innerHTML =
-      '<p style="text-align: center; color: #999;">Unable to load downloads. <a href="downloads/">View downloads page</a></p>';
-  });
-</script>
 
 ---
 

@@ -40,3 +40,4 @@ The workflow generates the following data files in `docs/data/`:
 
 These files are used by the documentation pages to display current information.
 
+
