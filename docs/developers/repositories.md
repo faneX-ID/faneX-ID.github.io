@@ -378,3 +378,4 @@ Even though `core` is private, public repositories can access:
 - **All Repositories:** [faneX-ID Organization](https://github.com/orgs/faneX-ID/repositories)
 - **Documentation:** [faneX-ID.github.io](https://faneX-ID.github.io/)
 - **Core Repository:** [faneX-ID/core](https://github.com/faneX-ID/core) (Private)
+

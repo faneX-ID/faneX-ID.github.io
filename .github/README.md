@@ -39,3 +39,4 @@ The workflow generates the following data files in `docs/data/`:
 - `builds.json` - Build status from core repository
 
 These files are used by the documentation pages to display current information.
+
