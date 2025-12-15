@@ -35,7 +35,7 @@ jobs:
 
       - name: Feedback Comment
         if: always()
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: |
             const outcome = '${{ job.status }}';
@@ -59,7 +59,7 @@ jobs:
     if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v8
         with:
           script: |
             const author = context.payload.pull_request.user.login;
