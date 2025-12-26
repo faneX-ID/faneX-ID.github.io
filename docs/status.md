@@ -30,7 +30,7 @@ This page displays the current build status and version information from the fan
 
 <script>
 // Fetch and display version info with cache-buster
-fetch('/data/versions.json?v=' + new Date().getTime())
+fetch('../data/versions.json?v=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('versions-container');
@@ -72,7 +72,7 @@ fetch('/data/versions.json?v=' + new Date().getTime())
   });
 
 // Fetch and display build status with cache-buster
-fetch('/data/builds.json?v=' + new Date().getTime())
+fetch('../data/builds.json?v=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('builds-container');
@@ -123,7 +123,7 @@ fetch('/data/builds.json?v=' + new Date().getTime())
   });
 
 // Fetch and display releases summary with cache-buster
-fetch('/data/releases.json?v=' + new Date().getTime())
+fetch('../data/releases.json?v=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('releases-summary');

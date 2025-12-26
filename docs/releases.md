@@ -77,12 +77,7 @@ Comprehensive release information from all faneX-ID projects, including both **s
 let releasesData = null;
 
 // Fetch and display releases with cache-buster
-const getJsonPath = (path) => {
-  const base = window.location.pathname.startsWith('/releases') ? '..' : '.';
-  return path; // Keeping absolute for now as it's a root domain site
-};
-
-fetch('/data/releases.json?v=' + new Date().getTime())
+fetch('../data/releases.json?v=' + new Date().getTime())
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

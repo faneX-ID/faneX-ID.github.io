@@ -64,7 +64,7 @@ function formatSize(bytes) {
 }
 
 // Fetch and display downloads with cache-buster
-fetch('/data/releases.json?v=' + new Date().getTime())
+fetch('../data/releases.json?v=' + new Date().getTime())
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
