@@ -10,199 +10,7 @@ Comprehensive release information from all faneX-ID projects, including both **s
 !!! tip "Quick Downloads"
     Looking for direct download links organized by platform? Check out the [Downloads page](downloads.md) for all available platform downloads.
 
-<style>
-  .releases-table-container {
-    overflow-x: auto;
-    margin: 2rem 0;
-    border-radius: 12px;
-    border: 1px solid var(--md-default-fg-color--lightest);
-    background: var(--md-default-bg-color);
-  }
-  .releases-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-  }
-  .releases-table th {
-    background: var(--md-default-bg-color--light);
-    color: var(--md-default-fg-color);
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 600;
-    border-bottom: 2px solid var(--md-default-fg-color--lightest);
-  }
-  .releases-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--md-default-fg-color--lightest);
-    color: var(--md-default-fg-color);
-  }
-  .releases-table tr:hover {
-    background: var(--md-default-bg-color--light);
-  }
-  .release-filter {
-    display: flex;
-    gap: 1.5rem;
-    margin: 2rem 0;
-    padding: 1.25rem;
-    background: var(--md-default-bg-color--light);
-    border-radius: 12px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .release-filter label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-weight: 500;
-    color: var(--md-default-fg-color);
-    transition: color 0.2s;
-  }
-  .release-filter label:hover {
-    color: var(--md-primary-fg-color);
-  }
-  .release-filter input[type="radio"] {
-    margin-right: 0.5rem;
-  }
-  .release-card {
-    border: 1px solid var(--md-default-fg-color--lightest);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    background: var(--md-default-bg-color);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .release-card:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    transform: translateY(-4px);
-    border-color: var(--md-primary-fg-color--light);
-  }
-  .release-badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .badge-stable {
-    background: #e8f5e9;
-    color: #2e7d32;
-    border: 1px solid #c8e6c9;
-  }
-  [data-md-color-scheme="slate"] .badge-stable {
-    background: rgba(46, 125, 50, 0.2);
-    color: #81c784;
-    border-color: rgba(129, 199, 132, 0.3);
-  }
-  .badge-prerelease {
-    background: #fff3e0;
-    color: #ef6c00;
-    border: 1px solid #ffe0b2;
-  }
-  [data-md-color-scheme="slate"] .badge-prerelease {
-    background: rgba(239, 108, 0, 0.2);
-    color: #ffb74d;
-    border-color: rgba(255, 183, 77, 0.3);
-  }
-  .release-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.25rem;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-  .release-title {
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin: 0;
-    color: var(--md-primary-fg-color);
-    letter-spacing: -0.02em;
-  }
-  .release-meta {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    margin: 1.25rem 0;
-    padding: 1.25rem;
-    background: var(--md-default-bg-color--light);
-    border-radius: 10px;
-    border: 1px solid var(--md-default-fg-color--lightest);
-  }
-  .release-meta-item {
-    display: flex;
-    flex-direction: column;
-  }
-  .release-meta-label {
-    font-size: 0.7rem;
-    color: var(--md-default-fg-color--light);
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 0.35rem;
-    letter-spacing: 0.05em;
-  }
-  .release-meta-value {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--md-default-fg-color);
-  }
-  .download-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-  }
-  .download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.6rem 1.1rem;
-    background: var(--md-primary-fg-color);
-    color: var(--md-primary-bg-color);
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.2s ease;
-    border: none;
-  }
-  .download-btn:hover {
-    background: var(--md-accent-fg-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-  .summary-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.25rem;
-    margin: 2rem 0;
-  }
-  .stat-card {
-    background: var(--md-default-bg-color);
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid var(--md-default-fg-color--lightest);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  }
-  .stat-value {
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: var(--md-primary-fg-color);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.8rem;
-    color: var(--md-default-fg-color--light);
-    margin-top: 0.75rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-  }
-</style>
-
-<div class="release-filter">
+<div class="release-filter reveal">
   <label>
     <input type="radio" name="release-filter" value="all" checked onchange="filterReleases()">
     All Releases
@@ -217,7 +25,7 @@ Comprehensive release information from all faneX-ID projects, including both **s
   </label>
 </div>
 
-<div id="summary-stats" class="summary-stats" style="display: none;">
+<div id="summary-stats" class="summary-stats reveal" style="display: none;">
   <div class="stat-card">
     <div class="stat-value" id="total-stable">0</div>
     <div class="stat-label">Stable Releases</div>
@@ -232,8 +40,8 @@ Comprehensive release information from all faneX-ID projects, including both **s
   </div>
 </div>
 
-<h2 id="summary-table-title" style="display: none;">📊 Release Overview</h2>
-<div id="releases-table-container" class="releases-table-container" style="display: none;">
+<h2 id="summary-table-title" class="reveal" style="display: none;">📊 Release Overview</h2>
+<div id="releases-table-container" class="releases-table-container reveal" style="display: none;">
   <table class="releases-table">
     <thead>
       <tr>
@@ -248,16 +56,33 @@ Comprehensive release information from all faneX-ID projects, including both **s
   </table>
 </div>
 
-<h2 id="detailed-releases-title" style="display: none;">🗂️ Detailed Release Info</h2>
-<div id="releases-container">
+<h2 id="detailed-releases-title" class="reveal" style="display: none;">🗂️ Detailed Release Info</h2>
+<div id="releases-container" class="reveal">
   <div class="loading">Loading releases...</div>
 </div>
 
 <script>
+  window.addEventListener('load', () => {
+    ScrollReveal().reveal('.reveal', {
+      distance: '30px',
+      duration: 800,
+      interval: 100,
+      origin: 'bottom',
+      easing: 'ease-out'
+    });
+  });
+</script>
+
+<script>
 let releasesData = null;
 
-// Fetch and display releases
-fetch('/data/releases.json')
+// Fetch and display releases with cache-buster
+const getJsonPath = (path) => {
+  const base = window.location.pathname.startsWith('/releases') ? '..' : '.';
+  return path; // Keeping absolute for now as it's a root domain site
+};
+
+fetch('/data/releases.json?v=' + new Date().getTime())
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

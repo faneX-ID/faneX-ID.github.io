@@ -2,98 +2,10 @@
 
 This page displays the current build status and version information from the faneX-ID core repository.
 
-<style>
-  .status-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-  }
-  .status-card {
-    background: var(--md-default-bg-color);
-    border: 1px solid var(--md-default-fg-color--lightest);
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    transition: all 0.3s ease;
-  }
-  .status-card:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    transform: translateY(-4px);
-  }
-  .status-card h4 {
-    margin-top: 0;
-    color: var(--md-primary-fg-color);
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-  .version-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .version-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--md-default-fg-color--lightest);
-  }
-  .version-item:last-child {
-    border-bottom: none;
-  }
-  .version-label {
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: var(--md-default-fg-color--light);
-  }
-  .version-value {
-    font-family: var(--md-code-font-family);
-    font-weight: 700;
-    color: var(--md-primary-fg-color);
-  }
-  .build-status-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .build-status-item {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: var(--md-default-bg-color--light);
-    border-radius: 8px;
-    border: 1px solid var(--md-default-fg-color--lightest);
-  }
-  .build-status-item:last-child {
-    margin-bottom: 0;
-  }
-  .status-indicator {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 700;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
-  .status-success { background: #e8f5e9; color: #2e7d32; }
-  .status-failure { background: #ffebee; color: #c62828; }
-  .status-pending { background: #fff3e0; color: #ef6c00; }
-
-  [data-md-color-scheme="slate"] .status-success { background: rgba(46, 125, 50, 0.2); color: #81c784; }
-  [data-md-color-scheme="slate"] .status-failure { background: rgba(198, 40, 40, 0.2); color: #ef9a9a; }
-  [data-md-color-scheme="slate"] .status-pending { background: rgba(239, 108, 0, 0.2); color: #ffb74d; }
-
-  .loading-state {
-    text-align: center;
-    padding: 2rem;
-    color: var(--md-default-fg-color--light);
-  }
-</style>
 
 ## 📌 Core Version Control
 
-<div id="versions-container">
+<div id="versions-container" class="reveal">
   <div class="loading-state">
     <p>Loading version information...</p>
   </div>
@@ -101,7 +13,7 @@ This page displays the current build status and version information from the fan
 
 ## 🌐 Project-wide Releases Summary
 
-<div id="releases-summary">
+<div id="releases-summary" class="reveal">
   <div class="loading-state">
     <p>Loading releases summary...</p>
   </div>
@@ -109,15 +21,16 @@ This page displays the current build status and version information from the fan
 
 ## ⚙️ CI/CD Workflow Status
 
-<div id="builds-container" class="status-grid">
+<div id="builds-container" class="status-grid reveal">
   <div class="loading-state">
     <p>Loading build status status...</p>
   </div>
 </div>
 
+
 <script>
-// Fetch and display version info
-fetch('/data/versions.json')
+// Fetch and display version info with cache-buster
+fetch('/data/versions.json?v=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('versions-container');
@@ -158,8 +71,8 @@ fetch('/data/versions.json')
       `<div class="status-card"><p style="color: #ff5252;">Error loading version info: ${error.message}</p></div>`;
   });
 
-// Fetch and display build status
-fetch('/data/builds.json')
+// Fetch and display build status with cache-buster
+fetch('/data/builds.json?v=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('builds-container');
@@ -209,8 +122,8 @@ fetch('/data/builds.json')
       `<div class="status-card" style="grid-column: 1/-1;"><p style="color: #ff5252;">Error loading build status: ${error.message}</p></div>`;
   });
 
-// Fetch and display releases summary
-fetch('/data/releases.json')
+// Fetch and display releases summary with cache-buster
+fetch('/data/releases.json?v=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('releases-summary');

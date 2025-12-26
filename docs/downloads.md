@@ -10,169 +10,23 @@ Download the latest releases of faneX-ID for all supported platforms. All downlo
 !!! tip "Release Information"
     For detailed release notes and version history, check out the [Releases page](releases.md).
 
-<style>
-  .downloads-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .platform-section {
-    margin-bottom: 3rem;
-  }
-  .platform-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 3px solid var(--md-primary-fg-color);
-  }
-  .platform-icon {
-    font-size: 2.5rem;
-  }
-  .platform-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--md-primary-fg-color);
-    margin: 0;
-  }
-  .download-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  .download-card {
-    background: var(--md-default-bg-color);
-    border: 2px solid var(--md-default-fg-color--lightest);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-  .download-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    border-color: var(--md-primary-fg-color);
-  }
-  .download-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-  .download-badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  .badge-stable {
-    background: #4caf50;
-    color: white;
-  }
-  .badge-prerelease {
-    background: #ff9800;
-    color: white;
-  }
-  .download-name {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--md-default-fg-color);
-    margin: 0.5rem 0;
-    word-break: break-word;
-  }
-  .download-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin: 1rem 0;
-    padding: 1rem;
-    background: var(--md-default-bg-color--light);
-    border-radius: 8px;
-  }
-  .download-meta-item {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-  }
-  .download-meta-label {
-    color: var(--md-default-fg-color--light);
-    font-weight: 500;
-  }
-  .download-meta-value {
-    color: var(--md-default-fg-color);
-    font-weight: 600;
-  }
-  .download-btn {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background: var(--md-primary-fg-color);
-    color: var(--md-primary-bg-color);
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: all 0.2s ease;
-    margin-top: 1rem;
-  }
-  .download-btn:hover {
-    background: var(--md-accent-fg-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  .download-btn:active {
-    transform: translateY(0);
-  }
-  .summary-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 3rem 0;
-    padding: 2rem;
-    background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-accent-fg-color) 100%);
-    border-radius: 16px;
-    color: white;
-  }
-  .stat-item {
-    text-align: center;
-  }
-  .stat-value {
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
-  }
-  .stat-label {
-    font-size: 1rem;
-    opacity: 0.9;
-  }
-  .loading {
-    text-align: center;
-    padding: 3rem;
-    color: var(--md-default-fg-color--light);
-  }
-  .no-downloads {
-    text-align: center;
-    padding: 3rem;
-    color: var(--md-default-fg-color--light);
-  }
-  .repo-badge {
-    display: inline-block;
-    padding: 2px 8px;
-    background: var(--md-primary-fg-color--light);
-    color: var(--md-primary-bg-color);
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-left: 0.5rem;
-  }
-</style>
 
-<div id="downloads-container" class="downloads-container">
+<div id="downloads-container" class="downloads-container reveal">
   <div class="loading">Loading downloads...</div>
 </div>
+
+<script>
+  window.addEventListener('load', () => {
+    ScrollReveal().reveal('.reveal', {
+      distance: '30px',
+      duration: 800,
+      interval: 100,
+      origin: 'bottom',
+      easing: 'ease-out'
+    });
+  });
+</script>
+
 
 <script>
 // Platform icons and names
@@ -209,8 +63,8 @@ function formatSize(bytes) {
   return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
 }
 
-// Fetch and display downloads
-fetch('/data/releases.json')
+// Fetch and display downloads with cache-buster
+fetch('/data/releases.json?v=' + new Date().getTime())
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

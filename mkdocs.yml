@@ -45,6 +45,12 @@ theme:
     - search.share
     - search.suggest
 
+extra_css:
+  - assets/custom.css
+
+extra_javascript:
+  - https://unpkg.com/scrollreveal
+
 plugins:
   - search
   - awesome-pages
