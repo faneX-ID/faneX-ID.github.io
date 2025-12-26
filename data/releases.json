@@ -1,0 +1,195 @@
+{
+  "last_updated": "2025-12-26T13:11:00.971642Z",
+  "repositories": {
+    "core": {
+      "full_name": "faneX-ID/core",
+      "latest_stable": null,
+      "latest_prerelease": null,
+      "stable_releases": [],
+      "prereleases": [],
+      "total_stable": 0,
+      "total_prereleases": 0,
+      "version_info": {
+        "manifest_schema_version": "2.0.0",
+        "workflow_schema_version": "2.0.0",
+        "required_manifest_version": "2.0.0",
+        "min_core_version": "2025.12.0",
+        "schema_base_url": "https://raw.githubusercontent.com/faneX-ID/core/main/docs/specs/integrations-manifest/schemas",
+        "last_updated": "2025-12-13",
+        "latest_stable": "2025.12.0",
+        "latest_beta": "2025.12.0-beta.1",
+        "latest_nightly": "2025.12.0-nightly.126"
+      }
+    },
+    "integrations": {
+      "full_name": "faneX-ID/integrations",
+      "latest_stable": null,
+      "latest_prerelease": null,
+      "stable_releases": [],
+      "prereleases": [],
+      "total_stable": 0,
+      "total_prereleases": 0,
+      "version_info": null
+    },
+    "integrations-example": {
+      "full_name": "faneX-ID/integrations-example",
+      "latest_stable": null,
+      "latest_prerelease": null,
+      "stable_releases": [],
+      "prereleases": [],
+      "total_stable": 0,
+      "total_prereleases": 0,
+      "version_info": null
+    },
+    "workflows": {
+      "full_name": "faneX-ID/workflows",
+      "latest_stable": null,
+      "latest_prerelease": null,
+      "stable_releases": [],
+      "prereleases": [],
+      "total_stable": 0,
+      "total_prereleases": 0,
+      "version_info": null
+    },
+    "workflows-example": {
+      "full_name": "faneX-ID/workflows-example",
+      "latest_stable": null,
+      "latest_prerelease": null,
+      "stable_releases": [],
+      "prereleases": [],
+      "total_stable": 0,
+      "total_prereleases": 0,
+      "version_info": null
+    },
+    "integration-validation": {
+      "full_name": "faneX-ID/integration-validation",
+      "latest_stable": {
+        "name": "0.1.0 - Initial release",
+        "tag": "0.1.0",
+        "published_at": "2025-12-13T02:14:26+00:00",
+        "url": "https://github.com/faneX-ID/integration-validation/releases/tag/0.1.0",
+        "prerelease": false,
+        "body": "**Full Changelog**: https://github.com/faneX-ID/integration-validation/commits/0.1.0",
+        "draft": false,
+        "assets": []
+      },
+      "latest_prerelease": null,
+      "stable_releases": [
+        {
+          "name": "0.1.0 - Initial release",
+          "tag": "0.1.0",
+          "published_at": "2025-12-13T02:14:26+00:00",
+          "url": "https://github.com/faneX-ID/integration-validation/releases/tag/0.1.0",
+          "prerelease": false,
+          "body": "**Full Changelog**: https://github.com/faneX-ID/integration-validation/commits/0.1.0",
+          "draft": false,
+          "assets": []
+        }
+      ],
+      "prereleases": [],
+      "total_stable": 1,
+      "total_prereleases": 0,
+      "version_info": null
+    },
+    "github-bot": {
+      "full_name": "faneX-ID/github-bot",
+      "latest_stable": {
+        "name": "1.1.4 - Small improvements",
+        "tag": "1.1.4",
+        "published_at": "2025-12-13T23:00:45+00:00",
+        "url": "https://github.com/faneX-ID/github-bot/releases/tag/1.1.4",
+        "prerelease": false,
+        "body": "**Full Changelog**: https://github.com/faneX-ID/github-bot/compare/1.1.3...1.1.4",
+        "draft": false,
+        "assets": []
+      },
+      "latest_prerelease": null,
+      "stable_releases": [
+        {
+          "name": "1.1.4 - Small improvements",
+          "tag": "1.1.4",
+          "published_at": "2025-12-13T23:00:45+00:00",
+          "url": "https://github.com/faneX-ID/github-bot/releases/tag/1.1.4",
+          "prerelease": false,
+          "body": "**Full Changelog**: https://github.com/faneX-ID/github-bot/compare/1.1.3...1.1.4",
+          "draft": false,
+          "assets": []
+        },
+        {
+          "name": "1.1.3 - Small improvements",
+          "tag": "1.1.3",
+          "published_at": "2025-12-13T22:50:03+00:00",
+          "url": "https://github.com/faneX-ID/github-bot/releases/tag/1.1.3",
+          "prerelease": false,
+          "body": "**Full Changelog**: https://github.com/faneX-ID/github-bot/compare/1.1.2...1.1.3",
+          "draft": false,
+          "assets": []
+        },
+        {
+          "name": "1.1.2 - Small fixes",
+          "tag": "1.1.2",
+          "published_at": "2025-12-13T22:29:21+00:00",
+          "url": "https://github.com/faneX-ID/github-bot/releases/tag/1.1.2",
+          "prerelease": false,
+          "body": "**Full Changelog**: https://github.com/faneX-ID/github-bot/compare/1.1.1...1.1.2",
+          "draft": false,
+          "assets": []
+        },
+        {
+          "name": "1.1.1 - Small fixes",
+          "tag": "1.1.1",
+          "published_at": "2025-12-13T22:17:33+00:00",
+          "url": "https://github.com/faneX-ID/github-bot/releases/tag/1.1.1",
+          "prerelease": false,
+          "body": "**Full Changelog**: https://github.com/faneX-ID/github-bot/compare/1.1.0...1.1.1",
+          "draft": false,
+          "assets": []
+        },
+        {
+          "name": "1.1.0 - Support for more faneX-ID repos",
+          "tag": "1.1.0",
+          "published_at": "2025-12-13T19:16:36+00:00",
+          "url": "https://github.com/faneX-ID/github-bot/releases/tag/1.1.0",
+          "prerelease": false,
+          "body": "**Full Changelog**: https://github.com/faneX-ID/github-bot/compare/1.0.0...1.1.0",
+          "draft": false,
+          "assets": []
+        },
+        {
+          "name": "1.0.0 - Initial release",
+          "tag": "1.0.0",
+          "published_at": "2025-12-13T18:27:26+00:00",
+          "url": "https://github.com/faneX-ID/github-bot/releases/tag/1.0.0",
+          "prerelease": false,
+          "body": "**Full Changelog**: https://github.com/faneX-ID/github-bot/commits/1.0.0",
+          "draft": false,
+          "assets": []
+        }
+      ],
+      "prereleases": [],
+      "total_stable": 6,
+      "total_prereleases": 0,
+      "version_info": null
+    },
+    "homeassistant-addon": {
+      "full_name": "faneX-ID/homeassistant-addon",
+      "latest_stable": null,
+      "latest_prerelease": null,
+      "stable_releases": [],
+      "prereleases": [],
+      "total_stable": 0,
+      "total_prereleases": 0,
+      "version_info": null
+    },
+    "faneX-ID.github.io": {
+      "full_name": "faneX-ID/faneX-ID.github.io",
+      "latest_stable": null,
+      "latest_prerelease": null,
+      "stable_releases": [],
+      "prereleases": [],
+      "total_stable": 0,
+      "total_prereleases": 0,
+      "version_info": null
+    }
+  }
+}
