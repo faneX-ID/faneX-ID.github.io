@@ -23,7 +23,8 @@
     font-weight: 800;
 }
 
-.md-header {
+/* Header - only apply glassmorphism in dark mode */
+[data-md-color-scheme="slate"] .md-header {
     backdrop-filter: blur(12px);
     background-color: var(--px-glass) !important;
     border-bottom: 1px solid var(--px-glass-border);
