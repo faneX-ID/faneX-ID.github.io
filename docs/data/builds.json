@@ -1,1 +1,433 @@
-{"last_updated": "2025-12-26T13:11:01.899404Z", "workflows": [], "skipped": true}
+{
+  "last_updated": "2025-12-26T18:17:57.916713+00:00Z",
+  "workflows": [
+    {
+      "name": "Master CI Orchestrator",
+      "id": 215495041,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T22:57:42+00:00",
+          "updated_at": "2025-12-24T22:57:47+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20495163813"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:58+00:00",
+          "updated_at": "2025-12-24T14:59:05+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488693368"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:49+00:00",
+          "updated_at": "2025-12-24T14:58:55+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488691378"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:36+00:00",
+          "updated_at": "2025-12-24T14:58:41+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488688354"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:17+00:00",
+          "updated_at": "2025-12-24T14:58:23+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488684360"
+        }
+      ]
+    },
+    {
+      "name": "Docker Integration Test",
+      "id": 215495042,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-13T14:20:39+00:00",
+          "updated_at": "2025-12-13T14:21:03+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20193326477"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-13T14:11:51+00:00",
+          "updated_at": "2025-12-13T14:12:15+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20193220628"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-13T13:56:01+00:00",
+          "updated_at": "2025-12-13T13:56:23+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20193039315"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-13T11:45:24+00:00",
+          "updated_at": "2025-12-13T11:45:50+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20191589178"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-13T11:16:44+00:00",
+          "updated_at": "2025-12-13T11:17:10+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20191288475"
+        }
+      ]
+    },
+    {
+      "name": "Nightly Release",
+      "id": 215495049,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "startup_failure",
+          "created_at": "2025-12-22T03:42:24+00:00",
+          "updated_at": "2025-12-22T03:42:24+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20421043819"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-16T19:22:26+00:00",
+          "updated_at": "2025-12-16T19:22:26+00:00",
+          "head_branch": "fixes-&-improvements",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20280012613"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-16T17:15:52+00:00",
+          "updated_at": "2025-12-16T17:15:52+00:00",
+          "head_branch": "fixes-&-improvements",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20276589897"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-16T15:02:12+00:00",
+          "updated_at": "2025-12-16T15:02:12+00:00",
+          "head_branch": "fixes-&-improvements",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20272455716"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-15T22:49:47+00:00",
+          "updated_at": "2025-12-15T22:49:47+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20250111793"
+        }
+      ]
+    },
+    {
+      "name": "Release",
+      "id": 215495051,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-18T19:28:21+00:00",
+          "updated_at": "2025-12-18T19:28:30+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20348810975"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-16T19:22:26+00:00",
+          "updated_at": "2025-12-16T19:22:26+00:00",
+          "head_branch": "fixes-&-improvements",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20280012417"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-16T17:15:51+00:00",
+          "updated_at": "2025-12-16T17:15:51+00:00",
+          "head_branch": "fixes-&-improvements",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20276589468"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-16T15:02:13+00:00",
+          "updated_at": "2025-12-16T15:02:13+00:00",
+          "head_branch": "fixes-&-improvements",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20272456335"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-15T22:49:47+00:00",
+          "updated_at": "2025-12-15T22:49:47+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20250111915"
+        }
+      ]
+    },
+    {
+      "name": "Dependabot Updates",
+      "id": 215560655,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-24T14:58:26+00:00",
+          "updated_at": "2025-12-24T14:59:17+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488686378"
+        },
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-20T22:05:02+00:00",
+          "updated_at": "2025-12-20T22:05:42+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400657619"
+        },
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-20T22:05:02+00:00",
+          "updated_at": "2025-12-20T22:06:15+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400657600"
+        },
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-20T22:05:02+00:00",
+          "updated_at": "2025-12-20T22:08:16+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400657568"
+        },
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-20T22:05:02+00:00",
+          "updated_at": "2025-12-20T22:05:52+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400657534"
+        }
+      ]
+    },
+    {
+      "name": "PR Auto-Fix",
+      "id": 215603850,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-20T22:07:09+00:00",
+          "updated_at": "2025-12-20T22:07:11+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/react-grid-layout-2.1.0",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400682668"
+        },
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-20T22:06:59+00:00",
+          "updated_at": "2025-12-20T22:07:02+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/vitest-4.0.16",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400680462"
+        },
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-20T22:06:40+00:00",
+          "updated_at": "2025-12-20T22:06:43+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/testing-library/react-16.3.1",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400676527"
+        },
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-20T22:06:26+00:00",
+          "updated_at": "2025-12-20T22:06:28+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/typescript-eslint/parser-8.50.0",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400674201"
+        },
+        {
+          "status": "completed",
+          "conclusion": "success",
+          "created_at": "2025-12-20T22:06:14+00:00",
+          "updated_at": "2025-12-20T22:06:17+00:00",
+          "head_branch": "dependabot/pip/backend/python-multipart-0.0.21",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400672258"
+        }
+      ]
+    },
+    {
+      "name": "Thank Contributor",
+      "id": 215603851,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:58+00:00",
+          "updated_at": "2025-12-24T14:59:01+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/react-grid-layout-2.1.0",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488693363"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:49+00:00",
+          "updated_at": "2025-12-24T14:58:52+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/vitest-4.0.16",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488691353"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:35+00:00",
+          "updated_at": "2025-12-24T14:58:40+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/testing-library/react-16.3.1",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488688303"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:17+00:00",
+          "updated_at": "2025-12-24T14:58:20+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/typescript-eslint/parser-8.50.0",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488684387"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:06+00:00",
+          "updated_at": "2025-12-24T14:58:09+00:00",
+          "head_branch": "dependabot/pip/backend/python-multipart-0.0.21",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488681460"
+        }
+      ]
+    },
+    {
+      "name": "PR Validation & Feedback",
+      "id": 215603852,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-20T22:07:09+00:00",
+          "updated_at": "2025-12-20T22:07:14+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/react-grid-layout-2.1.0",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400682660"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-20T22:06:59+00:00",
+          "updated_at": "2025-12-20T22:07:06+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/vitest-4.0.16",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400680464"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-20T22:06:40+00:00",
+          "updated_at": "2025-12-20T22:06:45+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/testing-library/react-16.3.1",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400676523"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-20T22:06:26+00:00",
+          "updated_at": "2025-12-20T22:06:32+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/typescript-eslint/parser-8.50.0",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400674213"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-20T22:06:14+00:00",
+          "updated_at": "2025-12-20T22:06:20+00:00",
+          "head_branch": "dependabot/pip/backend/python-multipart-0.0.21",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20400672254"
+        }
+      ]
+    },
+    {
+      "name": "Withdraw Release (Manual)",
+      "id": 215610820,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-13T20:36:06+00:00",
+          "updated_at": "2025-12-13T20:36:17+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20197529212"
+        }
+      ]
+    },
+    {
+      "name": "PR Assistant",
+      "id": 215621734,
+      "runs": [
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T22:57:42+00:00",
+          "updated_at": "2025-12-24T22:57:49+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20495163805"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:58+00:00",
+          "updated_at": "2025-12-24T14:59:02+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/react-grid-layout-2.1.0",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488693370"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:58+00:00",
+          "updated_at": "2025-12-24T14:59:01+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488693334"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:49+00:00",
+          "updated_at": "2025-12-24T14:58:53+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488691350"
+        },
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2025-12-24T14:58:49+00:00",
+          "updated_at": "2025-12-24T14:58:52+00:00",
+          "head_branch": "dependabot/npm_and_yarn/frontend/vitest-4.0.16",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/20488691335"
+        }
+      ]
+    }
+  ]
+}
