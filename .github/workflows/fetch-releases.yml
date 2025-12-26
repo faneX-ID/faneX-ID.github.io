@@ -42,15 +42,19 @@ jobs:
           import json
           import os
           from datetime import datetime
-          from github import Github
+          from github import Github, Auth, GithubException
           import requests
 
           # Initialize GitHub client
           github_token = os.environ.get('GITHUB_TOKEN')
-          core_token = os.environ.get('CORE_TOKEN', github_token)  # Fallback to GITHUB_TOKEN
+          core_token = os.environ.get('CORE_TOKEN') or github_token
 
-          # Use core token for private repo access
-          gh = Github(core_token)
+          # Use core token for private repo access if available
+          if core_token:
+              auth = Auth.Token(core_token)
+              gh = Github(auth=auth)
+          else:
+              gh = Github()
 
           # List of all faneX-ID repositories
           repos = [
@@ -128,6 +132,16 @@ jobs:
                           print(f"  ✅ Latest pre-release: {latest_prerelease['tag']}")
                       print(f"  📊 Total: {len(stable_releases)} stable, {len(prereleases)} pre-releases")
 
+                  except GithubException as e:
+                      print(f"  ⚠️  GitHub error for {repo_name}: {e}")
+                      all_releases[repo_name] = {
+                          'latest_stable': None,
+                          'latest_prerelease': None,
+                          'stable_releases': [],
+                          'prereleases': [],
+                          'total_stable': 0,
+                          'total_prereleases': 0
+                      }
                   except Exception as e:
                       print(f"  ⚠️  No releases found: {e}")
                       all_releases[repo_name] = {
@@ -150,6 +164,9 @@ jobs:
                       except Exception as e:
                           print(f"  ⚠️  Could not fetch versions.json: {e}")
 
+              except GithubException as e:
+                  print(f"  ⚠️  Repository {repo_name} not accessible: {e}")
+                  all_releases[repo_name] = None
               except Exception as e:
                   print(f"  ❌ Error fetching {repo_name}: {e}")
                   all_releases[repo_name] = None
@@ -164,6 +181,8 @@ jobs:
           }
 
           for repo_name, release_data in all_releases.items():
+              if release_data is None:
+                  continue
               repo_short = repo_name.replace('faneX-ID/', '')
               output_data['repositories'][repo_short] = {
                   'full_name': repo_name,
@@ -180,9 +199,9 @@ jobs:
               json.dump(output_data, f, indent=2, ensure_ascii=False)
 
           print(f"\n✅ Saved releases data to {releases_file}")
-          print(f"   Total repositories: {len(all_releases)}")
-          total_stable = sum(r.get('total_stable', 0) for r in all_releases.values())
-          total_prereleases = sum(r.get('total_prereleases', 0) for r in all_releases.values())
+          print(f"   Total repositories processed: {len(all_releases)}")
+          total_stable = sum(r.get('total_stable', 0) for r in all_releases.values() if r)
+          total_prereleases = sum(r.get('total_prereleases', 0) for r in all_releases.values() if r)
           print(f"   Total stable releases: {total_stable}")
           print(f"   Total pre-releases: {total_prereleases}")
 
@@ -201,11 +220,18 @@ jobs:
           python << 'EOF'
           import json
           import os
-          from datetime import datetime, timedelta
-          from github import Github
+          from datetime import datetime
+          from github import Github, Auth, GithubException
 
-          core_token = os.environ.get('CORE_TOKEN', os.environ.get('GITHUB_TOKEN'))
-          gh = Github(core_token)
+          github_token = os.environ.get('GITHUB_TOKEN')
+          core_token = os.environ.get('CORE_TOKEN') or github_token
+
+          # Use core token for private repo access if available
+          if core_token:
+              auth = Auth.Token(core_token)
+              gh = Github(auth=auth)
+          else:
+              gh = Github()
 
           try:
               repo = gh.get_repo('faneX-ID/core')
@@ -251,6 +277,13 @@ jobs:
               print(f"✅ Saved build info to {build_file}")
               print(f"   Workflows tracked: {len(build_info['workflows'])}")
 
+          except GithubException as e:
+              print(f"⚠️  Repository faneX-ID/core not accessible for builds: {e}")
+              # Create empty file
+              build_file = 'docs/data/builds.json'
+              os.makedirs('docs/data', exist_ok=True)
+              with open(build_file, 'w', encoding='utf-8') as f:
+                  json.dump({'last_updated': datetime.utcnow().isoformat() + 'Z', 'workflows': [], 'skipped': True}, f)
           except Exception as e:
               print(f"⚠️  Could not fetch build info: {e}")
               # Create empty file
@@ -270,10 +303,17 @@ jobs:
           import json
           import os
           from datetime import datetime
-          from github import Github
+          from github import Github, Auth, GithubException
 
-          core_token = os.environ.get('CORE_TOKEN', os.environ.get('GITHUB_TOKEN'))
-          gh = Github(core_token)
+          github_token = os.environ.get('GITHUB_TOKEN')
+          core_token = os.environ.get('CORE_TOKEN') or github_token
+
+          # Use core token for private repo access if available
+          if core_token:
+              auth = Auth.Token(core_token)
+              gh = Github(auth=auth)
+          else:
+              gh = Github()
 
           try:
               repo = gh.get_repo('faneX-ID/core')
@@ -307,6 +347,17 @@ jobs:
               print(f"   Schema Version: {versions_data.get('manifest_schema_version', 'N/A')}")
               print(f"   Min Core Version: {versions_data.get('min_core_version', 'N/A')}")
 
+          except GithubException as e:
+              print(f"⚠️  Repository faneX-ID/core not accessible for versions: {e}")
+              # Create fallback file
+              version_file = 'docs/data/versions.json'
+              os.makedirs('docs/data', exist_ok=True)
+              with open(version_file, 'w', encoding='utf-8') as f:
+                  json.dump({
+                      'last_updated': datetime.utcnow().isoformat() + 'Z',
+                      'versions': {},
+                      'skipped': True
+                  }, f)
           except Exception as e:
               print(f"⚠️  Could not fetch version info: {e}")
               # Create fallback file
