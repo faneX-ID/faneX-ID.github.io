@@ -210,7 +210,7 @@ function formatSize(bytes) {
 }
 
 // Fetch and display downloads
-fetch('/docs/data/releases.json')
+fetch('/data/releases.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

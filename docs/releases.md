@@ -11,20 +11,54 @@ Comprehensive release information from all faneX-ID projects, including both **s
     Looking for direct download links organized by platform? Check out the [Downloads page](downloads.md) for all available platform downloads.
 
 <style>
+  .releases-table-container {
+    overflow-x: auto;
+    margin: 2rem 0;
+    border-radius: 12px;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    background: var(--md-default-bg-color);
+  }
+  .releases-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .releases-table th {
+    background: var(--md-default-bg-color--light);
+    color: var(--md-default-fg-color);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--md-default-fg-color--lightest);
+  }
+  .releases-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    color: var(--md-default-fg-color);
+  }
+  .releases-table tr:hover {
+    background: var(--md-default-bg-color--light);
+  }
   .release-filter {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     margin: 2rem 0;
-    padding: 1rem;
+    padding: 1.25rem;
     background: var(--md-default-bg-color--light);
-    border-radius: 8px;
+    border-radius: 12px;
     flex-wrap: wrap;
+    align-items: center;
   }
   .release-filter label {
     display: flex;
     align-items: center;
     cursor: pointer;
     font-weight: 500;
+    color: var(--md-default-fg-color);
+    transition: color 0.2s;
+  }
+  .release-filter label:hover {
+    color: var(--md-primary-fg-color);
   }
   .release-filter input[type="radio"] {
     margin-right: 0.5rem;
@@ -35,65 +69,81 @@ Comprehensive release information from all faneX-ID projects, including both **s
     padding: 1.5rem;
     margin: 1.5rem 0;
     background: var(--md-default-bg-color);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .release-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+    border-color: var(--md-primary-fg-color--light);
   }
   .release-badge {
     display: inline-block;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
     text-transform: uppercase;
-    margin-right: 8px;
+    letter-spacing: 0.05em;
   }
   .badge-stable {
-    background: #4caf50;
-    color: white;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+  }
+  [data-md-color-scheme="slate"] .badge-stable {
+    background: rgba(46, 125, 50, 0.2);
+    color: #81c784;
+    border-color: rgba(129, 199, 132, 0.3);
   }
   .badge-prerelease {
-    background: #ff9800;
-    color: white;
+    background: #fff3e0;
+    color: #ef6c00;
+    border: 1px solid #ffe0b2;
+  }
+  [data-md-color-scheme="slate"] .badge-prerelease {
+    background: rgba(239, 108, 0, 0.2);
+    color: #ffb74d;
+    border-color: rgba(255, 183, 77, 0.3);
   }
   .release-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
   .release-title {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 800;
     margin: 0;
     color: var(--md-primary-fg-color);
+    letter-spacing: -0.02em;
   }
   .release-meta {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
-    margin: 1rem 0;
-    padding: 1rem;
+    margin: 1.25rem 0;
+    padding: 1.25rem;
     background: var(--md-default-bg-color--light);
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--md-default-fg-color--lightest);
   }
   .release-meta-item {
     display: flex;
     flex-direction: column;
   }
   .release-meta-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--md-default-fg-color--light);
     text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.05em;
   }
   .release-meta-value {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--md-default-fg-color);
   }
@@ -101,62 +151,54 @@ Comprehensive release information from all faneX-ID projects, including both **s
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
   }
   .download-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
+    gap: 0.6rem;
+    padding: 0.6rem 1.1rem;
     background: var(--md-primary-fg-color);
     color: var(--md-primary-bg-color);
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: all 0.2s ease;
     border: none;
-    cursor: pointer;
   }
   .download-btn:hover {
     background: var(--md-accent-fg-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
-  .download-btn:active {
-    transform: translateY(0);
-  }
-  .no-releases {
-    text-align: center;
-    padding: 3rem;
-    color: var(--md-default-fg-color--light);
-  }
-  .loading {
-    text-align: center;
-    padding: 3rem;
-    color: var(--md-default-fg-color--light);
-  }
   .summary-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
     margin: 2rem 0;
   }
   .stat-card {
-    background: var(--md-default-bg-color--light);
+    background: var(--md-default-bg-color);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
   }
   .stat-value {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 900;
     color: var(--md-primary-fg-color);
+    line-height: 1;
   }
   .stat-label {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: var(--md-default-fg-color--light);
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 </style>
 
@@ -190,6 +232,23 @@ Comprehensive release information from all faneX-ID projects, including both **s
   </div>
 </div>
 
+<h2 id="summary-table-title" style="display: none;">📊 Release Overview</h2>
+<div id="releases-table-container" class="releases-table-container" style="display: none;">
+  <table class="releases-table">
+    <thead>
+      <tr>
+        <th>Repository</th>
+        <th>Latest Stable</th>
+        <th>Latest Pre-Release</th>
+        <th>Released At</th>
+      </tr>
+    </thead>
+    <tbody id="releases-table-body">
+    </tbody>
+  </table>
+</div>
+
+<h2 id="detailed-releases-title" style="display: none;">🗂️ Detailed Release Info</h2>
 <div id="releases-container">
   <div class="loading">Loading releases...</div>
 </div>
@@ -198,7 +257,7 @@ Comprehensive release information from all faneX-ID projects, including both **s
 let releasesData = null;
 
 // Fetch and display releases
-fetch('/docs/data/releases.json')
+fetch('/data/releases.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -253,7 +312,13 @@ function renderReleases(filter) {
   if (!releasesData) return;
 
   const container = document.getElementById('releases-container');
+  const tableBody = document.getElementById('releases-table-body');
+  const tableContainer = document.getElementById('releases-table-container');
+  const summaryTitle = document.getElementById('summary-table-title');
+  const detailedTitle = document.getElementById('detailed-releases-title');
+
   container.innerHTML = '';
+  tableBody.innerHTML = '';
 
   const lastUpdated = new Date(releasesData.last_updated).toLocaleString();
   container.innerHTML += `<p style="text-align: center; color: var(--md-default-fg-color--light); margin-bottom: 2rem;"><em>Last updated: ${lastUpdated}</em></p>`;
@@ -271,8 +336,22 @@ function renderReleases(filter) {
 
     hasReleases = true;
 
+    // Add to table
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${repoName}</strong></td>
+      <td>${repoData.latest_stable ? `<span class="release-badge badge-stable">${repoData.latest_stable.tag}</span>` : '—'}</td>
+      <td>${repoData.latest_prerelease ? `<span class="release-badge badge-prerelease">${repoData.latest_prerelease.tag}</span>` : '—'}</td>
+      <td style="font-size: 0.8rem; color: var(--md-default-fg-color--light);">
+        ${repoData.latest_stable ? new Date(repoData.latest_stable.published_at).toLocaleDateString() : (repoData.latest_prerelease ? new Date(repoData.latest_prerelease.published_at).toLocaleDateString() : '—')}
+      </td>
+    `;
+    tableBody.appendChild(tr);
+
+    // Create detailed card
     const card = document.createElement('div');
     card.className = 'release-card';
+    card.id = `repo-${repoName.replace(/\W/g, '-')}`;
 
     const header = document.createElement('div');
     header.className = 'release-header';
@@ -293,7 +372,7 @@ function renderReleases(filter) {
       stableHeader.className = 'release-header';
       stableHeader.innerHTML = `
         <span class="release-badge badge-stable">STABLE</span>
-        <strong>Latest Stable Release</strong>
+        <strong style="color: var(--md-default-fg-color);">Latest Stable Release</strong>
       `;
       stableSection.appendChild(stableHeader);
 
@@ -303,17 +382,17 @@ function renderReleases(filter) {
         <div class="release-meta-item">
           <div class="release-meta-label">Version</div>
           <div class="release-meta-value">
-            <a href="${repoData.latest_stable.url}" target="_blank" style="color: var(--md-typeset-a-color);">
+            <a href="${repoData.latest_stable.url}" target="_blank" style="color: var(--md-typeset-a-color); text-decoration: underline;">
               ${repoData.latest_stable.tag}
             </a>
           </div>
         </div>
         <div class="release-meta-item">
-          <div class="release-meta-label">Published</div>
+          <div class="release-meta-label">Published At</div>
           <div class="release-meta-value">${new Date(repoData.latest_stable.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
         </div>
         <div class="release-meta-item">
-          <div class="release-meta-label">Time</div>
+          <div class="release-meta-label">Time (UTC)</div>
           <div class="release-meta-value">${new Date(repoData.latest_stable.published_at).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</div>
         </div>
       `;
@@ -327,7 +406,7 @@ function renderReleases(filter) {
           btn.href = asset.download_url;
           btn.target = '_blank';
           btn.className = 'download-btn';
-          btn.innerHTML = `📥 ${asset.name} <span style="opacity: 0.8; font-size: 0.85rem;">(${(asset.size / 1024 / 1024).toFixed(2)} MB)</span>`;
+          btn.innerHTML = `📥 ${asset.name} <span style="opacity: 0.7; font-size: 0.75rem; margin-left: 4px;">(${(asset.size / 1024 / 1024).toFixed(2)} MB)</span>`;
           downloads.appendChild(btn);
         });
         stableSection.appendChild(downloads);
@@ -344,7 +423,7 @@ function renderReleases(filter) {
       prereleaseHeader.className = 'release-header';
       prereleaseHeader.innerHTML = `
         <span class="release-badge badge-prerelease">PRE-RELEASE</span>
-        <strong>Latest Pre-Release</strong>
+        <strong style="color: var(--md-default-fg-color);">Latest Pre-Release</strong>
       `;
       prereleaseSection.appendChild(prereleaseHeader);
 
@@ -354,17 +433,17 @@ function renderReleases(filter) {
         <div class="release-meta-item">
           <div class="release-meta-label">Version</div>
           <div class="release-meta-value">
-            <a href="${repoData.latest_prerelease.url}" target="_blank" style="color: var(--md-typeset-a-color);">
+            <a href="${repoData.latest_prerelease.url}" target="_blank" style="color: var(--md-typeset-a-color); text-decoration: underline;">
               ${repoData.latest_prerelease.tag}
             </a>
           </div>
         </div>
         <div class="release-meta-item">
-          <div class="release-meta-label">Published</div>
+          <div class="release-meta-label">Published At</div>
           <div class="release-meta-value">${new Date(repoData.latest_prerelease.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
         </div>
         <div class="release-meta-item">
-          <div class="release-meta-label">Time</div>
+          <div class="release-meta-label">Time (UTC)</div>
           <div class="release-meta-value">${new Date(repoData.latest_prerelease.published_at).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</div>
         </div>
       `;
@@ -378,7 +457,7 @@ function renderReleases(filter) {
           btn.href = asset.download_url;
           btn.target = '_blank';
           btn.className = 'download-btn';
-          btn.innerHTML = `📥 ${asset.name} <span style="opacity: 0.8; font-size: 0.85rem;">(${(asset.size / 1024 / 1024).toFixed(2)} MB)</span>`;
+          btn.innerHTML = `📥 ${asset.name} <span style="opacity: 0.7; font-size: 0.75rem; margin-left: 4px;">(${(asset.size / 1024 / 1024).toFixed(2)} MB)</span>`;
           downloads.appendChild(btn);
         });
         prereleaseSection.appendChild(downloads);
@@ -390,10 +469,17 @@ function renderReleases(filter) {
     container.appendChild(card);
   });
 
-  if (!hasReleases) {
+  if (hasReleases) {
+      tableContainer.style.display = 'block';
+      summaryTitle.style.display = 'block';
+      detailedTitle.style.display = 'block';
+  } else {
+    tableContainer.style.display = 'none';
+    summaryTitle.style.display = 'none';
+    detailedTitle.style.display = 'none';
     container.innerHTML = `
-      <div class="no-releases">
-        <p>No releases found matching the selected filter.</p>
+      <div class="no-releases" style="text-align: center; padding: 4rem; color: var(--md-default-fg-color--light);">
+        <p style="font-size: 1.2rem; font-weight: 600;">No releases found matching the selected filter.</p>
       </div>
     `;
   }

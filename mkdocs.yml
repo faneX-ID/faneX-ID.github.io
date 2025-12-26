@@ -9,14 +9,19 @@ theme:
   name: material
   logo: assets/logo.png
   favicon: assets/favicon.ico
+  font:
+    text: Outfit
+    code: Roboto Mono
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
       accent: indigo
       toggle:
@@ -32,6 +37,13 @@ theme:
     - search.highlight
     - content.code.copy
     - content.tabs.link
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - search.share
+    - search.suggest
 
 plugins:
   - search

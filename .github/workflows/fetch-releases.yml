@@ -41,7 +41,7 @@ jobs:
           python << 'EOF'
           import json
           import os
-          from datetime import datetime
+          from datetime import datetime, timezone
           from github import Github, Auth, GithubException
           import requests
 
@@ -176,7 +176,7 @@ jobs:
           os.makedirs('docs/data', exist_ok=True)
 
           output_data = {
-              'last_updated': datetime.utcnow().isoformat() + 'Z',
+              'last_updated': datetime.now(timezone.utc).isoformat() + 'Z',
               'repositories': {}
           }
 
@@ -220,7 +220,7 @@ jobs:
           python << 'EOF'
           import json
           import os
-          from datetime import datetime
+          from datetime import datetime, timezone
           from github import Github, Auth, GithubException
 
           github_token = os.environ.get('GITHUB_TOKEN')
@@ -239,7 +239,7 @@ jobs:
               # Get recent workflow runs
               workflows = repo.get_workflows()
               build_info = {
-                  'last_updated': datetime.utcnow().isoformat() + 'Z',
+                  'last_updated': datetime.now(timezone.utc).isoformat() + 'Z',
                   'workflows': []
               }
 
@@ -283,14 +283,14 @@ jobs:
               build_file = 'docs/data/builds.json'
               os.makedirs('docs/data', exist_ok=True)
               with open(build_file, 'w', encoding='utf-8') as f:
-                  json.dump({'last_updated': datetime.utcnow().isoformat() + 'Z', 'workflows': [], 'skipped': True}, f)
+                  json.dump({'last_updated': datetime.now(timezone.utc).isoformat() + 'Z', 'workflows': [], 'skipped': True}, f)
           except Exception as e:
               print(f"⚠️  Could not fetch build info: {e}")
               # Create empty file
               build_file = 'docs/data/builds.json'
               os.makedirs('docs/data', exist_ok=True)
               with open(build_file, 'w', encoding='utf-8') as f:
-                  json.dump({'last_updated': datetime.utcnow().isoformat() + 'Z', 'workflows': []}, f)
+                  json.dump({'last_updated': datetime.now(timezone.utc).isoformat() + 'Z', 'workflows': []}, f)
           EOF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -302,7 +302,7 @@ jobs:
           python << 'EOF'
           import json
           import os
-          from datetime import datetime
+          from datetime import datetime, timezone
           from github import Github, Auth, GithubException
 
           github_token = os.environ.get('GITHUB_TOKEN')
@@ -331,7 +331,7 @@ jobs:
                   pass
 
               version_info = {
-                  'last_updated': datetime.utcnow().isoformat() + 'Z',
+                  'last_updated': datetime.now(timezone.utc).isoformat() + 'Z',
                   'versions': versions_data,
                   'project_manifest': project_manifest
               }
@@ -354,7 +354,7 @@ jobs:
               os.makedirs('docs/data', exist_ok=True)
               with open(version_file, 'w', encoding='utf-8') as f:
                   json.dump({
-                      'last_updated': datetime.utcnow().isoformat() + 'Z',
+                      'last_updated': datetime.now(timezone.utc).isoformat() + 'Z',
                       'versions': {},
                       'skipped': True
                   }, f)
@@ -365,7 +365,7 @@ jobs:
               os.makedirs('docs/data', exist_ok=True)
               with open(version_file, 'w', encoding='utf-8') as f:
                   json.dump({
-                      'last_updated': datetime.utcnow().isoformat() + 'Z',
+                      'last_updated': datetime.now(timezone.utc).isoformat() + 'Z',
                       'versions': {},
                       'error': str(e)
                   }, f)
