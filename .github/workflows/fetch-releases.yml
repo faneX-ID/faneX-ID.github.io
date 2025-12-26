@@ -381,7 +381,7 @@ jobs:
 
           if [[ -n $(git status -s) ]]; then
             git add docs/data/*.json
-            git commit -m "chore: update releases and version info [skip ci]" || echo "No changes to commit"
+            git commit -m "chore: update releases and version info" || echo "No changes to commit"
             git push || echo "Nothing to push"
           else
             echo "No changes to commit"

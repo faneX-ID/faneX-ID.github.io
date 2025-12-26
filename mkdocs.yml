@@ -46,7 +46,7 @@ theme:
     - search.suggest
 
 extra_css:
-  - assets/custom.css
+  - assets/custom.css?v=2
 
 extra_javascript:
   - https://unpkg.com/scrollreveal
