@@ -307,10 +307,8 @@ After successful installation:
 1. **Security Hardening:** [Security Guide](security.md)
 2. **Production Deployment:** [Deployment Guide](deployment.md)
 3. **Monitoring Setup:** [Maintenance Guide](maintenance.md)
-4. **Backup Configuration:** [Maintenance Guide](maintenance.md#backup)
+4. **Backup Configuration:** [Maintenance Guide](maintenance.md#backup-strategy)
 
 ---
 
 **Installation complete?** Proceed to the [Deployment Guide](deployment.md) for production setup.
-
-

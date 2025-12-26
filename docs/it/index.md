@@ -52,7 +52,7 @@ If you're ready to get started immediately:
 1. **Review Requirements:** [Installation Guide](installation.md#requirements)
 2. **Choose Deployment Method:** [Deployment Guide](deployment.md)
 3. **Follow Installation Steps:** [Installation Guide](installation.md)
-4. **Configure System:** [Configuration Section](installation.md#configuration)
+4. **Configure System:** [Configuration Section](installation.md#step-2-configure-environment)
 5. **Secure Installation:** [Security Guide](security.md)
 
 ## Guide Structure
@@ -97,5 +97,3 @@ If you're ready to get started immediately:
 ---
 
 **Ready to begin?** Start with the [Installation Guide](installation.md) to get faneX-ID up and running.
-
-

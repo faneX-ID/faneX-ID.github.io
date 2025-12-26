@@ -168,18 +168,18 @@ Start here:
 
 **Installation & Setup**
 - [Installation Guide](it/installation.md)
-- [Docker Setup](it/deployment.md#docker)
+- [Docker Setup](it/deployment.md#docker-compose-production-setup)
 - [OnPrem Connector](it/onprem-connector.md)
 
 **Deployment Models**
 - [On-Premises](it/deployment.md)
-- [Cloud/SaaS](it/saas-deployment.md#cloud-saas-deployment)
+- [Cloud/SaaS](it/saas-deployment.md#internet-mode)
 - [Hybrid](it/saas-deployment.md#hybrid-deployment-architecture)
 
 **Security**
 - [User Security](users/security.md)
 - [Admin Security](it/security.md)
-- [API Tokens](it/saas-deployment.md#api-token-setup)
+- [API Tokens](it/saas-deployment.md#step-2-generate-api-token)
 
 **Development**
 - [Integration Development](developers/integrations.md)

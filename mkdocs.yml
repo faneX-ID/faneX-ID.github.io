@@ -67,6 +67,7 @@ nav:
   - Releases: releases.md
   - Status: status.md
   - User Guide:
+    - Introduction: users/index.md
     - Getting Started: users/getting-started.md
     - Dashboard: users/dashboard.md
     - Security: users/security.md
