@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-31T06:26:34.816308+00:00Z",
+  "last_updated": "2026-01-31T12:25:51.571261+00:00Z",
   "versions": {
     "manifest_schema_version": "2.0.0",
     "workflow_schema_version": "2.0.0",
@@ -13,7 +13,7 @@
   },
   "project_manifest": {
     "project_name": "faneX-ID",
-    "generated_at": "2025-12-14T07:15:09.967507",
+    "generated_at": "2026-01-31T09:21:27.028091",
     "description": "Comprehensive Project Manifest for AI assistance.",
     "tech_stack": {
       "backend": "FastAPI (Python)",
@@ -25,10 +25,9 @@
       "renovate.json": "file",
       "LICENSE": "file",
       "requirements.txt": "file",
-      "README_CI_IMPROVEMENTS.md": "file",
       ".dockerignore": "file",
       ".gitattributes": "file",
-      "new_version.txt": "file",
+      "legacy_system_config_sample.yaml": "file",
       ".gitignore": "file",
       "README.md": "file",
       "docker-compose.yml": "file",
@@ -178,8 +177,10 @@
       },
       "scripts": {
         "generate_version.py": "file",
+        "check_quota.py": "file",
         "set_next_dev_version.py": "file",
         "validate_readme.py": "file",
+        "generate_demo_hr_data.py": "file",
         "check_pr_checklist.py": "file",
         "generate_app_token.py": "file",
         "README_SCREENSHOTS.md": "file",
@@ -194,6 +195,8 @@
         "validate_integrations.py": "file",
         "check_links.py": "file",
         "generate_manifest.py": "file",
+        "verify_e2e_sync.py": "file",
+        "add_analytics_badges.py": "file",
         "check_i18n.py": "file",
         "update_all_manifests.py": "file"
       },
@@ -209,6 +212,7 @@
           "auto_version_workflows.py": "file",
           "calculate_quality_score.py": "file",
           "generate_changelog.py": "file",
+          "auto_version_migrator.py": "file",
           "update-release-buttons.py": "file",
           "build-windows.js": "file",
           "build-ipa.js": "file",
@@ -224,6 +228,7 @@
           "release-ios-release.yml": "file",
           "release.yml": "file",
           "ci-frontend-ci.yml": "file",
+          "auto-version-migrator.yml": "file",
           "nightly-release.yml": "file",
           "pr-remove-changes-requested.yml": "file",
           "auto-version-integrations.yml": "file",
@@ -234,12 +239,15 @@
           "pr-validation.yml": "file",
           "pr-assistant.yml": "file",
           "ci-e2e-tests.yml": "file",
+          "README_WORKFLOW_MODE.md": "file",
           "pr-thanks.yml": "file",
           "validation-validate-integrations.yml": "file",
           "release-windows-release.yml": "file",
           "pr-orchestrator.yml": "file",
           "docker-ci.yml": "file",
+          "quota-check.yml": "file",
           "maintenance-update-schema.yml": "file",
+          "workflow-mode-controller.yml": "file",
           "extended-features-ci.yml": "file",
           "automation-auto-merge.yml": "file",
           "pr-autofix.yml": "file",
@@ -258,6 +266,11 @@
           "feature_request.yml": "file"
         }
       },
+      "workflows": {
+        "system": {
+          "notify_on_login.yaml": "file"
+        }
+      },
       "images": {
         "Dashboard.png": "file"
       },
@@ -266,18 +279,24 @@
         "requirements.txt": "file",
         "pytest.ini": "file",
         "main.py": "file",
+        "fix_db_schema.py": "file",
         "failure_output_utf8.md": "file",
         "debug_import.py": "file",
         "print_tb.py": "file",
         "failure_output.md": "file",
         "workflows_system": {
           "CHANGELOG.md": "file",
+          "notify_system_errors.yaml": "file",
           "employee_welcome_email.yaml": "file",
+          "notify_user_activity.yaml": "file",
+          "notify_integration_update.yaml": "file",
           "README.md": "file",
           "user_password_reset_workflow.yaml": "file",
           "ssl_certificate_expiry_warning.yaml": "file",
+          "notify_backup_completed.yaml": "file",
           "employee_sync_notification.yaml": "file",
           "user_login_failed_alert.yaml": "file",
+          "notify_disk_critical.yaml": "file",
           "backup_daily.yaml": "file",
           "employee_email_auto.yaml": "file",
           "special": {
@@ -293,6 +312,7 @@
             "new_user_onboarding.yaml": "file",
             "employee_rejoin.yaml": "file",
             "user_update.yaml": "file",
+            "2fa_reminder.yaml": "file",
             "user_delete.yaml": "file",
             "password_login_reminder.yaml": "file"
           },
@@ -314,6 +334,7 @@
             "works_council_report.yaml": "file",
             "manager_notification.yaml": "file",
             "it_training_report.yaml": "file",
+            "notify_chat_message.yaml": "file",
             "ticket_system_notification.yaml": "file",
             "license_report.yaml": "file",
             "welcome_new_employee.yaml": "file",
@@ -351,13 +372,16 @@
           }
         },
         "services": {
+          "hr_file_tracker.py": "file",
           "integration_loader.py": "file",
+          "hr_workflow_processor.py": "file",
           "repo_manager.py": "file",
           "integration_base.py": "file",
           "event_bus.py": "file",
           "datasources.py": "file",
           "ad_service.py": "file",
           "ssl_service.py": "file",
+          "hr_sap_parser.py": "file",
           "plugin_manager.py": "file",
           "scheduler.py": "file",
           "theme_helper.py": "file",
@@ -375,6 +399,7 @@
         "scripts": {
           "validate_manifests.py": "file",
           "generate_demo_employees.py": "file",
+          "fix_missing_columns.py": "file",
           "ad": {
             "README.md": "file"
           }
@@ -384,32 +409,76 @@
           "__init__.py": "file",
           "routers": {
             "users.py": "file",
+            "ai.py": "file",
             "developer.py": "file",
             "workflows.py": "file",
+            "onprem.py": "file",
             "auth.py": "file",
+            "analytics.py": "file",
             "widgets.py": "file",
-            "admin.py": "file",
+            "chat.py": "file",
+            "public_config.py": "file",
+            "notifications.py": "file",
             "plugins.py": "file",
+            "admin.py.old": "file",
             "employees.py": "file",
+            "__init__.py": "file",
             "system.py": "file",
-            "hr.py": "file"
+            "hr.py": "file",
+            "admin": {
+              "export_import.py": "file",
+              "server.py": "file",
+              "updates.py": "file",
+              "sync.py": "file",
+              "motd.py": "file",
+              "ssl.py": "file",
+              "settings.py": "file",
+              "database.py": "file",
+              "ad.py": "file",
+              "logs.py": "file",
+              "common.py": "file",
+              "upload.py": "file",
+              "backups.py": "file",
+              "api_tokens.py": "file",
+              "__init__.py": "file",
+              "rbac.py": "file",
+              "integrations.py": "file"
+            }
           },
           "services": {
             "password_validator.py": "file",
+            "log_broadcaster.py": "file",
             "monitoring_helper.py": "file",
             "mail.py": "file",
             "integration_registry.py": "file",
             "ticket_system_helper.py": "file",
             "startup_manager.py": "file",
+            "license.py": "file",
+            "migration_service.py": "file",
+            "ai_service.py": "file",
+            "ai_provider.py": "file",
             "theme_helper.py": "file",
+            "demo_traffic_generator.py": "file",
+            "ai_tools.py": "file",
+            "notify_service.py": "file",
             "interpreter_helper.py": "file",
             "webauthn_service.py": "file"
+          },
+          "workflows": {
+            "legacy": {
+              "lifecycle.py": "file",
+              "licensing.py": "file",
+              "sharepoint_sync.py": "file"
+            }
           },
           "core": {
             "demo_mode.py": "file",
             "permissions.py": "file",
+            "version.py": "file",
             "models_rbac_init.py": "file",
+            "sso.py": "file",
             "demo_security.py": "file",
+            "logging_handler.py": "file",
             "deps.py": "file",
             "security.py": "file",
             "config.py": "file",
@@ -479,13 +548,12 @@
               "integration.py": "file",
               "README.md": "file"
             },
-            "wakeonlan": {
-              "CHANGELOG.md": "file",
+            "teams": {
               "manifest.json": "file",
               "integration.py": "file",
               "README.md": "file"
             },
-            "docker": {
+            "wakeonlan": {
               "CHANGELOG.md": "file",
               "manifest.json": "file",
               "integration.py": "file",
@@ -502,13 +570,6 @@
               "CHANGELOG.md": "file",
               "manifest.json": "file",
               "README.md": "file"
-            },
-            "sharepoint_onprem": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file",
-              "integration.ps1": "file"
             },
             "reporting": {
               "CHANGELOG.md": "file",
@@ -589,10 +650,20 @@
               "integration.py": "file",
               "README.md": "file"
             },
+            "onprem_connector": {
+              "manifest.json": "file",
+              "integration.py": "file",
+              "README.md": "file"
+            },
             "network_utils": {
               "CHANGELOG.md": "file",
               "manifest.json": "file",
               "network.py": "file",
+              "README.md": "file"
+            },
+            "intune": {
+              "manifest.json": "file",
+              "integration.py": "file",
               "README.md": "file"
             },
             "theme_colorful": {
@@ -637,6 +708,11 @@
               "integration.py": "file",
               "README.md": "file"
             },
+            "teamviewer": {
+              "manifest.json": "file",
+              "integration.py": "file",
+              "README.md": "file"
+            },
             "admin_logs": {
               "CHANGELOG.md": "file",
               "manifest.json": "file",
@@ -673,18 +749,16 @@
               "README.md": "file",
               "integration.ps1": "file"
             },
+            "entra_management": {
+              "manifest.json": "file",
+              "integration.py": "file",
+              "README.md": "file"
+            },
             "theme_light": {
               "CHANGELOG.md": "file",
               "manifest.json": "file",
               "integration.py": "file",
               "README.md": "file"
-            },
-            "exchange_onprem": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file",
-              "integration.ps1": "file"
             },
             "entra_sso": {
               "CHANGELOG.md": "file",
@@ -740,6 +814,11 @@
               "integration.py": "file",
               "README.md": "file"
             },
+            "sso_helper": {
+              "manifest.json": "file",
+              "sso_helper.py": "file",
+              "README.md": "file"
+            },
             "mail": {
               "CHANGELOG.md": "file",
               "manifest.json": "file",
@@ -748,6 +827,11 @@
             },
             "theme_dark": {
               "CHANGELOG.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "README.md": "file"
+            },
+            "chat": {
               "manifest.json": "file",
               "integration.py": "file",
               "README.md": "file"
@@ -793,6 +877,11 @@
             "README.md": "file",
             "config.yaml": "file"
           },
+          "slack-notifications": {
+            "manifest.json": "file",
+            "integration.py": "file",
+            "README.md": "file"
+          },
           "ldap": {
             "manifest.json": "file",
             "integration.py": "file",
@@ -804,6 +893,7 @@
           "test_integration_registry.py": "file",
           "test_workflows.py": "file",
           "test_demo_security.py": "file",
+          "test_user_update.py": "file",
           "test_monitoring_helper.py": "file",
           "test_password_reset.py": "file",
           "test_auth.py": "file",
@@ -812,17 +902,21 @@
           "sample_hr_data.csv": "file",
           "test_ticket_system_integration.py": "file",
           "test_ticket_system_helper.py": "file",
+          "test_scheduler.py": "file",
           "test_github_integration.py": "file",
           "test_password_validator_extended.py": "file",
           "test_integrations.py": "file",
           "test_security.py": "file",
+          "test_ai.py": "file",
           "test_main.py": "file",
           "integration_test.py": "file",
           "test_integration_registry_capabilities.py": "file",
           "test_ssl.py": "file",
+          "test_repro_500_passkey.py": "file",
           "test_service_registry.py": "file",
           "test_code_executors.py": "file",
           "test_manifest_schema_2_1_0.py": "file",
+          "test_hr_sap_parser.py": "file",
           "conftest.py": "file",
           "test_interpreter_helper.py": "file",
           "test_users.py": "file",
@@ -840,12 +934,19 @@
         "service-workers.md": "file",
         "INTEGRATION_IMPLEMENTATION_SELECTION.md": "file",
         "TICKET_SYSTEM.md": "file",
+        "HR_SAP_FORMAT.md": "file",
         "INTEGRATION_DEV_GUIDE.md": "file",
         "INTERPRETER_SYSTEM.md": "file",
+        "SYSTEM_COMPONENTS.md": "file",
+        "SSO_CONFIG.md": "file",
         "NODE_VERSION_UPGRADE.md": "file",
         "CODE_EXECUTION.md": "file",
+        "WORKFLOWS.md": "file",
         "CI_TYPESCRIPT_CHECKS.md": "file",
         "GITHUB_TOKEN_SETUP.md": "file",
+        "INTEGRATION_STORE_FIX.md": "file",
+        "VERSIONING.md": "file",
+        "HR_SAP_TESTING.md": "file",
         "BOT_COMMENTS_FIX.md": "file",
         "QUALITY_SCALE.md": "file",
         "screenshots": {
@@ -882,10 +983,15 @@
           "integration.py": "file",
           "README.md": "file"
         },
-        "discord_bot": {
-          "manifest.json": "file",
-          "integration.py": "file",
-          "README.md": "file"
+        "system": {
+          "notify_browser": {
+            "manifest.json": "file",
+            "__init__.py": "file"
+          },
+          "notify_local": {
+            "manifest.json": "file",
+            "__init__.py": "file"
+          }
         }
       },
       "frontend": {
@@ -897,6 +1003,7 @@
         "nginx-ssl.conf": "file",
         "nginx.conf": "file",
         "playwright.config.ts": "file",
+        "CLOUDFLARE_CACHE.md": "file",
         "eslint.config.js": "file",
         "package.json": "file",
         ".nvmrc": "file",
@@ -915,6 +1022,7 @@
           "icon-384x384.png": "file",
           "icon-72x72.png": "file",
           "icon-144x144.png": "file",
+          "sw.js": "file",
           "icon-192x192.png": "file",
           "icons.json": "file",
           "locales": {
@@ -1055,7 +1163,9 @@
           }
         },
         "tests": {
+          "demo_integrations.spec.ts": "file",
           "docs.spec.ts": "file",
+          "verification_fixes.spec.ts": "file",
           "auth.spec.ts": "file",
           "example.spec.ts": "file",
           "github-integration.spec.ts": "file",
@@ -1068,20 +1178,30 @@
         "src": {
           "App.test.tsx": "file",
           "setupTests.ts": "file",
-          "config.js": "file",
           "vite-env.d.ts": "file",
           "index.css": "file",
+          "react-markdown.d.ts": "file",
           "App.integration.test.tsx": "file",
           "main.tsx": "file",
           "i18n.ts": "file",
+          "config.ts": "file",
           "i18n.test.ts": "file",
           "App.tsx": "file",
           "utils": {
+            "greeting.ts": "file",
             "sessionStorage.ts": "file",
             "webauthnUtils.ts": "file"
           },
           "router": {
             "index.tsx": "file"
+          },
+          "services": {
+            "OfflineStorageService.ts": "file",
+            "OfflineInterceptor.ts": "file",
+            "ConnectionService.ts": "file",
+            "NotificationService.ts": "file",
+            "AnalyticsService.ts": "file",
+            "ConnectionService.test.ts": "file"
           },
           "pages": {
             "Login.tsx": "file",
@@ -1093,9 +1213,14 @@
             "Employees.tsx": "file",
             "ManualEntry.tsx": "file",
             "Integrations.tsx": "file",
+            "PrivacyPolicy.tsx": "file",
+            "CookiePolicy.tsx": "file",
+            "Maintenance.test.tsx": "file",
             "DatabaseViewer.tsx": "file",
             "Dashboard.tsx": "file",
             "Maintenance.tsx": "file",
+            "Chat.tsx": "file",
+            "EmployeeDetail.tsx": "file",
             "WorkflowEditor.tsx": "file",
             "Admin.tsx": "file",
             "Features.tsx": "file",
@@ -1106,29 +1231,52 @@
             "Profile.tsx": "file"
           },
           "components": {
+            "OfflineModeBanner.tsx": "file",
+            "Avatar.tsx": "file",
+            "SourcesModal.tsx": "file",
             "DemoModeBanner.tsx": "file",
+            "IntegrationConfigModal.tsx": "file",
+            "Toast.tsx": "file",
             "MobileAppBanner.tsx": "file",
             "IntegrationInfoModal.tsx": "file",
             "WidgetsHelper.tsx": "file",
             "Layout.tsx": "file",
+            "ConsentManager.tsx": "file",
+            "DemoControlPanel.tsx": "file",
             "IntegrationConfigUI.tsx": "file",
             "NotificationBar.tsx": "file",
-            "CookieBanner.tsx": "file",
             "DevWarningBanner.tsx": "file",
+            "OfflineBanner.tsx": "file",
             "MaintenanceGuard.tsx": "file",
+            "AiAssistant.tsx": "file",
+            "InteractiveBackground.tsx": "file",
+            "OfflineDisabledButton.tsx": "file",
+            "MaintenanceGuard.test.tsx": "file",
             "IntegrationUpdates.tsx": "file",
+            "LicenseModal.tsx": "file",
             "admin": {
               "PluginManager.tsx": "file",
               "UserManagement.tsx": "file"
+            },
+            "ui": {
+              "PageTransition.tsx": "file"
             },
             "widgets": {
               "DraggableWidgetGrid.tsx": "file",
               "WidgetGrid.tsx": "file",
               "Widget.tsx": "file"
+            },
+            "chat": {
+              "SupportChat.tsx": "file",
+              "ChatList.tsx": "file",
+              "ChatWindow.tsx": "file",
+              "InternalAIChat.tsx": "file"
             }
           },
           "hooks": {
             "useSystemStatus.ts": "file",
+            "useOnlineStatus.ts": "file",
+            "useOfflineMode.ts": "file",
             "useWidgetLayout.ts": "file",
             "useSystemStatus.test.ts": "file"
           },
@@ -1136,6 +1284,7 @@
             "setup.ts": "file"
           },
           "contexts": {
+            "NotificationContext.tsx": "file",
             "ThemeContext.tsx": "file"
           }
         }
@@ -1257,6 +1406,26 @@
             {
               "name": "last_synced",
               "type": "Column(DateTime)"
+            },
+            {
+              "name": "created_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "updated_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "created_by",
+              "type": "Column(String)"
+            },
+            {
+              "name": "updated_by",
+              "type": "Column(String)"
+            },
+            {
+              "name": "change_count",
+              "type": "Column(Integer)"
             }
           ],
           "doc": null
@@ -1349,6 +1518,18 @@
             {
               "name": "reset_token_expiry",
               "type": "Column(DateTime)"
+            },
+            {
+              "name": "avatar",
+              "type": "Column(String)"
+            },
+            {
+              "name": "last_login",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "token_version",
+              "type": "Column(Integer)"
             }
           ],
           "doc": null
@@ -1417,6 +1598,128 @@
             {
               "name": "created_at",
               "type": "Column(DateTime)"
+            }
+          ],
+          "doc": null
+        },
+        {
+          "name": "Chat",
+          "columns": [
+            {
+              "name": "__tablename__",
+              "type": "Unknown"
+            },
+            {
+              "name": "id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "chat_type",
+              "type": "Column(String)"
+            },
+            {
+              "name": "created_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "updated_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "last_message_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "support_user_id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "chat_metadata",
+              "type": "Column(JSON)"
+            }
+          ],
+          "doc": null
+        },
+        {
+          "name": "ChatParticipant",
+          "columns": [
+            {
+              "name": "__tablename__",
+              "type": "Unknown"
+            },
+            {
+              "name": "id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "chat_id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "user_id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "joined_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "last_read_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "is_online",
+              "type": "Column(Boolean)"
+            },
+            {
+              "name": "last_seen_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "__table_args__",
+              "type": "Unknown"
+            }
+          ],
+          "doc": null
+        },
+        {
+          "name": "ChatMessage",
+          "columns": [
+            {
+              "name": "__tablename__",
+              "type": "Unknown"
+            },
+            {
+              "name": "id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "chat_id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "sender_id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "message",
+              "type": "Column(String)"
+            },
+            {
+              "name": "created_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "is_read",
+              "type": "Column(Boolean)"
+            },
+            {
+              "name": "read_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "is_support_message",
+              "type": "Column(Boolean)"
             }
           ],
           "doc": null
@@ -1553,6 +1856,38 @@
               "type": "Column(Integer)"
             },
             {
+              "name": "workflow_id",
+              "type": "Column(String)"
+            },
+            {
+              "name": "workflow_name",
+              "type": "Column(String)"
+            },
+            {
+              "name": "integration_domain",
+              "type": "Column(String)"
+            },
+            {
+              "name": "integration_name",
+              "type": "Column(String)"
+            },
+            {
+              "name": "reason",
+              "type": "Column(String)"
+            },
+            {
+              "name": "source_file",
+              "type": "Column(String)"
+            },
+            {
+              "name": "source_file_date",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "change_details",
+              "type": "Column(JSON)"
+            },
+            {
               "name": "approved",
               "type": "Column(Boolean)"
             },
@@ -1569,7 +1904,7 @@
               "type": "Column(DateTime)"
             }
           ],
-          "doc": "Änderungsprotokoll für Mitarbeiterdaten"
+          "doc": "Änderungsprotokoll für Mitarbeiterdaten - Complete change history with workflow/integration tracking"
         },
         {
           "name": "Permission",
@@ -1771,20 +2106,12 @@
               "type": "Column(JSON)"
             },
             {
-              "name": "metadata",
+              "name": "token_metadata",
               "type": "Column(JSON)"
-            },
-            {
-              "name": "created_at",
-              "type": "Column(DateTime)"
             },
             {
               "name": "updated_at",
               "type": "Column(DateTime)"
-            },
-            {
-              "name": "__table_args__",
-              "type": "Unknown"
             }
           ],
           "doc": "API Tokens for external services and connectors"
@@ -1826,6 +2153,52 @@
             }
           ],
           "doc": "Willkommensnachrichten mit Variationen für Rollen"
+        },
+        {
+          "name": "Ticket",
+          "columns": [
+            {
+              "name": "__tablename__",
+              "type": "Unknown"
+            },
+            {
+              "name": "id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "title",
+              "type": "Column(String)"
+            },
+            {
+              "name": "description",
+              "type": "Column(String)"
+            },
+            {
+              "name": "status",
+              "type": "Column(String)"
+            },
+            {
+              "name": "priority",
+              "type": "Column(String)"
+            },
+            {
+              "name": "created_by_id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "assignee_id",
+              "type": "Column(Integer)"
+            },
+            {
+              "name": "created_at",
+              "type": "Column(DateTime)"
+            },
+            {
+              "name": "updated_at",
+              "type": "Column(DateTime)"
+            }
+          ],
+          "doc": "Ticket Model"
         }
       ],
       "api_endpoints": [
@@ -1915,6 +2288,16 @@
           "doc": "Get overview of all roles and permissions in the system. Uses database for dynamic data."
         },
         {
+          "function": "delete_avatar",
+          "method": "DELETE",
+          "path": "/me/avatar",
+          "args": [
+            "current_user",
+            "db"
+          ],
+          "doc": "Delete user's custom avatar and revert to default."
+        },
+        {
           "function": "get_vscode_status",
           "method": "GET",
           "path": "/vscode/status",
@@ -1953,6 +2336,16 @@
             "username"
           ],
           "doc": "Test a workflow."
+        },
+        {
+          "function": "render_template",
+          "method": "POST",
+          "path": "/templates/render",
+          "args": [
+            "payload",
+            "username"
+          ],
+          "doc": "Render a Jinja2 template.\nPayload: {\"template\": \"{{ ... }}\", \"variables\": {}}"
         },
         {
           "function": "list_workflows",
@@ -2008,6 +2401,24 @@
           "doc": null
         },
         {
+          "function": "list_workflow_store",
+          "method": "GET",
+          "path": "/store",
+          "args": [
+            "refresh"
+          ],
+          "doc": "List available workflows from the store."
+        },
+        {
+          "function": "install_workflow_from_store",
+          "method": "POST",
+          "path": "/store/install",
+          "args": [
+            "data"
+          ],
+          "doc": "Install a workflow from the store cache to custom workflows."
+        },
+        {
           "function": "verify_2fa_login",
           "method": "POST",
           "path": "/2fa/verify",
@@ -2018,10 +2429,23 @@
           "doc": null
         },
         {
+          "function": "list_sso_providers",
+          "method": "GET",
+          "path": "/login/sso/providers",
+          "args": [
+            "db"
+          ],
+          "doc": null
+        },
+        {
           "function": "sso_login",
           "method": "GET",
           "path": "/login/sso",
-          "args": [],
+          "args": [
+            "request",
+            "provider",
+            "db"
+          ],
           "doc": null
         },
         {
@@ -2050,6 +2474,7 @@
           "method": "GET",
           "path": "/webauthn/register/options",
           "args": [
+            "request",
             "db",
             "current_user"
           ],
@@ -2060,6 +2485,7 @@
           "method": "POST",
           "path": "/webauthn/register/verify",
           "args": [
+            "request",
             "req",
             "db",
             "current_user"
@@ -2071,6 +2497,7 @@
           "method": "POST",
           "path": "/webauthn/login/options",
           "args": [
+            "request",
             "req",
             "db"
           ],
@@ -2081,6 +2508,7 @@
           "method": "POST",
           "path": "/webauthn/login/verify",
           "args": [
+            "request",
             "req",
             "db"
           ],
@@ -2094,422 +2522,70 @@
           "doc": "Returns a list of available authentication providers."
         },
         {
-          "function": "get_sync_providers",
+          "function": "track_event",
+          "method": "POST",
+          "path": "/track",
+          "args": [
+            "event",
+            "background_tasks",
+            "db"
+          ],
+          "doc": "Track an analytics event."
+        },
+        {
+          "function": "get_analytics_stats",
           "method": "GET",
-          "path": "/sync/providers",
+          "path": "/stats",
+          "args": [
+            "days",
+            "db"
+          ],
+          "doc": "Get basic analytics stats for the dashboard."
+        },
+        {
+          "function": "get_public_license",
+          "method": "GET",
+          "path": "/public-config/license",
           "args": [],
-          "doc": "Returns a list of available sync providers."
+          "doc": "Returns the project license information.\nPublic endpoint, no auth required (so it can be shown on Login page)."
         },
         {
-          "function": "get_mail_providers",
+          "function": "get_notifications",
           "method": "GET",
-          "path": "/mail/providers",
-          "args": [],
-          "doc": "Returns a list of available mail providers."
-        },
-        {
-          "function": "get_themes",
-          "method": "GET",
-          "path": "/themes",
-          "args": [],
-          "doc": "Returns a list of available theme integrations."
-        },
-        {
-          "function": "get_interpreters",
-          "method": "GET",
-          "path": "/interpreters",
-          "args": [],
-          "doc": "Returns a list of available interpreter integrations."
-        },
-        {
-          "function": "get_sensors",
-          "method": "GET",
-          "path": "/monitoring/sensors",
-          "args": [],
-          "doc": "Returns a list of all monitoring sensors with their status."
-        },
-        {
-          "function": "get_monitors",
-          "method": "GET",
-          "path": "/monitoring/monitors",
-          "args": [],
-          "doc": "Returns a list of available monitoring integrations."
-        },
-        {
-          "function": "get_ticket_systems",
-          "method": "GET",
-          "path": "/ticket-systems",
-          "args": [],
-          "doc": "Returns a list of available ticket system integrations."
-        },
-        {
-          "function": "get_logs",
-          "method": "GET",
-          "path": "/logs",
-          "args": [
-            "limit",
-            "db"
-          ],
-          "doc": null
-        },
-        {
-          "function": "export_logs",
-          "method": "GET",
-          "path": "/logs/export",
-          "args": [
-            "db"
-          ],
-          "doc": "Exports all system logs as CSV."
-        },
-        {
-          "function": "get_releases",
-          "method": "GET",
-          "path": "/releases",
-          "args": [
-            "channel"
-          ],
-          "doc": "Fetches releases from GitHub based on channel using updater integration."
-        },
-        {
-          "function": "trigger_manual_backup",
-          "method": "POST",
-          "path": "/backups/trigger",
-          "args": [
-            "db"
-          ],
-          "doc": "Manually triggers the backup logic (imported from main or reimplemented)."
-        },
-        {
-          "function": "list_backups",
-          "method": "GET",
-          "path": "/backups",
-          "args": [],
-          "doc": null
-        },
-        {
-          "function": "create_export",
-          "method": "POST",
-          "path": "/export",
-          "args": [
-            "req",
-            "db"
-          ],
-          "doc": "Create an encrypted export package with settings and/or database.\nReturns a downloadable ZIP file."
-        },
-        {
-          "function": "trigger_update",
-          "method": "POST",
-          "path": "/updates/trigger",
-          "args": [
-            "db"
-          ],
-          "doc": "Triggers an update using the updater integration or webhook if configured."
-        },
-        {
-          "function": "get_settings",
-          "method": "GET",
-          "path": "/settings",
-          "args": [
-            "db",
-            "current_user"
-          ],
-          "doc": null
-        },
-        {
-          "function": "update_settings",
-          "method": "POST",
-          "path": "/settings",
-          "args": [
-            "update",
-            "db",
-            "current_user"
-          ],
-          "doc": null
-        },
-        {
-          "function": "request_admin_reset",
-          "method": "POST",
-          "path": "/request-admin-reset",
-          "args": [
-            "req",
-            "db"
-          ],
-          "doc": "Request admin password reset.\nIf email matches stored admin_recovery_email, sets pending reset flag.\nRequires container restart to complete the reset."
-        },
-        {
-          "function": "get_ssl_status",
-          "method": "GET",
-          "path": "/ssl/status",
-          "args": [],
-          "doc": "Get current SSL certificate status."
-        },
-        {
-          "function": "generate_ssl_certificate",
-          "method": "POST",
-          "path": "/ssl/generate",
-          "args": [
-            "req",
-            "db"
-          ],
-          "doc": "Generate a self-signed SSL certificate for the given domain."
-        },
-        {
-          "function": "disable_ssl",
-          "method": "DELETE",
-          "path": "/ssl",
-          "args": [
-            "db"
-          ],
-          "doc": "Disable SSL and remove certificates."
-        },
-        {
-          "function": "test_ad_connection",
-          "method": "POST",
-          "path": "/ad/test",
-          "args": [
-            "db"
-          ],
-          "doc": "Test Active Directory connection with current settings."
-        },
-        {
-          "function": "get_ad_user",
-          "method": "GET",
-          "path": "/ad/user/{username}",
-          "args": [
-            "username",
-            "db"
-          ],
-          "doc": "Get an AD user by username."
-        },
-        {
-          "function": "search_ad_users",
-          "method": "GET",
-          "path": "/ad/search",
-          "args": [
-            "q",
-            "limit",
-            "db"
-          ],
-          "doc": "Search for AD users."
-        },
-        {
-          "function": "disable_ad_user",
-          "method": "POST",
-          "path": "/ad/user/disable",
-          "args": [
-            "req",
-            "db"
-          ],
-          "doc": "Disable an AD user account."
-        },
-        {
-          "function": "enable_ad_user",
-          "method": "POST",
-          "path": "/ad/user/enable",
-          "args": [
-            "req",
-            "db"
-          ],
-          "doc": "Enable an AD user account."
-        },
-        {
-          "function": "get_database_tables",
-          "method": "GET",
-          "path": "/database/tables",
-          "args": [
-            "current_user",
-            "db"
-          ],
-          "doc": "Get list of all database tables. Admin and HR only."
-        },
-        {
-          "function": "get_table_data",
-          "method": "GET",
-          "path": "/database/table/{table_name}",
-          "args": [
-            "table_name",
-            "page",
-            "limit",
-            "show_sensitive",
-            "current_user",
-            "db"
-          ],
-          "doc": "Get data from a specific table. Admin and HR only."
-        },
-        {
-          "function": "get_roles",
-          "method": "GET",
-          "path": "/rbac/roles",
-          "args": [
-            "current_user",
-            "db"
-          ],
-          "doc": "Get all roles. Admin only."
-        },
-        {
-          "function": "get_permissions",
-          "method": "GET",
-          "path": "/rbac/permissions",
-          "args": [
-            "current_user",
-            "db"
-          ],
-          "doc": "Get all permissions. Admin only."
-        },
-        {
-          "function": "get_role_details",
-          "method": "GET",
-          "path": "/rbac/role/{role_id}",
-          "args": [
-            "role_id",
-            "current_user",
-            "db"
-          ],
-          "doc": "Get role details with permissions. Admin only."
-        },
-        {
-          "function": "create_role",
-          "method": "POST",
-          "path": "/rbac/roles",
-          "args": [
-            "role_data",
-            "current_user",
-            "db"
-          ],
-          "doc": "Create a new role. Admin only. System roles cannot be created via API."
-        },
-        {
-          "function": "update_role",
-          "method": "PUT",
-          "path": "/rbac/roles/{role_id}",
-          "args": [
-            "role_id",
-            "role_data",
-            "current_user",
-            "db"
-          ],
-          "doc": "Update a role. Admin only. System roles cannot be modified."
-        },
-        {
-          "function": "delete_role",
-          "method": "DELETE",
-          "path": "/rbac/roles/{role_id}",
-          "args": [
-            "role_id",
-            "current_user",
-            "db"
-          ],
-          "doc": "Delete a role. Admin only. System roles cannot be deleted."
-        },
-        {
-          "function": "create_permission",
-          "method": "POST",
-          "path": "/rbac/permissions",
-          "args": [
-            "perm_data",
-            "current_user",
-            "db"
-          ],
-          "doc": "Create a new permission. Admin only."
-        },
-        {
-          "function": "update_role_permissions",
-          "method": "PUT",
-          "path": "/rbac/roles/{role_id}/permissions",
-          "args": [
-            "role_id",
-            "perm_update",
-            "current_user",
-            "db"
-          ],
-          "doc": "Update permissions for a role. Admin only. System roles can be updated but with restrictions."
-        },
-        {
-          "function": "get_role_integration_permissions",
-          "method": "GET",
-          "path": "/rbac/integration-permissions/{role_id}",
-          "args": [
-            "role_id",
-            "current_user",
-            "db"
-          ],
-          "doc": "Get integration permissions for a role. Admin only."
-        },
-        {
-          "function": "update_role_integration_permissions",
-          "method": "PUT",
-          "path": "/rbac/roles/{role_id}/integration-permissions",
-          "args": [
-            "role_id",
-            "permissions",
-            "current_user",
-            "db"
-          ],
-          "doc": "Update integration permissions for a role. Admin only."
-        },
-        {
-          "function": "get_welcome_messages",
-          "method": "GET",
-          "path": "/rbac/welcome-messages",
-          "args": [
-            "role_name",
-            "current_user",
-            "db"
-          ],
-          "doc": "Get welcome messages. Admin only."
-        },
-        {
-          "function": "create_welcome_message",
-          "method": "POST",
-          "path": "/rbac/welcome-messages",
-          "args": [
-            "message_data",
-            "current_user",
-            "db"
-          ],
-          "doc": "Create a welcome message. Admin only."
-        },
-        {
-          "function": "update_welcome_message",
-          "method": "PUT",
-          "path": "/rbac/welcome-messages/{message_id}",
-          "args": [
-            "message_id",
-            "message_data",
-            "current_user",
-            "db"
-          ],
-          "doc": "Update a welcome message. Admin only."
-        },
-        {
-          "function": "delete_welcome_message",
-          "method": "DELETE",
-          "path": "/rbac/welcome-messages/{message_id}",
-          "args": [
-            "message_id",
-            "current_user",
-            "db"
-          ],
-          "doc": "Delete a welcome message. Admin only."
-        },
-        {
-          "function": "get_user_welcome_message",
-          "method": "GET",
-          "path": "/rbac/welcome",
+          "path": "/",
           "args": [
             "current_user"
           ],
-          "doc": "Get welcome message for current user."
+          "doc": "Get all active notifications."
         },
         {
-          "function": "restart_server",
+          "function": "dismiss_notification",
           "method": "POST",
-          "path": "/server/restart",
+          "path": "/dismiss/{notification_id}",
           "args": [
-            "current_user",
-            "db"
+            "notification_id",
+            "current_user"
           ],
-          "doc": "Restart the server. Admin only."
+          "doc": "Dismiss a specific notification."
+        },
+        {
+          "function": "clear_all_notifications",
+          "method": "POST",
+          "path": "/clear",
+          "args": [
+            "current_user"
+          ],
+          "doc": "Clear all notifications."
+        },
+        {
+          "function": "test_notification",
+          "method": "POST",
+          "path": "/test",
+          "args": [
+            "payload",
+            "current_user"
+          ],
+          "doc": "Test creating a notification (Builder/Dev tool helper)."
         },
         {
           "function": "list_installed_integrations",
@@ -2533,6 +2609,37 @@
             "integration_id"
           ],
           "doc": "Uninstall a local integration (delete directory). System integrations cannot be uninstalled."
+        },
+        {
+          "function": "get_store_sources",
+          "method": "GET",
+          "path": "/store/sources",
+          "args": [
+            "type",
+            "current_user"
+          ],
+          "doc": null
+        },
+        {
+          "function": "add_store_source",
+          "method": "POST",
+          "path": "/store/sources",
+          "args": [
+            "data",
+            "current_user"
+          ],
+          "doc": null
+        },
+        {
+          "function": "remove_store_source",
+          "method": "DELETE",
+          "path": "/store/sources",
+          "args": [
+            "url",
+            "type",
+            "current_user"
+          ],
+          "doc": null
         },
         {
           "function": "list_store_integrations",
@@ -2559,7 +2666,7 @@
           "args": [
             "integration_id"
           ],
-          "doc": "Get the README.md content for an integration.\nReturns raw markdown content for frontend to render."
+          "doc": "Get the README.md content for an integration.\nReturns raw markdown content for frontend to render.\nFor store integrations (not installed), fetches from GitHub."
         },
         {
           "function": "get_integration_changelog",
@@ -2568,7 +2675,7 @@
           "args": [
             "integration_id"
           ],
-          "doc": "Get the CHANGELOG.md content for an integration.\nReturns raw markdown content for frontend to render."
+          "doc": "Get the CHANGELOG.md content for an integration.\nReturns raw markdown content for frontend to render.\nFor store integrations (not installed), fetches from GitHub."
         },
         {
           "function": "get_integration_config",
@@ -2598,7 +2705,7 @@
           "args": [
             "integration_id"
           ],
-          "doc": "Get complete information about an integration including\nmanifest, config, and README preview."
+          "doc": "Get complete information about an integration including\nmanifest, config, and README preview.\nFor store integrations (not installed), fetches from GitHub."
         },
         {
           "function": "get_integration_logs",
@@ -2679,6 +2786,18 @@
           "doc": null
         },
         {
+          "function": "get_employee_change_history",
+          "method": "GET",
+          "path": "/{employee_id}/change-history",
+          "args": [
+            "employee_id",
+            "limit",
+            "db",
+            "current_user"
+          ],
+          "doc": "Get complete change history for an employee.\nShows all changes with timestamp, reason, workflow/integration source."
+        },
+        {
           "function": "create_employee",
           "method": "POST",
           "path": "/",
@@ -2688,6 +2807,36 @@
             "current_user"
           ],
           "doc": null
+        },
+        {
+          "function": "start_demo_traffic",
+          "method": "POST",
+          "path": "/demo/traffic/start",
+          "args": [
+            "mode"
+          ],
+          "doc": "Start the demo traffic simulation.\nmode: 'local' (simulation only) or 'persistent' (db writes)"
+        },
+        {
+          "function": "stop_demo_traffic",
+          "method": "POST",
+          "path": "/demo/traffic/stop",
+          "args": [],
+          "doc": "Stop the demo traffic simulation."
+        },
+        {
+          "function": "get_demo_traffic_status",
+          "method": "GET",
+          "path": "/demo/traffic/status",
+          "args": [],
+          "doc": "Get the current status of traffic simulation."
+        },
+        {
+          "function": "get_demo_traffic_errors",
+          "method": "GET",
+          "path": "/demo/traffic/errors",
+          "args": [],
+          "doc": "Get captured errors from the simulation."
         },
         {
           "function": "get_system_status",
@@ -2777,6 +2926,520 @@
             "current_user"
           ],
           "doc": "Sync-Historie der letzten N Tage"
+        },
+        {
+          "function": "create_export",
+          "method": "POST",
+          "path": "/export",
+          "args": [
+            "req",
+            "db"
+          ],
+          "doc": "Create an encrypted export package with settings and/or database.\nReturns a downloadable ZIP file."
+        },
+        {
+          "function": "restart_server",
+          "method": "POST",
+          "path": "/restart",
+          "args": [
+            "current_user",
+            "db"
+          ],
+          "doc": "Restart the server. Admin only."
+        },
+        {
+          "function": "trigger_update",
+          "method": "POST",
+          "path": "/trigger",
+          "args": [
+            "db"
+          ],
+          "doc": "Triggers an update using the updater integration or webhook if configured."
+        },
+        {
+          "function": "get_releases",
+          "method": "GET",
+          "path": "/releases",
+          "args": [
+            "channel"
+          ],
+          "doc": "Fetches releases from GitHub based on channel using updater integration."
+        },
+        {
+          "function": "get_sync_providers",
+          "method": "GET",
+          "path": "/providers",
+          "args": [],
+          "doc": "Returns a list of available sync providers."
+        },
+        {
+          "function": "create_or_update_motd",
+          "method": "POST",
+          "path": "",
+          "args": [
+            "request",
+            "db",
+            "current_user"
+          ],
+          "doc": "Create or update the Message of the Day. Admin only."
+        },
+        {
+          "function": "get_motd",
+          "method": "GET",
+          "path": "",
+          "args": [
+            "db",
+            "current_user"
+          ],
+          "doc": "Get the current Message of the Day. Admin only."
+        },
+        {
+          "function": "send_motd_to_admins",
+          "method": "POST",
+          "path": "/send",
+          "args": [
+            "db",
+            "current_user"
+          ],
+          "doc": "Send the current MOTD as a notification to all admin users. Admin only."
+        },
+        {
+          "function": "delete_motd",
+          "method": "DELETE",
+          "path": "",
+          "args": [
+            "db",
+            "current_user"
+          ],
+          "doc": "Delete the Message of the Day. Admin only."
+        },
+        {
+          "function": "get_ssl_status",
+          "method": "GET",
+          "path": "/status",
+          "args": [],
+          "doc": "Get current SSL certificate status."
+        },
+        {
+          "function": "generate_ssl_certificate",
+          "method": "POST",
+          "path": "/generate",
+          "args": [
+            "req",
+            "db"
+          ],
+          "doc": "Generate a self-signed SSL certificate for the given domain."
+        },
+        {
+          "function": "disable_ssl",
+          "method": "DELETE",
+          "path": "",
+          "args": [
+            "db"
+          ],
+          "doc": "Disable SSL and remove certificates."
+        },
+        {
+          "function": "get_settings",
+          "method": "GET",
+          "path": "",
+          "args": [
+            "db",
+            "current_user"
+          ],
+          "doc": "Get all settings. Admin only."
+        },
+        {
+          "function": "update_settings",
+          "method": "POST",
+          "path": "",
+          "args": [
+            "update",
+            "db",
+            "current_user"
+          ],
+          "doc": "Update settings. Admin only."
+        },
+        {
+          "function": "request_admin_reset",
+          "method": "POST",
+          "path": "/request-admin-reset",
+          "args": [
+            "req",
+            "db"
+          ],
+          "doc": "Request admin password reset."
+        },
+        {
+          "function": "get_database_tables",
+          "method": "GET",
+          "path": "/tables",
+          "args": [
+            "current_user",
+            "db"
+          ],
+          "doc": "Get list of all database tables. Admin and HR only."
+        },
+        {
+          "function": "get_table_data",
+          "method": "GET",
+          "path": "/table/{table_name}",
+          "args": [
+            "table_name",
+            "page",
+            "limit",
+            "show_sensitive",
+            "current_user",
+            "db"
+          ],
+          "doc": "Get data from a specific table. Admin and HR only."
+        },
+        {
+          "function": "test_ad_connection",
+          "method": "POST",
+          "path": "/test",
+          "args": [
+            "db"
+          ],
+          "doc": "Test Active Directory connection with current settings."
+        },
+        {
+          "function": "get_ad_user",
+          "method": "GET",
+          "path": "/user/{username}",
+          "args": [
+            "username",
+            "db"
+          ],
+          "doc": "Get an AD user by username."
+        },
+        {
+          "function": "search_ad_users",
+          "method": "GET",
+          "path": "/search",
+          "args": [
+            "q",
+            "limit",
+            "db"
+          ],
+          "doc": "Search for AD users."
+        },
+        {
+          "function": "disable_ad_user",
+          "method": "POST",
+          "path": "/user/disable",
+          "args": [
+            "req",
+            "db"
+          ],
+          "doc": "Disable an AD user account."
+        },
+        {
+          "function": "enable_ad_user",
+          "method": "POST",
+          "path": "/user/enable",
+          "args": [
+            "req",
+            "db"
+          ],
+          "doc": "Enable an AD user account."
+        },
+        {
+          "function": "get_logs",
+          "method": "GET",
+          "path": "",
+          "args": [
+            "limit",
+            "db"
+          ],
+          "doc": "Get system logs."
+        },
+        {
+          "function": "create_test_log",
+          "method": "POST",
+          "path": "/test",
+          "args": [
+            "db",
+            "current_user"
+          ],
+          "doc": "Creates a test system log entry to verify logging works."
+        },
+        {
+          "function": "export_logs",
+          "method": "GET",
+          "path": "/export",
+          "args": [
+            "db"
+          ],
+          "doc": "Exports all system logs as CSV."
+        },
+        {
+          "function": "trigger_manual_backup",
+          "method": "POST",
+          "path": "/backups/trigger",
+          "args": [
+            "db"
+          ],
+          "doc": "Manually triggers the backup logic."
+        },
+        {
+          "function": "list_backups",
+          "method": "GET",
+          "path": "/backups",
+          "args": [],
+          "doc": "List all backup files."
+        },
+        {
+          "function": "list_api_tokens",
+          "method": "GET",
+          "path": "",
+          "args": [
+            "db",
+            "current_user"
+          ],
+          "doc": "List all API tokens."
+        },
+        {
+          "function": "create_api_token",
+          "method": "POST",
+          "path": "",
+          "args": [
+            "request",
+            "db",
+            "current_user"
+          ],
+          "doc": "Create a new API token."
+        },
+        {
+          "function": "update_api_token",
+          "method": "PUT",
+          "path": "/{token_id}",
+          "args": [
+            "token_id",
+            "request",
+            "db",
+            "current_user"
+          ],
+          "doc": "Update an API token."
+        },
+        {
+          "function": "delete_api_token",
+          "method": "DELETE",
+          "path": "/{token_id}",
+          "args": [
+            "token_id",
+            "db",
+            "current_user"
+          ],
+          "doc": "Delete an API token."
+        },
+        {
+          "function": "get_roles",
+          "method": "GET",
+          "path": "/roles",
+          "args": [
+            "current_user",
+            "db"
+          ],
+          "doc": "Get all roles. Admin only."
+        },
+        {
+          "function": "get_permissions",
+          "method": "GET",
+          "path": "/permissions",
+          "args": [
+            "current_user",
+            "db"
+          ],
+          "doc": "Get all permissions. Admin only."
+        },
+        {
+          "function": "get_role_details",
+          "method": "GET",
+          "path": "/role/{role_id}",
+          "args": [
+            "role_id",
+            "current_user",
+            "db"
+          ],
+          "doc": "Get role details with permissions. Admin only."
+        },
+        {
+          "function": "create_role",
+          "method": "POST",
+          "path": "/roles",
+          "args": [
+            "role_data",
+            "current_user",
+            "db"
+          ],
+          "doc": "Create a new role. Admin only. System roles cannot be created via API."
+        },
+        {
+          "function": "update_role",
+          "method": "PUT",
+          "path": "/roles/{role_id}",
+          "args": [
+            "role_id",
+            "role_data",
+            "current_user",
+            "db"
+          ],
+          "doc": "Update a role. Admin only. System roles cannot be modified."
+        },
+        {
+          "function": "delete_role",
+          "method": "DELETE",
+          "path": "/roles/{role_id}",
+          "args": [
+            "role_id",
+            "current_user",
+            "db"
+          ],
+          "doc": "Delete a role. Admin only. System roles cannot be deleted."
+        },
+        {
+          "function": "create_permission",
+          "method": "POST",
+          "path": "/permissions",
+          "args": [
+            "perm_data",
+            "current_user",
+            "db"
+          ],
+          "doc": "Create a new permission. Admin only."
+        },
+        {
+          "function": "update_role_permissions",
+          "method": "PUT",
+          "path": "/roles/{role_id}/permissions",
+          "args": [
+            "role_id",
+            "perm_update",
+            "current_user",
+            "db"
+          ],
+          "doc": "Update permissions for a role. Admin only. System roles can be updated but with restrictions."
+        },
+        {
+          "function": "get_role_integration_permissions",
+          "method": "GET",
+          "path": "/integration-permissions/{role_id}",
+          "args": [
+            "role_id",
+            "current_user",
+            "db"
+          ],
+          "doc": "Get integration permissions for a role. Admin only."
+        },
+        {
+          "function": "update_role_integration_permissions",
+          "method": "PUT",
+          "path": "/roles/{role_id}/integration-permissions",
+          "args": [
+            "role_id",
+            "permissions",
+            "current_user",
+            "db"
+          ],
+          "doc": "Update integration permissions for a role. Admin only."
+        },
+        {
+          "function": "get_welcome_messages",
+          "method": "GET",
+          "path": "/welcome-messages",
+          "args": [
+            "role_name",
+            "current_user",
+            "db"
+          ],
+          "doc": "Get welcome messages. Admin only."
+        },
+        {
+          "function": "create_welcome_message",
+          "method": "POST",
+          "path": "/welcome-messages",
+          "args": [
+            "message_data",
+            "current_user",
+            "db"
+          ],
+          "doc": "Create a welcome message. Admin only."
+        },
+        {
+          "function": "update_welcome_message",
+          "method": "PUT",
+          "path": "/welcome-messages/{message_id}",
+          "args": [
+            "message_id",
+            "message_data",
+            "current_user",
+            "db"
+          ],
+          "doc": "Update a welcome message. Admin only."
+        },
+        {
+          "function": "delete_welcome_message",
+          "method": "DELETE",
+          "path": "/welcome-messages/{message_id}",
+          "args": [
+            "message_id",
+            "current_user",
+            "db"
+          ],
+          "doc": "Delete a welcome message. Admin only."
+        },
+        {
+          "function": "get_user_welcome_message",
+          "method": "GET",
+          "path": "/welcome",
+          "args": [
+            "current_user",
+            "db"
+          ],
+          "doc": "Get welcome message for current user."
+        },
+        {
+          "function": "get_mail_providers",
+          "method": "GET",
+          "path": "/mail/providers",
+          "args": [],
+          "doc": "Returns a list of available mail providers."
+        },
+        {
+          "function": "get_themes",
+          "method": "GET",
+          "path": "/themes",
+          "args": [],
+          "doc": "Returns a list of available theme integrations."
+        },
+        {
+          "function": "get_interpreters",
+          "method": "GET",
+          "path": "/interpreters",
+          "args": [],
+          "doc": "Returns a list of available interpreter integrations."
+        },
+        {
+          "function": "get_sensors",
+          "method": "GET",
+          "path": "/monitoring/sensors",
+          "args": [],
+          "doc": "Returns a list of all monitoring sensors with their status."
+        },
+        {
+          "function": "get_monitors",
+          "method": "GET",
+          "path": "/monitoring/monitors",
+          "args": [],
+          "doc": "Returns a list of available monitoring integrations."
+        },
+        {
+          "function": "get_ticket_systems",
+          "method": "GET",
+          "path": "/ticket-systems",
+          "args": [],
+          "doc": "Returns a list of available ticket system integrations."
         }
       ],
       "frontend_structure": {
@@ -2792,9 +3455,14 @@
           "pages/Employees.tsx",
           "pages/ManualEntry.tsx",
           "pages/Integrations.tsx",
+          "pages/PrivacyPolicy.tsx",
+          "pages/CookiePolicy.tsx",
+          "pages/Maintenance.test.tsx",
           "pages/DatabaseViewer.tsx",
           "pages/Dashboard.tsx",
           "pages/Maintenance.tsx",
+          "pages/Chat.tsx",
+          "pages/EmployeeDetail.tsx",
           "pages/WorkflowEditor.tsx",
           "pages/Admin.tsx",
           "pages/Features.tsx",
@@ -2803,55 +3471,77 @@
           "pages/Docs.tsx",
           "pages/HRDashboard.tsx",
           "pages/Profile.tsx",
+          "components/OfflineModeBanner.tsx",
+          "components/Avatar.tsx",
+          "components/SourcesModal.tsx",
           "components/DemoModeBanner.tsx",
+          "components/IntegrationConfigModal.tsx",
+          "components/Toast.tsx",
           "components/MobileAppBanner.tsx",
           "components/IntegrationInfoModal.tsx",
           "components/WidgetsHelper.tsx",
           "components/Layout.tsx",
+          "components/ConsentManager.tsx",
+          "components/DemoControlPanel.tsx",
           "components/IntegrationConfigUI.tsx",
           "components/NotificationBar.tsx",
-          "components/CookieBanner.tsx",
           "components/DevWarningBanner.tsx",
+          "components/OfflineBanner.tsx",
           "components/MaintenanceGuard.tsx",
+          "components/AiAssistant.tsx",
+          "components/InteractiveBackground.tsx",
+          "components/OfflineDisabledButton.tsx",
+          "components/MaintenanceGuard.test.tsx",
           "components/IntegrationUpdates.tsx",
+          "components/LicenseModal.tsx",
           "components/admin/PluginManager.tsx",
           "components/admin/UserManagement.tsx",
+          "components/ui/PageTransition.tsx",
           "components/widgets/DraggableWidgetGrid.tsx",
           "components/widgets/WidgetGrid.tsx",
           "components/widgets/Widget.tsx",
+          "components/chat/SupportChat.tsx",
+          "components/chat/ChatList.tsx",
+          "components/chat/ChatWindow.tsx",
+          "components/chat/InternalAIChat.tsx",
+          "contexts/NotificationContext.tsx",
           "contexts/ThemeContext.tsx"
         ],
         "routes": [
-          "/forgot-password",
-          "integrations",
-          "it",
-          "/features",
-          "hr/database",
-          "settings",
-          "admin/rbac",
-          "developer",
+          "/login",
+          "/privacy",
           "admin/users",
           "admin/workflows",
-          "docs",
-          "/login",
-          "/",
-          "admin",
+          "it",
           "employees",
+          "/",
+          "employees/:id",
+          "chat",
+          "/features",
           "/reset-password/:token",
+          "/cookies",
+          "/forgot-password",
+          "integrations",
+          "entry",
+          "settings",
+          "admin",
           "admin/database",
-          "hr",
-          "entry"
+          "developer",
+          "docs",
+          "hr/database",
+          "admin/rbac",
+          "hr"
         ]
       }
     },
     "dependencies": {
       "backend": [
         "uvicorn[standard]==0.38.0",
-        "fastapi==0.124.4",
+        "fastapi==0.126.0",
         "sqlalchemy==2.0.45",
         "pydantic==2.12.5",
         "pydantic-settings==2.12.0",
-        "python-multipart==0.0.20",
+        "python-multipart==0.0.21",
         "apscheduler==3.11.1",
         "requests==2.32.5",
         "httpx==0.28.1",
@@ -2860,6 +3550,7 @@
         "passlib[argon2]==1.7.4",
         "argon2-cffi==25.1.0",
         "pyotp==2.9.0",
+        "webauthn>=2.0.0",
         "psycopg2-binary==2.9.11",
         "ldap3==2.9.1",
         "jinja2==3.1.6",
@@ -2867,19 +3558,35 @@
         "email-validator==2.3.0",
         "boto3>=1.34.0  # For Amazon SES support (optional)",
         "pytest>=8.2.0,<10.0.0",
-        "pytest-asyncio>=0.25.2"
+        "pytest-asyncio>=0.25.2",
+        "docker",
+        "exchangelib",
+        "msal",
+        "requests_ntlm",
+        "paramiko",
+        "wakeonlan",
+        "croniter"
       ],
       "frontend": [
+        "@codemirror/lang-json",
+        "@codemirror/lang-yaml",
+        "@types/js-yaml",
+        "@types/react-grid-layout",
+        "@uiw/react-codemirror",
         "@xyflow/react",
         "axios",
         "clsx",
+        "framer-motion",
         "i18next",
         "i18next-browser-languagedetector",
         "i18next-http-backend",
+        "js-yaml",
         "lucide-react",
         "react",
         "react-dom",
+        "react-grid-layout",
         "react-i18next",
+        "react-markdown",
         "react-qr-code",
         "react-router-dom",
         "tailwind-merge",
