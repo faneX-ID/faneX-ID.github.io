@@ -2,7 +2,7 @@
 # Updated: 2025-12-13
 
 # Core theme
-mkdocs-material>=9.5.0
+mkdocs-material>=9.7.6
 
 # Plugins
 mkdocs-minify-plugin>=0.8.0
