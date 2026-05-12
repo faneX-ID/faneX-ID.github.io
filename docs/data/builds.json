@@ -1,10 +1,18 @@
 {
-  "last_updated": "2026-05-12T02:01:23.462113+00:00Z",
+  "last_updated": "2026-05-12T08:24:43.418149+00:00Z",
   "workflows": [
     {
       "name": "Master CI Orchestrator",
       "id": 215495041,
       "runs": [
+        {
+          "status": "completed",
+          "conclusion": "failure",
+          "created_at": "2026-05-12T06:09:24+00:00",
+          "updated_at": "2026-05-12T06:10:20+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/25716823072"
+        },
         {
           "status": "completed",
           "conclusion": "failure",
@@ -36,14 +44,6 @@
           "updated_at": "2026-01-24T22:53:41+00:00",
           "head_branch": "dependabot/pip/backend/sqlalchemy-2.0.46",
           "html_url": "https://github.com/faneX-ID/core/actions/runs/21322919307"
-        },
-        {
-          "status": "completed",
-          "conclusion": "failure",
-          "created_at": "2026-01-09T00:15:22+00:00",
-          "updated_at": "2026-01-09T00:16:09+00:00",
-          "head_branch": "dependabot/npm_and_yarn/frontend/npm_and_yarn-e7552e82bb",
-          "html_url": "https://github.com/faneX-ID/core/actions/runs/20836481225"
         }
       ]
     },
@@ -390,6 +390,14 @@
         {
           "status": "completed",
           "conclusion": "success",
+          "created_at": "2026-05-12T06:09:24+00:00",
+          "updated_at": "2026-05-12T06:10:00+00:00",
+          "head_branch": "main",
+          "html_url": "https://github.com/faneX-ID/core/actions/runs/25716823056"
+        },
+        {
+          "status": "completed",
+          "conclusion": "success",
           "created_at": "2026-01-31T09:21:01+00:00",
           "updated_at": "2026-01-31T09:21:29+00:00",
           "head_branch": "main",
@@ -418,14 +426,6 @@
           "updated_at": "2026-01-24T22:54:40+00:00",
           "head_branch": "dependabot/pip/backend/sqlalchemy-2.0.46",
           "html_url": "https://github.com/faneX-ID/core/actions/runs/21322919325"
-        },
-        {
-          "status": "completed",
-          "conclusion": "failure",
-          "created_at": "2026-01-09T00:15:22+00:00",
-          "updated_at": "2026-01-09T00:17:10+00:00",
-          "head_branch": "dependabot/npm_and_yarn/frontend/npm_and_yarn-e7552e82bb",
-          "html_url": "https://github.com/faneX-ID/core/actions/runs/20836481224"
         }
       ]
     }

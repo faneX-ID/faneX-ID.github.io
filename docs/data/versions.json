@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-12T02:01:38.274384+00:00Z",
+  "last_updated": "2026-05-12T08:24:59.456022+00:00Z",
   "versions": {
     "manifest_schema_version": "2.0.0",
     "workflow_schema_version": "2.0.0",
@@ -13,7 +13,7 @@
   },
   "project_manifest": {
     "project_name": "faneX-ID",
-    "generated_at": "2026-01-31T09:21:27.028091",
+    "generated_at": "2026-05-12T06:09:56.884425",
     "description": "Comprehensive Project Manifest for AI assistance.",
     "tech_stack": {
       "backend": "FastAPI (Python)",
@@ -21,950 +21,141 @@
       "database": "SQLite / SQLAlchemy"
     },
     "repository_structure": {
-      "Dockerfile": "file",
-      "renovate.json": "file",
-      "LICENSE": "file",
-      "requirements.txt": "file",
-      ".dockerignore": "file",
-      ".gitattributes": "file",
-      "legacy_system_config_sample.yaml": "file",
-      ".gitignore": "file",
       "README.md": "file",
-      "docker-compose.yml": "file",
-      ".env.example": "file",
-      ".nvmrc": "file",
       "cliff.toml": "file",
-      "logos": {
-        "faneX-ID.png": "file",
-        "icons": {
-          "icon-128x128.png": "file",
-          "site.webmanifest": "file",
-          "favicon-96x96.png": "file",
-          "icon-48x48.png": "file",
-          "icon-152x152.png": "file",
-          "web-app-manifest-512x512.png": "file",
-          "icon-96x96.png": "file",
-          "web-app-manifest-192x192.png": "file",
-          "favicon.svg": "file",
-          "icon-512x512.png": "file",
-          "icon-256x256.png": "file",
-          "icon-384x384.png": "file",
-          "icon-72x72.png": "file",
-          "apple-touch-icon.png": "file",
-          "icon-144x144.png": "file",
-          "favicon.ico": "file",
-          "icon-192x192.png": "file",
-          "icons.json": "file",
-          "android": {
-            "android-launchericon-512-512.png": "file",
-            "android-launchericon-144-144.png": "file",
-            "android-launchericon-192-192.png": "file",
-            "android-launchericon-96-96.png": "file",
-            "android-launchericon-48-48.png": "file",
-            "android-launchericon-72-72.png": "file"
-          },
-          "windows11": {
-            "Square44x44Logo.altform-unplated_targetsize-48.png": "file",
-            "StoreLogo.scale-400.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-44.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-72.png": "file",
-            "Square44x44Logo.targetsize-20.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-20.png": "file",
-            "Square44x44Logo.scale-150.png": "file",
-            "LargeTile.scale-150.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-80.png": "file",
-            "Square44x44Logo.targetsize-48.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-60.png": "file",
-            "SplashScreen.scale-400.png": "file",
-            "LargeTile.scale-100.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-16.png": "file",
-            "Square44x44Logo.scale-200.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-44.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-64.png": "file",
-            "Square44x44Logo.targetsize-64.png": "file",
-            "StoreLogo.scale-200.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-40.png": "file",
-            "Wide310x150Logo.scale-150.png": "file",
-            "Wide310x150Logo.scale-400.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-36.png": "file",
-            "StoreLogo.scale-125.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-60.png": "file",
-            "Square44x44Logo.targetsize-44.png": "file",
-            "LargeTile.scale-125.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-36.png": "file",
-            "Square150x150Logo.scale-400.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-256.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-48.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-40.png": "file",
-            "Square150x150Logo.scale-125.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-32.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-16.png": "file",
-            "SmallTile.scale-150.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-30.png": "file",
-            "LargeTile.scale-400.png": "file",
-            "Wide310x150Logo.scale-200.png": "file",
-            "SplashScreen.scale-100.png": "file",
-            "Square150x150Logo.scale-100.png": "file",
-            "Square44x44Logo.scale-100.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-96.png": "file",
-            "SmallTile.scale-100.png": "file",
-            "Square44x44Logo.targetsize-40.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-30.png": "file",
-            "Square44x44Logo.targetsize-72.png": "file",
-            "Square44x44Logo.targetsize-30.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-24.png": "file",
-            "Square44x44Logo.scale-125.png": "file",
-            "SplashScreen.scale-150.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-20.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-72.png": "file",
-            "LargeTile.scale-200.png": "file",
-            "Square44x44Logo.targetsize-256.png": "file",
-            "Square150x150Logo.scale-150.png": "file",
-            "SmallTile.scale-400.png": "file",
-            "SplashScreen.scale-200.png": "file",
-            "Square44x44Logo.targetsize-24.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-64.png": "file",
-            "SplashScreen.scale-125.png": "file",
-            "Square44x44Logo.targetsize-16.png": "file",
-            "Square44x44Logo.targetsize-60.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-256.png": "file",
-            "Square44x44Logo.targetsize-32.png": "file",
-            "StoreLogo.scale-100.png": "file",
-            "Square44x44Logo.scale-400.png": "file",
-            "SmallTile.scale-200.png": "file",
-            "Square150x150Logo.scale-200.png": "file",
-            "StoreLogo.scale-150.png": "file",
-            "SmallTile.scale-125.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-32.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-24.png": "file",
-            "Square44x44Logo.targetsize-80.png": "file",
-            "Square44x44Logo.targetsize-96.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-80.png": "file",
-            "Wide310x150Logo.scale-100.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-96.png": "file",
-            "Square44x44Logo.targetsize-36.png": "file",
-            "Wide310x150Logo.scale-125.png": "file"
-          },
-          "ios": {
-            "29.png": "file",
-            "64.png": "file",
-            "114.png": "file",
-            "80.png": "file",
-            "87.png": "file",
-            "144.png": "file",
-            "180.png": "file",
-            "152.png": "file",
-            "60.png": "file",
-            "57.png": "file",
-            "256.png": "file",
-            "50.png": "file",
-            "167.png": "file",
-            "1024.png": "file",
-            "120.png": "file",
-            "40.png": "file",
-            "32.png": "file",
-            "192.png": "file",
-            "58.png": "file",
-            "16.png": "file",
-            "76.png": "file",
-            "20.png": "file",
-            "100.png": "file",
-            "512.png": "file",
-            "128.png": "file",
-            "72.png": "file"
-          }
-        }
-      },
-      "scripts": {
-        "generate_version.py": "file",
-        "check_quota.py": "file",
-        "set_next_dev_version.py": "file",
-        "validate_readme.py": "file",
-        "generate_demo_hr_data.py": "file",
-        "check_pr_checklist.py": "file",
-        "generate_app_token.py": "file",
-        "README_SCREENSHOTS.md": "file",
-        "get_schema_version.py": "file",
-        "post_bot_comment.py": "file",
-        "check_runtime_errors.py": "file",
-        "generate_screenshots.ts": "file",
-        "generate_screenshots.js": "file",
-        "validate_addon_repo.py": "file",
-        "update_readme_stats.py": "file",
-        "update_manifest_schema.py": "file",
-        "validate_integrations.py": "file",
-        "check_links.py": "file",
-        "generate_manifest.py": "file",
-        "verify_e2e_sync.py": "file",
-        "add_analytics_badges.py": "file",
-        "check_i18n.py": "file",
-        "update_all_manifests.py": "file"
-      },
+      "Dockerfile": "file",
+      "requirements.txt": "file",
+      "LICENSE": "file",
+      "legacy_system_config_sample.yaml": "file",
+      ".gitattributes": "file",
+      "renovate.json": "file",
+      ".gitignore": "file",
+      ".env.example": "file",
+      "docker-compose.yml": "file",
+      ".nvmrc": "file",
+      ".dockerignore": "file",
       ".github": {
-        "dependabot.yml": "file",
         "versions.json": "file",
+        "dependabot.yml": "file",
         "VERSION_SYNC.md": "file",
         "pull_request_template.md": "file",
         "scripts": {
-          "generate_workflow_changelog.py": "file",
-          "generate_schema_changelog.py": "file",
-          "generate_integration.py": "file",
-          "auto_version_workflows.py": "file",
-          "calculate_quality_score.py": "file",
-          "generate_changelog.py": "file",
           "auto_version_migrator.py": "file",
-          "update-release-buttons.py": "file",
-          "build-windows.js": "file",
-          "build-ipa.js": "file",
+          "auto_version_workflows.py": "file",
+          "generate_changelog.py": "file",
+          "generate_integration.py": "file",
+          "auto_version_integrations.py": "file",
           "build-apk.js": "file",
-          "auto_version_integrations.py": "file"
-        },
-        "workflows": {
-          "auto-version-workflows.yml": "file",
-          "validation-validate-readme.yml": "file",
-          "maintenance-update-manifest.yml": "file",
-          "ci.yml": "file",
-          "generate-screenshots.yml": "file",
-          "release-ios-release.yml": "file",
-          "release.yml": "file",
-          "ci-frontend-ci.yml": "file",
-          "auto-version-migrator.yml": "file",
-          "nightly-release.yml": "file",
-          "pr-remove-changes-requested.yml": "file",
-          "auto-version-integrations.yml": "file",
-          "manual-full-test.yml": "file",
-          "ci-extended-features-ci.yml": "file",
-          "maintenance-sync-versions.yml": "file",
-          "pr-auto-label.yml": "file",
-          "pr-validation.yml": "file",
-          "pr-assistant.yml": "file",
-          "ci-e2e-tests.yml": "file",
-          "README_WORKFLOW_MODE.md": "file",
-          "pr-thanks.yml": "file",
-          "validation-validate-integrations.yml": "file",
-          "release-windows-release.yml": "file",
-          "pr-orchestrator.yml": "file",
-          "docker-ci.yml": "file",
-          "quota-check.yml": "file",
-          "maintenance-update-schema.yml": "file",
-          "workflow-mode-controller.yml": "file",
-          "extended-features-ci.yml": "file",
-          "automation-auto-merge.yml": "file",
-          "pr-autofix.yml": "file",
-          "bot-fanex-id-bot.yml": "file",
-          "maintenance-nightly-cleanup.yml": "file",
-          "release-docker-publish.yml": "file",
-          "ci-backend-ci.yml": "file",
-          "maintenance-housekeeping.yml": "file",
-          "release-android-release.yml": "file",
-          "ci-functional-tests.yml": "file",
-          "withdraw-release.yml": "file"
+          "build-windows.js": "file",
+          "generate_schema_changelog.py": "file",
+          "build-ipa.js": "file",
+          "generate_workflow_changelog.py": "file",
+          "calculate_quality_score.py": "file",
+          "update-release-buttons.py": "file"
         },
         "ISSUE_TEMPLATE": {
-          "bug_report.yml": "file",
           "config.yml": "file",
-          "feature_request.yml": "file"
+          "feature_request.yml": "file",
+          "bug_report.yml": "file"
+        },
+        "workflows": {
+          "validation-validate-readme.yml": "file",
+          "ci-extended-features-ci.yml": "file",
+          "auto-version-migrator.yml": "file",
+          "manual-full-test.yml": "file",
+          "pr-remove-changes-requested.yml": "file",
+          "pr-assistant.yml": "file",
+          "ci.yml": "file",
+          "bot-fanex-id-bot.yml": "file",
+          "extended-features-ci.yml": "file",
+          "pr-orchestrator.yml": "file",
+          "quota-check.yml": "file",
+          "docker-ci.yml": "file",
+          "maintenance-nightly-cleanup.yml": "file",
+          "pr-validation.yml": "file",
+          "validation-validate-integrations.yml": "file",
+          "maintenance-sync-versions.yml": "file",
+          "auto-version-workflows.yml": "file",
+          "README_WORKFLOW_MODE.md": "file",
+          "maintenance-update-manifest.yml": "file",
+          "pr-thanks.yml": "file",
+          "workflow-mode-controller.yml": "file",
+          "maintenance-update-schema.yml": "file",
+          "generate-screenshots.yml": "file",
+          "maintenance-housekeeping.yml": "file",
+          "release.yml": "file",
+          "automation-auto-merge.yml": "file",
+          "pr-auto-label.yml": "file",
+          "release-ios-release.yml": "file",
+          "auto-version-integrations.yml": "file",
+          "release-windows-release.yml": "file",
+          "release-docker-publish.yml": "file",
+          "ci-frontend-ci.yml": "file",
+          "ci-functional-tests.yml": "file",
+          "ci-e2e-tests.yml": "file",
+          "release-android-release.yml": "file",
+          "ci-backend-ci.yml": "file",
+          "withdraw-release.yml": "file",
+          "nightly-release.yml": "file",
+          "pr-autofix.yml": "file"
         }
       },
-      "workflows": {
-        "system": {
-          "notify_on_login.yaml": "file"
-        }
-      },
-      "images": {
-        "Dashboard.png": "file"
-      },
-      "backend": {
-        "Dockerfile": "file",
-        "requirements.txt": "file",
-        "pytest.ini": "file",
-        "main.py": "file",
-        "fix_db_schema.py": "file",
-        "failure_output_utf8.md": "file",
-        "debug_import.py": "file",
-        "print_tb.py": "file",
-        "failure_output.md": "file",
-        "workflows_system": {
-          "CHANGELOG.md": "file",
-          "notify_system_errors.yaml": "file",
-          "employee_welcome_email.yaml": "file",
-          "notify_user_activity.yaml": "file",
-          "notify_integration_update.yaml": "file",
-          "README.md": "file",
-          "user_password_reset_workflow.yaml": "file",
-          "ssl_certificate_expiry_warning.yaml": "file",
-          "notify_backup_completed.yaml": "file",
-          "employee_sync_notification.yaml": "file",
-          "user_login_failed_alert.yaml": "file",
-          "notify_disk_critical.yaml": "file",
-          "backup_daily.yaml": "file",
-          "employee_email_auto.yaml": "file",
-          "special": {
-            "CHANGELOG.md": "file",
-            "inactive_special_users_reminder.yaml": "file",
-            "cost_center_check.yaml": "file",
-            "guest_user_cleanup.yaml": "file",
-            "external_vpn_account_creation.yaml": "file"
-          },
-          "user_lifecycle": {
-            "CHANGELOG.md": "file",
-            "user_disable.yaml": "file",
-            "new_user_onboarding.yaml": "file",
-            "employee_rejoin.yaml": "file",
-            "user_update.yaml": "file",
-            "2fa_reminder.yaml": "file",
-            "user_delete.yaml": "file",
-            "password_login_reminder.yaml": "file"
-          },
-          "examples": {
-            "CHANGELOG.md": "file",
-            "workflow_database_storage.yaml": "file"
-          },
-          "monitoring": {
-            "CHANGELOG.md": "file",
-            "sap_monitoring_alert.yaml": "file"
-          },
-          "data_sync": {
-            "CHANGELOG.md": "file",
-            "sync_on_employee_change.yaml": "file"
-          },
-          "notifications": {
-            "CHANGELOG.md": "file",
-            "welcome_email.yaml": "file",
-            "works_council_report.yaml": "file",
-            "manager_notification.yaml": "file",
-            "it_training_report.yaml": "file",
-            "notify_chat_message.yaml": "file",
-            "ticket_system_notification.yaml": "file",
-            "license_report.yaml": "file",
-            "welcome_new_employee.yaml": "file",
-            "error_report.yaml": "file"
-          },
-          "automation": {
-            "CHANGELOG.md": "file",
-            "auto_backup_on_schedule.yaml": "file",
-            "sharepoint_cleanup_old_files.yaml": "file"
-          },
-          "pre_checks": {
-            "CHANGELOG.md": "file",
-            "pre_run_checks.yaml": "file",
-            "hash_file_comparison.yaml": "file"
-          },
-          "security": {
-            "notify_on_failed_login.yaml": "file",
-            "CHANGELOG.md": "file"
-          },
-          "maintenance": {
-            "CHANGELOG.md": "file",
-            "log_cleanup.yaml": "file",
-            "update_check.yaml": "file",
-            "cache_management.yaml": "file"
-          },
-          "cloud_integration": {
-            "teams_phone_number_sync.yaml": "file",
-            "CHANGELOG.md": "file",
-            "teamviewer_device_cleanup.yaml": "file",
-            "sharepoint_guest_user_creation.yaml": "file",
-            "teams_without_owner_check.yaml": "file",
-            "entra_sync_and_license.yaml": "file",
-            "sharepoint_rfid_update.yaml": "file",
-            "intune_primary_user_set.yaml": "file"
-          }
-        },
-        "services": {
-          "hr_file_tracker.py": "file",
-          "integration_loader.py": "file",
-          "hr_workflow_processor.py": "file",
-          "repo_manager.py": "file",
-          "integration_base.py": "file",
-          "event_bus.py": "file",
-          "datasources.py": "file",
-          "ad_service.py": "file",
-          "ssl_service.py": "file",
-          "hr_sap_parser.py": "file",
-          "plugin_manager.py": "file",
-          "scheduler.py": "file",
-          "theme_helper.py": "file",
-          "export_service.py": "file",
-          "powershell_integration.py": "file",
-          "service_worker.py": "file",
-          "settings_interpreter.py": "file",
-          "workflow_engine.py": "file",
-          "requirements_installer.py": "file",
-          "version_manager.py": "file",
-          "service_registry.py": "file",
-          "sync_helper.py": "file",
-          "importer.py": "file"
-        },
-        "scripts": {
-          "validate_manifests.py": "file",
-          "generate_demo_employees.py": "file",
-          "fix_missing_columns.py": "file",
-          "ad": {
-            "README.md": "file"
-          }
-        },
-        "app": {
-          "schemas.py": "file",
-          "__init__.py": "file",
-          "routers": {
-            "users.py": "file",
-            "ai.py": "file",
-            "developer.py": "file",
-            "workflows.py": "file",
-            "onprem.py": "file",
-            "auth.py": "file",
-            "analytics.py": "file",
-            "widgets.py": "file",
-            "chat.py": "file",
-            "public_config.py": "file",
-            "notifications.py": "file",
-            "plugins.py": "file",
-            "admin.py.old": "file",
-            "employees.py": "file",
-            "__init__.py": "file",
-            "system.py": "file",
-            "hr.py": "file",
-            "admin": {
-              "export_import.py": "file",
-              "server.py": "file",
-              "updates.py": "file",
-              "sync.py": "file",
-              "motd.py": "file",
-              "ssl.py": "file",
-              "settings.py": "file",
-              "database.py": "file",
-              "ad.py": "file",
-              "logs.py": "file",
-              "common.py": "file",
-              "upload.py": "file",
-              "backups.py": "file",
-              "api_tokens.py": "file",
-              "__init__.py": "file",
-              "rbac.py": "file",
-              "integrations.py": "file"
-            }
-          },
-          "services": {
-            "password_validator.py": "file",
-            "log_broadcaster.py": "file",
-            "monitoring_helper.py": "file",
-            "mail.py": "file",
-            "integration_registry.py": "file",
-            "ticket_system_helper.py": "file",
-            "startup_manager.py": "file",
-            "license.py": "file",
-            "migration_service.py": "file",
-            "ai_service.py": "file",
-            "ai_provider.py": "file",
-            "theme_helper.py": "file",
-            "demo_traffic_generator.py": "file",
-            "ai_tools.py": "file",
-            "notify_service.py": "file",
-            "interpreter_helper.py": "file",
-            "webauthn_service.py": "file"
-          },
-          "workflows": {
-            "legacy": {
-              "lifecycle.py": "file",
-              "licensing.py": "file",
-              "sharepoint_sync.py": "file"
-            }
-          },
-          "core": {
-            "demo_mode.py": "file",
-            "permissions.py": "file",
-            "version.py": "file",
-            "models_rbac_init.py": "file",
-            "sso.py": "file",
-            "demo_security.py": "file",
-            "logging_handler.py": "file",
-            "deps.py": "file",
-            "security.py": "file",
-            "config.py": "file",
-            "__init__.py": "file",
-            "models.py": "file",
-            "demo_integrations.py": "file"
-          },
-          "system_integrations": {
-            "code_executor_python": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "ssl": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "passkey": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "time_trigger": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "network_sync": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "sync.py": "file",
-              "README.md": "file"
-            },
-            "manual": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "workflow_store": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "store.py": "file",
-              "README.md": "file"
-            },
-            "network_share": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "active_directory": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file",
-              "integration.ps1": "file"
-            },
-            "database_example_sqlite": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "teams": {
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "wakeonlan": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "sap": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "user_management": {
-              "users.py": "file",
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "README.md": "file"
-            },
-            "reporting": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "rest": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "mail_graph": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "mail_ses": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "sap_java": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "integration_store": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "store.py": "file",
-              "README.md": "file"
-            },
-            "github": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "backup": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "sap_r3": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "notify": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "mail_mailgun": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "health_monitor": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "employees": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "onprem_connector": {
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "network_utils": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "network.py": "file",
-              "README.md": "file"
-            },
-            "intune": {
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "theme_colorful": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "microsoft_graph": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "database_example_postgres": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "mail_smtp": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "ssh": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "mail_sendgrid": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "ldap": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "teamviewer": {
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "admin_logs": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "logs.py": "file",
-              "README.md": "file"
-            },
-            "plugin_manager": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "README.md": "file",
-              "manager.py": "file"
-            },
-            "manual_entry": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "csv_sync": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "sync.py": "file",
-              "README.md": "file"
-            },
-            "disk_monitor": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "code_executor_powershell": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "README.md": "file",
-              "integration.ps1": "file"
-            },
-            "entra_management": {
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "theme_light": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "entra_sso": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "sso.py": "file",
-              "README.md": "file"
-            },
-            "database": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "logging": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "bot_interpreter": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "analytics": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "email_scheduler": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "mail_gmail": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "updater": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "ticket_system": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "sso_helper": {
-              "manifest.json": "file",
-              "sso_helper.py": "file",
-              "README.md": "file"
-            },
-            "mail": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "theme_dark": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "chat": {
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "ping": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "theme_black": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            },
-            "rbac": {
-              "CHANGELOG.md": "file",
-              "manifest.json": "file",
-              "integration.py": "file",
-              "README.md": "file"
-            }
-          },
-          "templates": {
-            "email_footer.html": "file",
-            "base_email.html": "file",
-            "email_header.html": "file"
-          }
-        },
-        "data": {
-          ".secret_key": "file"
-        },
-        "plugins": {
-          "data_sync": {
-            "manifest.json": "file",
-            "integration.py": "file",
-            "README.md": "file",
-            "config.yaml": "file"
-          },
-          "scheduler": {
-            "manifest.json": "file",
-            "integration.py": "file",
-            "README.md": "file",
-            "config.yaml": "file"
-          },
-          "slack-notifications": {
-            "manifest.json": "file",
-            "integration.py": "file",
-            "README.md": "file"
-          },
-          "ldap": {
-            "manifest.json": "file",
-            "integration.py": "file",
-            "README.md": "file",
-            "config.yaml": "file"
-          }
-        },
-        "tests": {
-          "test_integration_registry.py": "file",
-          "test_workflows.py": "file",
-          "test_demo_security.py": "file",
-          "test_user_update.py": "file",
-          "test_monitoring_helper.py": "file",
-          "test_password_reset.py": "file",
-          "test_auth.py": "file",
-          "test_system_integrations_init.py": "file",
-          "test_integration_loader_validation.py": "file",
-          "sample_hr_data.csv": "file",
-          "test_ticket_system_integration.py": "file",
-          "test_ticket_system_helper.py": "file",
-          "test_scheduler.py": "file",
-          "test_github_integration.py": "file",
-          "test_password_validator_extended.py": "file",
-          "test_integrations.py": "file",
-          "test_security.py": "file",
-          "test_ai.py": "file",
-          "test_main.py": "file",
-          "integration_test.py": "file",
-          "test_integration_registry_capabilities.py": "file",
-          "test_ssl.py": "file",
-          "test_repro_500_passkey.py": "file",
-          "test_service_registry.py": "file",
-          "test_code_executors.py": "file",
-          "test_manifest_schema_2_1_0.py": "file",
-          "test_hr_sap_parser.py": "file",
-          "conftest.py": "file",
-          "test_interpreter_helper.py": "file",
-          "test_users.py": "file",
-          "test_monitoring_integration.py": "file",
-          "test_rbac.py": "file",
-          "check_i18n.py": "file",
-          "test_admin.py": "file"
-        }
+      "scripts": {
+        "add_analytics_badges.py": "file",
+        "set_next_dev_version.py": "file",
+        "post_bot_comment.py": "file",
+        "get_schema_version.py": "file",
+        "check_i18n.py": "file",
+        "generate_screenshots.js": "file",
+        "generate_screenshots.ts": "file",
+        "check_links.py": "file",
+        "validate_integrations.py": "file",
+        "README_SCREENSHOTS.md": "file",
+        "generate_version.py": "file",
+        "verify_e2e_sync.py": "file",
+        "generate_app_token.py": "file",
+        "update_manifest_schema.py": "file",
+        "update_all_manifests.py": "file",
+        "check_quota.py": "file",
+        "generate_demo_hr_data.py": "file",
+        "validate_addon_repo.py": "file",
+        "update_readme_stats.py": "file",
+        "validate_readme.py": "file",
+        "generate_manifest.py": "file",
+        "check_pr_checklist.py": "file",
+        "check_runtime_errors.py": "file"
       },
       "docs": {
-        "HISTORY.md": "file",
-        "MONITORING_SYSTEM.md": "file",
-        "WORKFLOW_EXAMPLES.md": "file",
-        "PR_WORKFLOWS.md": "file",
-        "service-workers.md": "file",
-        "INTEGRATION_IMPLEMENTATION_SELECTION.md": "file",
-        "TICKET_SYSTEM.md": "file",
-        "HR_SAP_FORMAT.md": "file",
-        "INTEGRATION_DEV_GUIDE.md": "file",
-        "INTERPRETER_SYSTEM.md": "file",
-        "SYSTEM_COMPONENTS.md": "file",
         "SSO_CONFIG.md": "file",
-        "NODE_VERSION_UPGRADE.md": "file",
-        "CODE_EXECUTION.md": "file",
-        "WORKFLOWS.md": "file",
+        "HR_SAP_FORMAT.md": "file",
         "CI_TYPESCRIPT_CHECKS.md": "file",
-        "GITHUB_TOKEN_SETUP.md": "file",
-        "INTEGRATION_STORE_FIX.md": "file",
-        "VERSIONING.md": "file",
-        "HR_SAP_TESTING.md": "file",
-        "BOT_COMMENTS_FIX.md": "file",
+        "service-workers.md": "file",
+        "WORKFLOW_EXAMPLES.md": "file",
+        "INTEGRATION_DEV_GUIDE.md": "file",
         "QUALITY_SCALE.md": "file",
-        "screenshots": {
-          ".gitkeep": "file",
-          "integrations.png": "file",
-          "user-settings.png": "file",
-          "dashboard.png": "file",
-          "login-public.png": "file",
-          "employees.png": "file"
-        },
+        "SYSTEM_COMPONENTS.md": "file",
+        "CODE_EXECUTION.md": "file",
+        "INTEGRATION_IMPLEMENTATION_SELECTION.md": "file",
+        "VERSIONING.md": "file",
+        "WORKFLOWS.md": "file",
+        "BOT_COMMENTS_FIX.md": "file",
+        "INTEGRATION_STORE_FIX.md": "file",
+        "MONITORING_SYSTEM.md": "file",
+        "PR_WORKFLOWS.md": "file",
+        "TICKET_SYSTEM.md": "file",
+        "NODE_VERSION_UPGRADE.md": "file",
+        "HISTORY.md": "file",
+        "GITHUB_TOKEN_SETUP.md": "file",
+        "HR_SAP_TESTING.md": "file",
+        "INTERPRETER_SYSTEM.md": "file",
         "specs": {
           "integrations-manifest": {
-            "CHANGELOG.md": "file",
-            "CAPABILITIES.md": "file",
-            "action.yml": "file",
             "README.md": "file",
+            "CAPABILITIES.md": "file",
             "changelog.md": "file",
             "validate_manifest.py": "file",
+            "CHANGELOG.md": "file",
+            "action.yml": "file",
             "examples": {
               "full-manifest.json": "file",
               "minimal-manifest.json": "file"
@@ -975,56 +166,938 @@
               "quality-score.json": "file"
             }
           }
+        },
+        "screenshots": {
+          "integrations.png": "file",
+          ".gitkeep": "file",
+          "employees.png": "file",
+          "dashboard.png": "file",
+          "login-public.png": "file",
+          "user-settings.png": "file"
         }
       },
-      "integrations": {
-        "microsoft_teams_bot": {
-          "manifest.json": "file",
-          "integration.py": "file",
-          "README.md": "file"
+      "backend": {
+        "main.py": "file",
+        "Dockerfile": "file",
+        "debug_import.py": "file",
+        "requirements.txt": "file",
+        "pytest.ini": "file",
+        "failure_output_utf8.md": "file",
+        "fix_db_schema.py": "file",
+        "failure_output.md": "file",
+        "print_tb.py": "file",
+        "tests": {
+          "test_security.py": "file",
+          "test_integration_registry.py": "file",
+          "test_system_integrations_init.py": "file",
+          "test_auth.py": "file",
+          "check_i18n.py": "file",
+          "test_github_integration.py": "file",
+          "test_monitoring_helper.py": "file",
+          "test_ssl.py": "file",
+          "test_rbac.py": "file",
+          "test_admin.py": "file",
+          "test_integrations.py": "file",
+          "test_interpreter_helper.py": "file",
+          "test_users.py": "file",
+          "test_workflows.py": "file",
+          "test_main.py": "file",
+          "test_scheduler.py": "file",
+          "test_ai.py": "file",
+          "test_integration_loader_validation.py": "file",
+          "test_password_validator_extended.py": "file",
+          "conftest.py": "file",
+          "test_service_registry.py": "file",
+          "test_repro_500_passkey.py": "file",
+          "sample_hr_data.csv": "file",
+          "test_ticket_system_integration.py": "file",
+          "test_hr_sap_parser.py": "file",
+          "integration_test.py": "file",
+          "test_password_reset.py": "file",
+          "test_code_executors.py": "file",
+          "test_demo_security.py": "file",
+          "test_monitoring_integration.py": "file",
+          "test_manifest_schema_2_1_0.py": "file",
+          "test_integration_registry_capabilities.py": "file",
+          "test_ticket_system_helper.py": "file",
+          "test_user_update.py": "file"
         },
-        "system": {
-          "notify_browser": {
-            "manifest.json": "file",
-            "__init__.py": "file"
+        "workflows_system": {
+          "notify_system_errors.yaml": "file",
+          "employee_sync_notification.yaml": "file",
+          "README.md": "file",
+          "employee_email_auto.yaml": "file",
+          "employee_welcome_email.yaml": "file",
+          "ssl_certificate_expiry_warning.yaml": "file",
+          "notify_disk_critical.yaml": "file",
+          "notify_backup_completed.yaml": "file",
+          "notify_user_activity.yaml": "file",
+          "backup_daily.yaml": "file",
+          "user_login_failed_alert.yaml": "file",
+          "notify_integration_update.yaml": "file",
+          "CHANGELOG.md": "file",
+          "user_password_reset_workflow.yaml": "file",
+          "cloud_integration": {
+            "teams_phone_number_sync.yaml": "file",
+            "sharepoint_rfid_update.yaml": "file",
+            "teams_without_owner_check.yaml": "file",
+            "teamviewer_device_cleanup.yaml": "file",
+            "entra_sync_and_license.yaml": "file",
+            "intune_primary_user_set.yaml": "file",
+            "CHANGELOG.md": "file",
+            "sharepoint_guest_user_creation.yaml": "file"
           },
-          "notify_local": {
-            "manifest.json": "file",
-            "__init__.py": "file"
+          "user_lifecycle": {
+            "password_login_reminder.yaml": "file",
+            "user_delete.yaml": "file",
+            "user_disable.yaml": "file",
+            "user_update.yaml": "file",
+            "employee_rejoin.yaml": "file",
+            "2fa_reminder.yaml": "file",
+            "new_user_onboarding.yaml": "file",
+            "CHANGELOG.md": "file"
+          },
+          "examples": {
+            "workflow_database_storage.yaml": "file",
+            "CHANGELOG.md": "file"
+          },
+          "automation": {
+            "sharepoint_cleanup_old_files.yaml": "file",
+            "CHANGELOG.md": "file",
+            "auto_backup_on_schedule.yaml": "file"
+          },
+          "notifications": {
+            "ticket_system_notification.yaml": "file",
+            "works_council_report.yaml": "file",
+            "welcome_email.yaml": "file",
+            "error_report.yaml": "file",
+            "license_report.yaml": "file",
+            "it_training_report.yaml": "file",
+            "notify_chat_message.yaml": "file",
+            "manager_notification.yaml": "file",
+            "CHANGELOG.md": "file",
+            "welcome_new_employee.yaml": "file"
+          },
+          "special": {
+            "cost_center_check.yaml": "file",
+            "inactive_special_users_reminder.yaml": "file",
+            "external_vpn_account_creation.yaml": "file",
+            "guest_user_cleanup.yaml": "file",
+            "CHANGELOG.md": "file"
+          },
+          "maintenance": {
+            "update_check.yaml": "file",
+            "log_cleanup.yaml": "file",
+            "cache_management.yaml": "file",
+            "CHANGELOG.md": "file"
+          },
+          "data_sync": {
+            "sync_on_employee_change.yaml": "file",
+            "CHANGELOG.md": "file"
+          },
+          "monitoring": {
+            "sap_monitoring_alert.yaml": "file",
+            "CHANGELOG.md": "file"
+          },
+          "pre_checks": {
+            "hash_file_comparison.yaml": "file",
+            "pre_run_checks.yaml": "file",
+            "CHANGELOG.md": "file"
+          },
+          "security": {
+            "notify_on_failed_login.yaml": "file",
+            "CHANGELOG.md": "file"
           }
+        },
+        "scripts": {
+          "generate_demo_employees.py": "file",
+          "fix_missing_columns.py": "file",
+          "validate_manifests.py": "file",
+          "ad": {
+            "README.md": "file"
+          }
+        },
+        "plugins": {
+          "scheduler": {
+            "README.md": "file",
+            "manifest.json": "file",
+            "integration.py": "file",
+            "config.yaml": "file"
+          },
+          "ldap": {
+            "README.md": "file",
+            "manifest.json": "file",
+            "integration.py": "file",
+            "config.yaml": "file"
+          },
+          "data_sync": {
+            "README.md": "file",
+            "manifest.json": "file",
+            "integration.py": "file",
+            "config.yaml": "file"
+          },
+          "slack-notifications": {
+            "README.md": "file",
+            "manifest.json": "file",
+            "integration.py": "file"
+          }
+        },
+        "services": {
+          "event_bus.py": "file",
+          "ssl_service.py": "file",
+          "integration_base.py": "file",
+          "hr_sap_parser.py": "file",
+          "integration_loader.py": "file",
+          "requirements_installer.py": "file",
+          "ad_service.py": "file",
+          "hr_workflow_processor.py": "file",
+          "export_service.py": "file",
+          "powershell_integration.py": "file",
+          "sync_helper.py": "file",
+          "importer.py": "file",
+          "plugin_manager.py": "file",
+          "scheduler.py": "file",
+          "hr_file_tracker.py": "file",
+          "datasources.py": "file",
+          "version_manager.py": "file",
+          "workflow_engine.py": "file",
+          "repo_manager.py": "file",
+          "service_worker.py": "file",
+          "service_registry.py": "file",
+          "theme_helper.py": "file",
+          "settings_interpreter.py": "file"
+        },
+        "app": {
+          "schemas.py": "file",
+          "__init__.py": "file",
+          "templates": {
+            "email_header.html": "file",
+            "email_footer.html": "file",
+            "base_email.html": "file"
+          },
+          "core": {
+            "demo_integrations.py": "file",
+            "config.py": "file",
+            "demo_mode.py": "file",
+            "models.py": "file",
+            "logging_handler.py": "file",
+            "deps.py": "file",
+            "demo_security.py": "file",
+            "version.py": "file",
+            "security.py": "file",
+            "sso.py": "file",
+            "permissions.py": "file",
+            "__init__.py": "file",
+            "models_rbac_init.py": "file"
+          },
+          "routers": {
+            "ai.py": "file",
+            "chat.py": "file",
+            "notifications.py": "file",
+            "auth.py": "file",
+            "developer.py": "file",
+            "system.py": "file",
+            "plugins.py": "file",
+            "employees.py": "file",
+            "users.py": "file",
+            "public_config.py": "file",
+            "onprem.py": "file",
+            "analytics.py": "file",
+            "hr.py": "file",
+            "widgets.py": "file",
+            "admin.py.old": "file",
+            "__init__.py": "file",
+            "workflows.py": "file",
+            "admin": {
+              "updates.py": "file",
+              "ssl.py": "file",
+              "export_import.py": "file",
+              "database.py": "file",
+              "settings.py": "file",
+              "api_tokens.py": "file",
+              "sync.py": "file",
+              "logs.py": "file",
+              "backups.py": "file",
+              "server.py": "file",
+              "upload.py": "file",
+              "rbac.py": "file",
+              "motd.py": "file",
+              "common.py": "file",
+              "ad.py": "file",
+              "__init__.py": "file",
+              "integrations.py": "file"
+            }
+          },
+          "services": {
+            "log_broadcaster.py": "file",
+            "ai_service.py": "file",
+            "license.py": "file",
+            "ai_tools.py": "file",
+            "demo_traffic_generator.py": "file",
+            "migration_service.py": "file",
+            "notify_service.py": "file",
+            "ticket_system_helper.py": "file",
+            "startup_manager.py": "file",
+            "password_validator.py": "file",
+            "ai_provider.py": "file",
+            "interpreter_helper.py": "file",
+            "monitoring_helper.py": "file",
+            "theme_helper.py": "file",
+            "webauthn_service.py": "file",
+            "integration_registry.py": "file",
+            "mail.py": "file"
+          },
+          "system_integrations": {
+            "rbac": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "integration_store": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "store.py": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "database": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "disk_monitor": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "plugin_manager": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "manager.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "database_example_sqlite": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "admin_logs": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "logs.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "updater": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "intune": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file"
+            },
+            "ldap": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "ping": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "theme_light": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "manual": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "csv_sync": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "sync.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "email_scheduler": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "github": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "database_example_postgres": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "network_sync": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "sync.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "ssl": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "onprem_connector": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file"
+            },
+            "sap_r3": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "time_trigger": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "sso_helper": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "sso_helper.py": "file"
+            },
+            "code_executor_python": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "entra_sso": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "sso.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "mail_smtp": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "user_management": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "users.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "mail_sendgrid": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "wakeonlan": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "notify": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "theme_colorful": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "mail_ses": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "reporting": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "health_monitor": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "theme_dark": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "entra_management": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file"
+            },
+            "manual_entry": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "rest": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "passkey": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "mail_graph": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "mail_gmail": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "sap_java": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "logging": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "ssh": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "mail": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "microsoft_graph": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "backup": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "theme_black": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "employees": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "mail_mailgun": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "workflow_store": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "store.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "network_share": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "bot_interpreter": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "chat": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file"
+            },
+            "code_executor_powershell": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.ps1": "file",
+              "CHANGELOG.md": "file"
+            },
+            "sap": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "active_directory": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "integration.ps1": "file",
+              "CHANGELOG.md": "file"
+            },
+            "teams": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file"
+            },
+            "analytics": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "network_utils": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "network.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "ticket_system": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file",
+              "CHANGELOG.md": "file"
+            },
+            "teamviewer": {
+              "README.md": "file",
+              "manifest.json": "file",
+              "integration.py": "file"
+            }
+          },
+          "workflows": {
+            "legacy": {
+              "sharepoint_sync.py": "file",
+              "lifecycle.py": "file",
+              "licensing.py": "file"
+            }
+          }
+        },
+        "data": {
+          ".secret_key": "file"
         }
+      },
+      "images": {
+        "Dashboard.png": "file"
       },
       "frontend": {
-        "Dockerfile": "file",
-        "tsconfig.node.json": "file",
         "tailwind.config.js": "file",
-        ".dockerignore": "file",
+        "Dockerfile": "file",
         "index.html": "file",
-        "nginx-ssl.conf": "file",
-        "nginx.conf": "file",
-        "playwright.config.ts": "file",
-        "CLOUDFLARE_CACHE.md": "file",
-        "eslint.config.js": "file",
-        "package.json": "file",
-        ".nvmrc": "file",
-        "vite.config.ts": "file",
-        "tsconfig.json": "file",
         "postcss.config.js": "file",
+        "CLOUDFLARE_CACHE.md": "file",
+        "nginx-ssl.conf": "file",
+        "tsconfig.node.json": "file",
+        "vite.config.ts": "file",
+        ".nvmrc": "file",
+        "playwright.config.ts": "file",
+        "tsconfig.json": "file",
+        ".dockerignore": "file",
+        "eslint.config.js": "file",
+        "nginx.conf": "file",
+        "package.json": "file",
+        "src": {
+          "setupTests.ts": "file",
+          "vite-env.d.ts": "file",
+          "App.tsx": "file",
+          "App.test.tsx": "file",
+          "App.integration.test.tsx": "file",
+          "i18n.ts": "file",
+          "index.css": "file",
+          "react-markdown.d.ts": "file",
+          "config.ts": "file",
+          "main.tsx": "file",
+          "i18n.test.ts": "file",
+          "test": {
+            "setup.ts": "file"
+          },
+          "utils": {
+            "sessionStorage.ts": "file",
+            "webauthnUtils.ts": "file",
+            "greeting.ts": "file"
+          },
+          "components": {
+            "ConsentManager.tsx": "file",
+            "SourcesModal.tsx": "file",
+            "MaintenanceGuard.tsx": "file",
+            "DemoModeBanner.tsx": "file",
+            "IntegrationInfoModal.tsx": "file",
+            "OfflineDisabledButton.tsx": "file",
+            "DevWarningBanner.tsx": "file",
+            "IntegrationConfigModal.tsx": "file",
+            "Avatar.tsx": "file",
+            "MobileAppBanner.tsx": "file",
+            "IntegrationConfigUI.tsx": "file",
+            "LicenseModal.tsx": "file",
+            "DemoControlPanel.tsx": "file",
+            "OfflineModeBanner.tsx": "file",
+            "IntegrationUpdates.tsx": "file",
+            "AiAssistant.tsx": "file",
+            "MaintenanceGuard.test.tsx": "file",
+            "Toast.tsx": "file",
+            "OfflineBanner.tsx": "file",
+            "NotificationBar.tsx": "file",
+            "InteractiveBackground.tsx": "file",
+            "Layout.tsx": "file",
+            "WidgetsHelper.tsx": "file",
+            "ui": {
+              "PageTransition.tsx": "file"
+            },
+            "widgets": {
+              "Widget.tsx": "file",
+              "DraggableWidgetGrid.tsx": "file",
+              "WidgetGrid.tsx": "file"
+            },
+            "admin": {
+              "PluginManager.tsx": "file",
+              "UserManagement.tsx": "file"
+            },
+            "chat": {
+              "ChatList.tsx": "file",
+              "InternalAIChat.tsx": "file",
+              "ChatWindow.tsx": "file",
+              "SupportChat.tsx": "file"
+            }
+          },
+          "pages": {
+            "DeveloperTools.tsx": "file",
+            "Integrations.tsx": "file",
+            "Features.tsx": "file",
+            "WorkflowEditor.tsx": "file",
+            "Chat.tsx": "file",
+            "Docs.tsx": "file",
+            "RBACEditor.tsx": "file",
+            "Dashboard.tsx": "file",
+            "PrivacyPolicy.tsx": "file",
+            "CookiePolicy.tsx": "file",
+            "Maintenance.tsx": "file",
+            "EmployeeDetail.tsx": "file",
+            "Profile.tsx": "file",
+            "ResetPassword.tsx": "file",
+            "ForgotPassword.tsx": "file",
+            "UserManagement.tsx": "file",
+            "Maintenance.test.tsx": "file",
+            "DatabaseViewer.tsx": "file",
+            "Employees.tsx": "file",
+            "UserSettings.tsx": "file",
+            "ManualEntry.tsx": "file",
+            "ITDashboard.tsx": "file",
+            "HRDashboard.tsx": "file",
+            "Login.tsx": "file",
+            "Admin.tsx": "file"
+          },
+          "services": {
+            "NotificationService.ts": "file",
+            "ConnectionService.ts": "file",
+            "ConnectionService.test.ts": "file",
+            "OfflineStorageService.ts": "file",
+            "OfflineInterceptor.ts": "file",
+            "AnalyticsService.ts": "file"
+          },
+          "router": {
+            "index.tsx": "file"
+          },
+          "contexts": {
+            "ThemeContext.tsx": "file",
+            "NotificationContext.tsx": "file"
+          },
+          "hooks": {
+            "useOfflineMode.ts": "file",
+            "useSystemStatus.ts": "file",
+            "useOnlineStatus.ts": "file",
+            "useWidgetLayout.ts": "file",
+            "useSystemStatus.test.ts": "file"
+          }
+        },
+        "tests": {
+          "github-integration.spec.ts": "file",
+          "i18n.spec.ts": "file",
+          "app.spec.ts": "file",
+          "employees.spec.ts": "file",
+          "helpers.ts": "file",
+          "demo_integrations.spec.ts": "file",
+          "admin-features.spec.ts": "file",
+          "docs.spec.ts": "file",
+          "example.spec.ts": "file",
+          "auth.spec.ts": "file",
+          "verification_fixes.spec.ts": "file"
+        },
         "public": {
-          "icon-128x128.png": "file",
-          "site.webmanifest": "file",
-          "manifest.json": "file",
-          "icon-48x48.png": "file",
-          "icon-152x152.png": "file",
-          "icon-96x96.png": "file",
-          "icon-512x512.png": "file",
-          "icon-256x256.png": "file",
-          "icon-384x384.png": "file",
-          "icon-72x72.png": "file",
-          "icon-144x144.png": "file",
-          "sw.js": "file",
-          "icon-192x192.png": "file",
           "icons.json": "file",
+          "icon-256x256.png": "file",
+          "icon-96x96.png": "file",
+          "manifest.json": "file",
+          "icon-192x192.png": "file",
+          "sw.js": "file",
+          "icon-72x72.png": "file",
+          "icon-512x512.png": "file",
+          "icon-128x128.png": "file",
+          "icon-144x144.png": "file",
+          "icon-384x384.png": "file",
+          "icon-152x152.png": "file",
+          "site.webmanifest": "file",
+          "icon-48x48.png": "file",
+          "windows11": {
+            "Square44x44Logo.altform-lightunplated_targetsize-64.png": "file",
+            "SmallTile.scale-125.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-256.png": "file",
+            "LargeTile.scale-125.png": "file",
+            "Square44x44Logo.targetsize-256.png": "file",
+            "Square44x44Logo.targetsize-20.png": "file",
+            "StoreLogo.scale-100.png": "file",
+            "Square44x44Logo.scale-400.png": "file",
+            "Square150x150Logo.scale-100.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-32.png": "file",
+            "SmallTile.scale-150.png": "file",
+            "Square44x44Logo.targetsize-80.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-96.png": "file",
+            "Square44x44Logo.targetsize-96.png": "file",
+            "Square44x44Logo.scale-200.png": "file",
+            "Wide310x150Logo.scale-200.png": "file",
+            "LargeTile.scale-200.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-96.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-80.png": "file",
+            "SplashScreen.scale-200.png": "file",
+            "Square44x44Logo.scale-125.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-44.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-48.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-60.png": "file",
+            "Wide310x150Logo.scale-400.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-72.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-36.png": "file",
+            "Square44x44Logo.targetsize-72.png": "file",
+            "Wide310x150Logo.scale-150.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-36.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-16.png": "file",
+            "Square44x44Logo.targetsize-16.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-40.png": "file",
+            "SmallTile.scale-100.png": "file",
+            "Square44x44Logo.targetsize-44.png": "file",
+            "Square150x150Logo.scale-400.png": "file",
+            "SplashScreen.scale-100.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-40.png": "file",
+            "Square44x44Logo.scale-100.png": "file",
+            "SmallTile.scale-200.png": "file",
+            "Square44x44Logo.targetsize-30.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-60.png": "file",
+            "Square44x44Logo.targetsize-36.png": "file",
+            "Square44x44Logo.targetsize-64.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-20.png": "file",
+            "Square150x150Logo.scale-125.png": "file",
+            "StoreLogo.scale-200.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-64.png": "file",
+            "StoreLogo.scale-150.png": "file",
+            "StoreLogo.scale-400.png": "file",
+            "SplashScreen.scale-125.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-24.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-44.png": "file",
+            "Square150x150Logo.scale-150.png": "file",
+            "Wide310x150Logo.scale-125.png": "file",
+            "Wide310x150Logo.scale-100.png": "file",
+            "Square44x44Logo.targetsize-32.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-30.png": "file",
+            "LargeTile.scale-400.png": "file",
+            "SplashScreen.scale-150.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-32.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-72.png": "file",
+            "Square44x44Logo.targetsize-48.png": "file",
+            "LargeTile.scale-150.png": "file",
+            "Square44x44Logo.scale-150.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-256.png": "file",
+            "Square44x44Logo.targetsize-60.png": "file",
+            "StoreLogo.scale-125.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-80.png": "file",
+            "SmallTile.scale-400.png": "file",
+            "Square44x44Logo.targetsize-24.png": "file",
+            "Square44x44Logo.targetsize-40.png": "file",
+            "Square150x150Logo.scale-200.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-20.png": "file",
+            "SplashScreen.scale-400.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-30.png": "file",
+            "LargeTile.scale-100.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-48.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-16.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-24.png": "file"
+          },
+          "ios": {
+            "20.png": "file",
+            "40.png": "file",
+            "50.png": "file",
+            "100.png": "file",
+            "152.png": "file",
+            "192.png": "file",
+            "1024.png": "file",
+            "72.png": "file",
+            "32.png": "file",
+            "144.png": "file",
+            "29.png": "file",
+            "128.png": "file",
+            "87.png": "file",
+            "58.png": "file",
+            "180.png": "file",
+            "114.png": "file",
+            "120.png": "file",
+            "57.png": "file",
+            "512.png": "file",
+            "167.png": "file",
+            "76.png": "file",
+            "64.png": "file",
+            "256.png": "file",
+            "80.png": "file",
+            "60.png": "file",
+            "16.png": "file"
+          },
           "locales": {
             "en": {
               "translation.json": "file"
@@ -1033,260 +1106,187 @@
               "translation.json": "file"
             }
           },
-          "android": {
-            "android-launchericon-512-512.png": "file",
-            "android-launchericon-144-144.png": "file",
-            "android-launchericon-192-192.png": "file",
-            "android-launchericon-96-96.png": "file",
-            "android-launchericon-48-48.png": "file",
-            "android-launchericon-72-72.png": "file"
-          },
           "images": {
-            "favicon-96x96.png": "file",
+            "favicon.ico": "file",
             "web-app-manifest-512x512.png": "file",
-            "web-app-manifest-192x192.png": "file",
             "favicon.svg": "file",
-            "apple-touch-icon.png": "file",
             "faneX-ID.png": "file",
+            "web-app-manifest-192x192.png": "file",
             "logo.png": "file",
-            "favicon.ico": "file"
+            "apple-touch-icon.png": "file",
+            "favicon-96x96.png": "file"
           },
+          "android": {
+            "android-launchericon-48-48.png": "file",
+            "android-launchericon-192-192.png": "file",
+            "android-launchericon-512-512.png": "file",
+            "android-launchericon-96-96.png": "file",
+            "android-launchericon-144-144.png": "file",
+            "android-launchericon-72-72.png": "file"
+          }
+        }
+      },
+      "logos": {
+        "faneX-ID.png": "file",
+        "icons": {
+          "icons.json": "file",
+          "icon-256x256.png": "file",
+          "icon-96x96.png": "file",
+          "favicon.ico": "file",
+          "icon-192x192.png": "file",
+          "web-app-manifest-512x512.png": "file",
+          "favicon.svg": "file",
+          "icon-72x72.png": "file",
+          "icon-512x512.png": "file",
+          "icon-128x128.png": "file",
+          "icon-144x144.png": "file",
+          "icon-384x384.png": "file",
+          "icon-152x152.png": "file",
+          "site.webmanifest": "file",
+          "web-app-manifest-192x192.png": "file",
+          "icon-48x48.png": "file",
+          "apple-touch-icon.png": "file",
+          "favicon-96x96.png": "file",
           "windows11": {
-            "Square44x44Logo.altform-unplated_targetsize-48.png": "file",
-            "StoreLogo.scale-400.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-44.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-72.png": "file",
-            "Square44x44Logo.targetsize-20.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-20.png": "file",
-            "Square44x44Logo.scale-150.png": "file",
-            "LargeTile.scale-150.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-80.png": "file",
-            "Square44x44Logo.targetsize-48.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-60.png": "file",
-            "SplashScreen.scale-400.png": "file",
-            "LargeTile.scale-100.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-16.png": "file",
-            "Square44x44Logo.scale-200.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-44.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-64.png": "file",
-            "Square44x44Logo.targetsize-64.png": "file",
-            "StoreLogo.scale-200.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-40.png": "file",
-            "Wide310x150Logo.scale-150.png": "file",
-            "Wide310x150Logo.scale-400.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-36.png": "file",
-            "StoreLogo.scale-125.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-60.png": "file",
-            "Square44x44Logo.targetsize-44.png": "file",
-            "LargeTile.scale-125.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-36.png": "file",
-            "Square150x150Logo.scale-400.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-256.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-48.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-40.png": "file",
-            "Square150x150Logo.scale-125.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-32.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-16.png": "file",
-            "SmallTile.scale-150.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-30.png": "file",
-            "LargeTile.scale-400.png": "file",
-            "Wide310x150Logo.scale-200.png": "file",
-            "SplashScreen.scale-100.png": "file",
-            "Square150x150Logo.scale-100.png": "file",
-            "Square44x44Logo.scale-100.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-96.png": "file",
-            "SmallTile.scale-100.png": "file",
-            "Square44x44Logo.targetsize-40.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-30.png": "file",
-            "Square44x44Logo.targetsize-72.png": "file",
-            "Square44x44Logo.targetsize-30.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-24.png": "file",
-            "Square44x44Logo.scale-125.png": "file",
-            "SplashScreen.scale-150.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-20.png": "file",
-            "Square44x44Logo.altform-unplated_targetsize-72.png": "file",
-            "LargeTile.scale-200.png": "file",
-            "Square44x44Logo.targetsize-256.png": "file",
-            "Square150x150Logo.scale-150.png": "file",
-            "SmallTile.scale-400.png": "file",
-            "SplashScreen.scale-200.png": "file",
-            "Square44x44Logo.targetsize-24.png": "file",
             "Square44x44Logo.altform-lightunplated_targetsize-64.png": "file",
-            "SplashScreen.scale-125.png": "file",
-            "Square44x44Logo.targetsize-16.png": "file",
-            "Square44x44Logo.targetsize-60.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-256.png": "file",
-            "Square44x44Logo.targetsize-32.png": "file",
+            "SmallTile.scale-125.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-256.png": "file",
+            "LargeTile.scale-125.png": "file",
+            "Square44x44Logo.targetsize-256.png": "file",
+            "Square44x44Logo.targetsize-20.png": "file",
             "StoreLogo.scale-100.png": "file",
             "Square44x44Logo.scale-400.png": "file",
-            "SmallTile.scale-200.png": "file",
-            "Square150x150Logo.scale-200.png": "file",
-            "StoreLogo.scale-150.png": "file",
-            "SmallTile.scale-125.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-32.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-24.png": "file",
+            "Square150x150Logo.scale-100.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-32.png": "file",
+            "SmallTile.scale-150.png": "file",
             "Square44x44Logo.targetsize-80.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-96.png": "file",
             "Square44x44Logo.targetsize-96.png": "file",
-            "Square44x44Logo.altform-lightunplated_targetsize-80.png": "file",
-            "Wide310x150Logo.scale-100.png": "file",
+            "Square44x44Logo.scale-200.png": "file",
+            "Wide310x150Logo.scale-200.png": "file",
+            "LargeTile.scale-200.png": "file",
             "Square44x44Logo.altform-unplated_targetsize-96.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-80.png": "file",
+            "SplashScreen.scale-200.png": "file",
+            "Square44x44Logo.scale-125.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-44.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-48.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-60.png": "file",
+            "Wide310x150Logo.scale-400.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-72.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-36.png": "file",
+            "Square44x44Logo.targetsize-72.png": "file",
+            "Wide310x150Logo.scale-150.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-36.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-16.png": "file",
+            "Square44x44Logo.targetsize-16.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-40.png": "file",
+            "SmallTile.scale-100.png": "file",
+            "Square44x44Logo.targetsize-44.png": "file",
+            "Square150x150Logo.scale-400.png": "file",
+            "SplashScreen.scale-100.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-40.png": "file",
+            "Square44x44Logo.scale-100.png": "file",
+            "SmallTile.scale-200.png": "file",
+            "Square44x44Logo.targetsize-30.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-60.png": "file",
             "Square44x44Logo.targetsize-36.png": "file",
-            "Wide310x150Logo.scale-125.png": "file"
+            "Square44x44Logo.targetsize-64.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-20.png": "file",
+            "Square150x150Logo.scale-125.png": "file",
+            "StoreLogo.scale-200.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-64.png": "file",
+            "StoreLogo.scale-150.png": "file",
+            "StoreLogo.scale-400.png": "file",
+            "SplashScreen.scale-125.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-24.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-44.png": "file",
+            "Square150x150Logo.scale-150.png": "file",
+            "Wide310x150Logo.scale-125.png": "file",
+            "Wide310x150Logo.scale-100.png": "file",
+            "Square44x44Logo.targetsize-32.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-30.png": "file",
+            "LargeTile.scale-400.png": "file",
+            "SplashScreen.scale-150.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-32.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-72.png": "file",
+            "Square44x44Logo.targetsize-48.png": "file",
+            "LargeTile.scale-150.png": "file",
+            "Square44x44Logo.scale-150.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-256.png": "file",
+            "Square44x44Logo.targetsize-60.png": "file",
+            "StoreLogo.scale-125.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-80.png": "file",
+            "SmallTile.scale-400.png": "file",
+            "Square44x44Logo.targetsize-24.png": "file",
+            "Square44x44Logo.targetsize-40.png": "file",
+            "Square150x150Logo.scale-200.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-20.png": "file",
+            "SplashScreen.scale-400.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-30.png": "file",
+            "LargeTile.scale-100.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-48.png": "file",
+            "Square44x44Logo.altform-lightunplated_targetsize-16.png": "file",
+            "Square44x44Logo.altform-unplated_targetsize-24.png": "file"
           },
           "ios": {
-            "29.png": "file",
-            "64.png": "file",
-            "114.png": "file",
-            "80.png": "file",
-            "87.png": "file",
-            "144.png": "file",
-            "180.png": "file",
-            "152.png": "file",
-            "60.png": "file",
-            "57.png": "file",
-            "256.png": "file",
-            "50.png": "file",
-            "167.png": "file",
-            "1024.png": "file",
-            "120.png": "file",
-            "40.png": "file",
-            "32.png": "file",
-            "192.png": "file",
-            "58.png": "file",
-            "16.png": "file",
-            "76.png": "file",
             "20.png": "file",
+            "40.png": "file",
+            "50.png": "file",
             "100.png": "file",
-            "512.png": "file",
+            "152.png": "file",
+            "192.png": "file",
+            "1024.png": "file",
+            "72.png": "file",
+            "32.png": "file",
+            "144.png": "file",
+            "29.png": "file",
             "128.png": "file",
-            "72.png": "file"
+            "87.png": "file",
+            "58.png": "file",
+            "180.png": "file",
+            "114.png": "file",
+            "120.png": "file",
+            "57.png": "file",
+            "512.png": "file",
+            "167.png": "file",
+            "76.png": "file",
+            "64.png": "file",
+            "256.png": "file",
+            "80.png": "file",
+            "60.png": "file",
+            "16.png": "file"
+          },
+          "android": {
+            "android-launchericon-48-48.png": "file",
+            "android-launchericon-192-192.png": "file",
+            "android-launchericon-512-512.png": "file",
+            "android-launchericon-96-96.png": "file",
+            "android-launchericon-144-144.png": "file",
+            "android-launchericon-72-72.png": "file"
+          }
+        }
+      },
+      "workflows": {
+        "system": {
+          "notify_on_login.yaml": "file"
+        }
+      },
+      "integrations": {
+        "system": {
+          "notify_local": {
+            "manifest.json": "file",
+            "__init__.py": "file"
+          },
+          "notify_browser": {
+            "manifest.json": "file",
+            "__init__.py": "file"
           }
         },
-        "tests": {
-          "demo_integrations.spec.ts": "file",
-          "docs.spec.ts": "file",
-          "verification_fixes.spec.ts": "file",
-          "auth.spec.ts": "file",
-          "example.spec.ts": "file",
-          "github-integration.spec.ts": "file",
-          "app.spec.ts": "file",
-          "admin-features.spec.ts": "file",
-          "i18n.spec.ts": "file",
-          "helpers.ts": "file",
-          "employees.spec.ts": "file"
-        },
-        "src": {
-          "App.test.tsx": "file",
-          "setupTests.ts": "file",
-          "vite-env.d.ts": "file",
-          "index.css": "file",
-          "react-markdown.d.ts": "file",
-          "App.integration.test.tsx": "file",
-          "main.tsx": "file",
-          "i18n.ts": "file",
-          "config.ts": "file",
-          "i18n.test.ts": "file",
-          "App.tsx": "file",
-          "utils": {
-            "greeting.ts": "file",
-            "sessionStorage.ts": "file",
-            "webauthnUtils.ts": "file"
-          },
-          "router": {
-            "index.tsx": "file"
-          },
-          "services": {
-            "OfflineStorageService.ts": "file",
-            "OfflineInterceptor.ts": "file",
-            "ConnectionService.ts": "file",
-            "NotificationService.ts": "file",
-            "AnalyticsService.ts": "file",
-            "ConnectionService.test.ts": "file"
-          },
-          "pages": {
-            "Login.tsx": "file",
-            "ResetPassword.tsx": "file",
-            "DeveloperTools.tsx": "file",
-            "ForgotPassword.tsx": "file",
-            "RBACEditor.tsx": "file",
-            "UserSettings.tsx": "file",
-            "Employees.tsx": "file",
-            "ManualEntry.tsx": "file",
-            "Integrations.tsx": "file",
-            "PrivacyPolicy.tsx": "file",
-            "CookiePolicy.tsx": "file",
-            "Maintenance.test.tsx": "file",
-            "DatabaseViewer.tsx": "file",
-            "Dashboard.tsx": "file",
-            "Maintenance.tsx": "file",
-            "Chat.tsx": "file",
-            "EmployeeDetail.tsx": "file",
-            "WorkflowEditor.tsx": "file",
-            "Admin.tsx": "file",
-            "Features.tsx": "file",
-            "UserManagement.tsx": "file",
-            "ITDashboard.tsx": "file",
-            "Docs.tsx": "file",
-            "HRDashboard.tsx": "file",
-            "Profile.tsx": "file"
-          },
-          "components": {
-            "OfflineModeBanner.tsx": "file",
-            "Avatar.tsx": "file",
-            "SourcesModal.tsx": "file",
-            "DemoModeBanner.tsx": "file",
-            "IntegrationConfigModal.tsx": "file",
-            "Toast.tsx": "file",
-            "MobileAppBanner.tsx": "file",
-            "IntegrationInfoModal.tsx": "file",
-            "WidgetsHelper.tsx": "file",
-            "Layout.tsx": "file",
-            "ConsentManager.tsx": "file",
-            "DemoControlPanel.tsx": "file",
-            "IntegrationConfigUI.tsx": "file",
-            "NotificationBar.tsx": "file",
-            "DevWarningBanner.tsx": "file",
-            "OfflineBanner.tsx": "file",
-            "MaintenanceGuard.tsx": "file",
-            "AiAssistant.tsx": "file",
-            "InteractiveBackground.tsx": "file",
-            "OfflineDisabledButton.tsx": "file",
-            "MaintenanceGuard.test.tsx": "file",
-            "IntegrationUpdates.tsx": "file",
-            "LicenseModal.tsx": "file",
-            "admin": {
-              "PluginManager.tsx": "file",
-              "UserManagement.tsx": "file"
-            },
-            "ui": {
-              "PageTransition.tsx": "file"
-            },
-            "widgets": {
-              "DraggableWidgetGrid.tsx": "file",
-              "WidgetGrid.tsx": "file",
-              "Widget.tsx": "file"
-            },
-            "chat": {
-              "SupportChat.tsx": "file",
-              "ChatList.tsx": "file",
-              "ChatWindow.tsx": "file",
-              "InternalAIChat.tsx": "file"
-            }
-          },
-          "hooks": {
-            "useSystemStatus.ts": "file",
-            "useOnlineStatus.ts": "file",
-            "useOfflineMode.ts": "file",
-            "useWidgetLayout.ts": "file",
-            "useSystemStatus.test.ts": "file"
-          },
-          "test": {
-            "setup.ts": "file"
-          },
-          "contexts": {
-            "NotificationContext.tsx": "file",
-            "ThemeContext.tsx": "file"
-          }
+        "microsoft_teams_bot": {
+          "README.md": "file",
+          "manifest.json": "file",
+          "integration.py": "file"
         }
       }
     },
@@ -2203,220 +2203,42 @@
       ],
       "api_endpoints": [
         {
-          "function": "create_user",
-          "method": "POST",
-          "path": "/",
-          "args": [
-            "user",
-            "db",
-            "current_user"
-          ],
-          "doc": null
-        },
-        {
-          "function": "read_users",
+          "function": "get_notifications",
           "method": "GET",
           "path": "/",
           "args": [
-            "skip",
-            "limit",
-            "db",
             "current_user"
           ],
-          "doc": null
+          "doc": "Get all active notifications."
         },
         {
-          "function": "delete_user",
-          "method": "DELETE",
-          "path": "/{user_id}",
-          "args": [
-            "user_id",
-            "db",
-            "current_user"
-          ],
-          "doc": null
-        },
-        {
-          "function": "update_user",
-          "method": "PUT",
-          "path": "/{user_id}",
-          "args": [
-            "user_id",
-            "user_update",
-            "db",
-            "current_user"
-          ],
-          "doc": null
-        },
-        {
-          "function": "get_current_user_info",
-          "method": "GET",
-          "path": "/me",
-          "args": [
-            "current_user",
-            "db"
-          ],
-          "doc": "Get current user's information including preferences."
-        },
-        {
-          "function": "update_current_user",
-          "method": "PUT",
-          "path": "/me",
-          "args": [
-            "user_update",
-            "current_user",
-            "db"
-          ],
-          "doc": "Update current user's information and preferences."
-        },
-        {
-          "function": "get_user_permissions",
-          "method": "GET",
-          "path": "/permissions",
-          "args": [
-            "current_user"
-          ],
-          "doc": "Get list of permissions for the current user."
-        },
-        {
-          "function": "get_permissions_overview",
-          "method": "GET",
-          "path": "/permissions/overview",
-          "args": [
-            "current_user"
-          ],
-          "doc": "Get overview of all roles and permissions in the system. Uses database for dynamic data."
-        },
-        {
-          "function": "delete_avatar",
-          "method": "DELETE",
-          "path": "/me/avatar",
-          "args": [
-            "current_user",
-            "db"
-          ],
-          "doc": "Delete user's custom avatar and revert to default."
-        },
-        {
-          "function": "get_vscode_status",
-          "method": "GET",
-          "path": "/vscode/status",
-          "args": [
-            "username"
-          ],
-          "doc": "Get VSCode Server status."
-        },
-        {
-          "function": "toggle_vscode_server",
+          "function": "dismiss_notification",
           "method": "POST",
-          "path": "/vscode/toggle",
+          "path": "/dismiss/{notification_id}",
+          "args": [
+            "notification_id",
+            "current_user"
+          ],
+          "doc": "Dismiss a specific notification."
+        },
+        {
+          "function": "clear_all_notifications",
+          "method": "POST",
+          "path": "/clear",
+          "args": [
+            "current_user"
+          ],
+          "doc": "Clear all notifications."
+        },
+        {
+          "function": "test_notification",
+          "method": "POST",
+          "path": "/test",
           "args": [
             "payload",
-            "username",
-            "db"
+            "current_user"
           ],
-          "doc": "Enable or disable VSCode Server."
-        },
-        {
-          "function": "test_integration",
-          "method": "POST",
-          "path": "/test/integration",
-          "args": [
-            "payload",
-            "username"
-          ],
-          "doc": "Test an integration."
-        },
-        {
-          "function": "test_workflow",
-          "method": "POST",
-          "path": "/test/workflow",
-          "args": [
-            "payload",
-            "username"
-          ],
-          "doc": "Test a workflow."
-        },
-        {
-          "function": "render_template",
-          "method": "POST",
-          "path": "/templates/render",
-          "args": [
-            "payload",
-            "username"
-          ],
-          "doc": "Render a Jinja2 template.\nPayload: {\"template\": \"{{ ... }}\", \"variables\": {}}"
-        },
-        {
-          "function": "list_workflows",
-          "method": "GET",
-          "path": "/",
-          "args": [
-            "category",
-            "tags",
-            "required_capabilities",
-            "enabled_only",
-            "system_only",
-            "search"
-          ],
-          "doc": "List workflows with optional filtering."
-        },
-        {
-          "function": "get_categories",
-          "method": "GET",
-          "path": "/categories",
-          "args": [],
-          "doc": "Get all workflow categories."
-        },
-        {
-          "function": "get_tags",
-          "method": "GET",
-          "path": "/tags",
-          "args": [],
-          "doc": "Get all workflow tags."
-        },
-        {
-          "function": "create_workflow",
-          "method": "POST",
-          "path": "/",
-          "args": [
-            "data"
-          ],
-          "doc": null
-        },
-        {
-          "function": "delete_workflow",
-          "method": "DELETE",
-          "path": "/{workflow_id}",
-          "args": [
-            "workflow_id"
-          ],
-          "doc": null
-        },
-        {
-          "function": "reload_workflows",
-          "method": "POST",
-          "path": "/reload",
-          "args": [],
-          "doc": null
-        },
-        {
-          "function": "list_workflow_store",
-          "method": "GET",
-          "path": "/store",
-          "args": [
-            "refresh"
-          ],
-          "doc": "List available workflows from the store."
-        },
-        {
-          "function": "install_workflow_from_store",
-          "method": "POST",
-          "path": "/store/install",
-          "args": [
-            "data"
-          ],
-          "doc": "Install a workflow from the store cache to custom workflows."
+          "doc": "Test creating a notification (Builder/Dev tool helper)."
         },
         {
           "function": "verify_2fa_login",
@@ -2522,70 +2344,102 @@
           "doc": "Returns a list of available authentication providers."
         },
         {
-          "function": "track_event",
-          "method": "POST",
-          "path": "/track",
-          "args": [
-            "event",
-            "background_tasks",
-            "db"
-          ],
-          "doc": "Track an analytics event."
-        },
-        {
-          "function": "get_analytics_stats",
+          "function": "get_vscode_status",
           "method": "GET",
-          "path": "/stats",
+          "path": "/vscode/status",
           "args": [
-            "days",
-            "db"
+            "username"
           ],
-          "doc": "Get basic analytics stats for the dashboard."
+          "doc": "Get VSCode Server status."
         },
         {
-          "function": "get_public_license",
-          "method": "GET",
-          "path": "/public-config/license",
-          "args": [],
-          "doc": "Returns the project license information.\nPublic endpoint, no auth required (so it can be shown on Login page)."
-        },
-        {
-          "function": "get_notifications",
-          "method": "GET",
-          "path": "/",
-          "args": [
-            "current_user"
-          ],
-          "doc": "Get all active notifications."
-        },
-        {
-          "function": "dismiss_notification",
+          "function": "toggle_vscode_server",
           "method": "POST",
-          "path": "/dismiss/{notification_id}",
-          "args": [
-            "notification_id",
-            "current_user"
-          ],
-          "doc": "Dismiss a specific notification."
-        },
-        {
-          "function": "clear_all_notifications",
-          "method": "POST",
-          "path": "/clear",
-          "args": [
-            "current_user"
-          ],
-          "doc": "Clear all notifications."
-        },
-        {
-          "function": "test_notification",
-          "method": "POST",
-          "path": "/test",
+          "path": "/vscode/toggle",
           "args": [
             "payload",
-            "current_user"
+            "username",
+            "db"
           ],
-          "doc": "Test creating a notification (Builder/Dev tool helper)."
+          "doc": "Enable or disable VSCode Server."
+        },
+        {
+          "function": "test_integration",
+          "method": "POST",
+          "path": "/test/integration",
+          "args": [
+            "payload",
+            "username"
+          ],
+          "doc": "Test an integration."
+        },
+        {
+          "function": "test_workflow",
+          "method": "POST",
+          "path": "/test/workflow",
+          "args": [
+            "payload",
+            "username"
+          ],
+          "doc": "Test a workflow."
+        },
+        {
+          "function": "render_template",
+          "method": "POST",
+          "path": "/templates/render",
+          "args": [
+            "payload",
+            "username"
+          ],
+          "doc": "Render a Jinja2 template.\nPayload: {\"template\": \"{{ ... }}\", \"variables\": {}}"
+        },
+        {
+          "function": "start_demo_traffic",
+          "method": "POST",
+          "path": "/demo/traffic/start",
+          "args": [
+            "mode"
+          ],
+          "doc": "Start the demo traffic simulation.\nmode: 'local' (simulation only) or 'persistent' (db writes)"
+        },
+        {
+          "function": "stop_demo_traffic",
+          "method": "POST",
+          "path": "/demo/traffic/stop",
+          "args": [],
+          "doc": "Stop the demo traffic simulation."
+        },
+        {
+          "function": "get_demo_traffic_status",
+          "method": "GET",
+          "path": "/demo/traffic/status",
+          "args": [],
+          "doc": "Get the current status of traffic simulation."
+        },
+        {
+          "function": "get_demo_traffic_errors",
+          "method": "GET",
+          "path": "/demo/traffic/errors",
+          "args": [],
+          "doc": "Get captured errors from the simulation."
+        },
+        {
+          "function": "get_system_status",
+          "method": "GET",
+          "path": "/status",
+          "args": [
+            "db"
+          ],
+          "doc": null
+        },
+        {
+          "function": "validate_password",
+          "method": "POST",
+          "path": "/validate-password",
+          "args": [
+            "req"
+          ],
+          "doc": "Validate a password against security requirements.\nReturns validation result with errors and warnings."
         },
         {
           "function": "list_installed_integrations",
@@ -2809,52 +2663,127 @@
           "doc": null
         },
         {
-          "function": "start_demo_traffic",
+          "function": "create_user",
           "method": "POST",
-          "path": "/demo/traffic/start",
+          "path": "/",
           "args": [
-            "mode"
-          ],
-          "doc": "Start the demo traffic simulation.\nmode: 'local' (simulation only) or 'persistent' (db writes)"
-        },
-        {
-          "function": "stop_demo_traffic",
-          "method": "POST",
-          "path": "/demo/traffic/stop",
-          "args": [],
-          "doc": "Stop the demo traffic simulation."
-        },
-        {
-          "function": "get_demo_traffic_status",
-          "method": "GET",
-          "path": "/demo/traffic/status",
-          "args": [],
-          "doc": "Get the current status of traffic simulation."
-        },
-        {
-          "function": "get_demo_traffic_errors",
-          "method": "GET",
-          "path": "/demo/traffic/errors",
-          "args": [],
-          "doc": "Get captured errors from the simulation."
-        },
-        {
-          "function": "get_system_status",
-          "method": "GET",
-          "path": "/status",
-          "args": [
-            "db"
+            "user",
+            "db",
+            "current_user"
           ],
           "doc": null
         },
         {
-          "function": "validate_password",
-          "method": "POST",
-          "path": "/validate-password",
+          "function": "read_users",
+          "method": "GET",
+          "path": "/",
           "args": [
-            "req"
+            "skip",
+            "limit",
+            "db",
+            "current_user"
           ],
-          "doc": "Validate a password against security requirements.\nReturns validation result with errors and warnings."
+          "doc": null
+        },
+        {
+          "function": "delete_user",
+          "method": "DELETE",
+          "path": "/{user_id}",
+          "args": [
+            "user_id",
+            "db",
+            "current_user"
+          ],
+          "doc": null
+        },
+        {
+          "function": "update_user",
+          "method": "PUT",
+          "path": "/{user_id}",
+          "args": [
+            "user_id",
+            "user_update",
+            "db",
+            "current_user"
+          ],
+          "doc": null
+        },
+        {
+          "function": "get_current_user_info",
+          "method": "GET",
+          "path": "/me",
+          "args": [
+            "current_user",
+            "db"
+          ],
+          "doc": "Get current user's information including preferences."
+        },
+        {
+          "function": "update_current_user",
+          "method": "PUT",
+          "path": "/me",
+          "args": [
+            "user_update",
+            "current_user",
+            "db"
+          ],
+          "doc": "Update current user's information and preferences."
+        },
+        {
+          "function": "get_user_permissions",
+          "method": "GET",
+          "path": "/permissions",
+          "args": [
+            "current_user"
+          ],
+          "doc": "Get list of permissions for the current user."
+        },
+        {
+          "function": "get_permissions_overview",
+          "method": "GET",
+          "path": "/permissions/overview",
+          "args": [
+            "current_user"
+          ],
+          "doc": "Get overview of all roles and permissions in the system. Uses database for dynamic data."
+        },
+        {
+          "function": "delete_avatar",
+          "method": "DELETE",
+          "path": "/me/avatar",
+          "args": [
+            "current_user",
+            "db"
+          ],
+          "doc": "Delete user's custom avatar and revert to default."
+        },
+        {
+          "function": "get_public_license",
+          "method": "GET",
+          "path": "/public-config/license",
+          "args": [],
+          "doc": "Returns the project license information.\nPublic endpoint, no auth required (so it can be shown on Login page)."
+        },
+        {
+          "function": "track_event",
+          "method": "POST",
+          "path": "/track",
+          "args": [
+            "event",
+            "background_tasks",
+            "db"
+          ],
+          "doc": "Track an analytics event."
+        },
+        {
+          "function": "get_analytics_stats",
+          "method": "GET",
+          "path": "/stats",
+          "args": [
+            "days",
+            "db"
+          ],
+          "doc": "Get basic analytics stats for the dashboard."
         },
         {
           "function": "get_sync_jobs",
@@ -2928,24 +2857,75 @@
           "doc": "Sync-Historie der letzten N Tage"
         },
         {
-          "function": "create_export",
-          "method": "POST",
-          "path": "/export",
+          "function": "list_workflows",
+          "method": "GET",
+          "path": "/",
           "args": [
-            "req",
-            "db"
+            "category",
+            "tags",
+            "required_capabilities",
+            "enabled_only",
+            "system_only",
+            "search"
           ],
-          "doc": "Create an encrypted export package with settings and/or database.\nReturns a downloadable ZIP file."
+          "doc": "List workflows with optional filtering."
         },
         {
-          "function": "restart_server",
+          "function": "get_categories",
+          "method": "GET",
+          "path": "/categories",
+          "args": [],
+          "doc": "Get all workflow categories."
+        },
+        {
+          "function": "get_tags",
+          "method": "GET",
+          "path": "/tags",
+          "args": [],
+          "doc": "Get all workflow tags."
+        },
+        {
+          "function": "create_workflow",
           "method": "POST",
-          "path": "/restart",
+          "path": "/",
           "args": [
-            "current_user",
-            "db"
+            "data"
           ],
-          "doc": "Restart the server. Admin only."
+          "doc": null
+        },
+        {
+          "function": "delete_workflow",
+          "method": "DELETE",
+          "path": "/{workflow_id}",
+          "args": [
+            "workflow_id"
+          ],
+          "doc": null
+        },
+        {
+          "function": "reload_workflows",
+          "method": "POST",
+          "path": "/reload",
+          "args": [],
+          "doc": null
+        },
+        {
+          "function": "list_workflow_store",
+          "method": "GET",
+          "path": "/store",
+          "args": [
+            "refresh"
+          ],
+          "doc": "List available workflows from the store."
+        },
+        {
+          "function": "install_workflow_from_store",
+          "method": "POST",
+          "path": "/store/install",
+          "args": [
+            "data"
+          ],
+          "doc": "Install a workflow from the store cache to custom workflows."
         },
         {
           "function": "trigger_update",
@@ -2964,54 +2944,6 @@
             "channel"
           ],
           "doc": "Fetches releases from GitHub based on channel using updater integration."
-        },
-        {
-          "function": "get_sync_providers",
-          "method": "GET",
-          "path": "/providers",
-          "args": [],
-          "doc": "Returns a list of available sync providers."
-        },
-        {
-          "function": "create_or_update_motd",
-          "method": "POST",
-          "path": "",
-          "args": [
-            "request",
-            "db",
-            "current_user"
-          ],
-          "doc": "Create or update the Message of the Day. Admin only."
-        },
-        {
-          "function": "get_motd",
-          "method": "GET",
-          "path": "",
-          "args": [
-            "db",
-            "current_user"
-          ],
-          "doc": "Get the current Message of the Day. Admin only."
-        },
-        {
-          "function": "send_motd_to_admins",
-          "method": "POST",
-          "path": "/send",
-          "args": [
-            "db",
-            "current_user"
-          ],
-          "doc": "Send the current MOTD as a notification to all admin users. Admin only."
-        },
-        {
-          "function": "delete_motd",
-          "method": "DELETE",
-          "path": "",
-          "args": [
-            "db",
-            "current_user"
-          ],
-          "doc": "Delete the Message of the Day. Admin only."
         },
         {
           "function": "get_ssl_status",
@@ -3038,6 +2970,40 @@
             "db"
           ],
           "doc": "Disable SSL and remove certificates."
+        },
+        {
+          "function": "create_export",
+          "method": "POST",
+          "path": "/export",
+          "args": [
+            "req",
+            "db"
+          ],
+          "doc": "Create an encrypted export package with settings and/or database.\nReturns a downloadable ZIP file."
+        },
+        {
+          "function": "get_database_tables",
+          "method": "GET",
+          "path": "/tables",
+          "args": [
+            "current_user",
+            "db"
+          ],
+          "doc": "Get list of all database tables. Admin and HR only."
+        },
+        {
+          "function": "get_table_data",
+          "method": "GET",
+          "path": "/table/{table_name}",
+          "args": [
+            "table_name",
+            "page",
+            "limit",
+            "show_sensitive",
+            "current_user",
+            "db"
+          ],
+          "doc": "Get data from a specific table. Admin and HR only."
         },
         {
           "function": "get_settings",
@@ -3071,78 +3037,55 @@
           "doc": "Request admin password reset."
         },
         {
-          "function": "get_database_tables",
+          "function": "list_api_tokens",
           "method": "GET",
-          "path": "/tables",
+          "path": "",
           "args": [
-            "current_user",
-            "db"
+            "db",
+            "current_user"
           ],
-          "doc": "Get list of all database tables. Admin and HR only."
+          "doc": "List all API tokens."
         },
         {
-          "function": "get_table_data",
-          "method": "GET",
-          "path": "/table/{table_name}",
-          "args": [
-            "table_name",
-            "page",
-            "limit",
-            "show_sensitive",
-            "current_user",
-            "db"
-          ],
-          "doc": "Get data from a specific table. Admin and HR only."
-        },
-        {
-          "function": "test_ad_connection",
+          "function": "create_api_token",
           "method": "POST",
-          "path": "/test",
+          "path": "",
           "args": [
-            "db"
+            "request",
+            "db",
+            "current_user"
           ],
-          "doc": "Test Active Directory connection with current settings."
+          "doc": "Create a new API token."
         },
         {
-          "function": "get_ad_user",
+          "function": "update_api_token",
+          "method": "PUT",
+          "path": "/{token_id}",
+          "args": [
+            "token_id",
+            "request",
+            "db",
+            "current_user"
+          ],
+          "doc": "Update an API token."
+        },
+        {
+          "function": "delete_api_token",
+          "method": "DELETE",
+          "path": "/{token_id}",
+          "args": [
+            "token_id",
+            "db",
+            "current_user"
+          ],
+          "doc": "Delete an API token."
+        },
+        {
+          "function": "get_sync_providers",
           "method": "GET",
-          "path": "/user/{username}",
-          "args": [
-            "username",
-            "db"
-          ],
-          "doc": "Get an AD user by username."
-        },
-        {
-          "function": "search_ad_users",
-          "method": "GET",
-          "path": "/search",
-          "args": [
-            "q",
-            "limit",
-            "db"
-          ],
-          "doc": "Search for AD users."
-        },
-        {
-          "function": "disable_ad_user",
-          "method": "POST",
-          "path": "/user/disable",
-          "args": [
-            "req",
-            "db"
-          ],
-          "doc": "Disable an AD user account."
-        },
-        {
-          "function": "enable_ad_user",
-          "method": "POST",
-          "path": "/user/enable",
-          "args": [
-            "req",
-            "db"
-          ],
-          "doc": "Enable an AD user account."
+          "path": "/providers",
+          "args": [],
+          "doc": "Returns a list of available sync providers."
         },
         {
           "function": "get_logs",
@@ -3190,48 +3133,14 @@
           "doc": "List all backup files."
         },
         {
-          "function": "list_api_tokens",
-          "method": "GET",
-          "path": "",
-          "args": [
-            "db",
-            "current_user"
-          ],
-          "doc": "List all API tokens."
-        },
-        {
-          "function": "create_api_token",
+          "function": "restart_server",
           "method": "POST",
-          "path": "",
+          "path": "/restart",
           "args": [
-            "request",
-            "db",
-            "current_user"
+            "current_user",
+            "db"
           ],
-          "doc": "Create a new API token."
-        },
-        {
-          "function": "update_api_token",
-          "method": "PUT",
-          "path": "/{token_id}",
-          "args": [
-            "token_id",
-            "request",
-            "db",
-            "current_user"
-          ],
-          "doc": "Update an API token."
-        },
-        {
-          "function": "delete_api_token",
-          "method": "DELETE",
-          "path": "/{token_id}",
-          "args": [
-            "token_id",
-            "db",
-            "current_user"
-          ],
-          "doc": "Delete an API token."
+          "doc": "Restart the server. Admin only."
         },
         {
           "function": "get_roles",
@@ -3400,6 +3309,97 @@
           "doc": "Get welcome message for current user."
         },
         {
+          "function": "create_or_update_motd",
+          "method": "POST",
+          "path": "",
+          "args": [
+            "request",
+            "db",
+            "current_user"
+          ],
+          "doc": "Create or update the Message of the Day. Admin only."
+        },
+        {
+          "function": "get_motd",
+          "method": "GET",
+          "path": "",
+          "args": [
+            "db",
+            "current_user"
+          ],
+          "doc": "Get the current Message of the Day. Admin only."
+        },
+        {
+          "function": "send_motd_to_admins",
+          "method": "POST",
+          "path": "/send",
+          "args": [
+            "db",
+            "current_user"
+          ],
+          "doc": "Send the current MOTD as a notification to all admin users. Admin only."
+        },
+        {
+          "function": "delete_motd",
+          "method": "DELETE",
+          "path": "",
+          "args": [
+            "db",
+            "current_user"
+          ],
+          "doc": "Delete the Message of the Day. Admin only."
+        },
+        {
+          "function": "test_ad_connection",
+          "method": "POST",
+          "path": "/test",
+          "args": [
+            "db"
+          ],
+          "doc": "Test Active Directory connection with current settings."
+        },
+        {
+          "function": "get_ad_user",
+          "method": "GET",
+          "path": "/user/{username}",
+          "args": [
+            "username",
+            "db"
+          ],
+          "doc": "Get an AD user by username."
+        },
+        {
+          "function": "search_ad_users",
+          "method": "GET",
+          "path": "/search",
+          "args": [
+            "q",
+            "limit",
+            "db"
+          ],
+          "doc": "Search for AD users."
+        },
+        {
+          "function": "disable_ad_user",
+          "method": "POST",
+          "path": "/user/disable",
+          "args": [
+            "req",
+            "db"
+          ],
+          "doc": "Disable an AD user account."
+        },
+        {
+          "function": "enable_ad_user",
+          "method": "POST",
+          "path": "/user/enable",
+          "args": [
+            "req",
+            "db"
+          ],
+          "doc": "Enable an AD user account."
+        },
+        {
           "function": "get_mail_providers",
           "method": "GET",
           "path": "/mail/providers",
@@ -3445,92 +3445,92 @@
       "frontend_structure": {
         "components": [
           "main.tsx",
-          "router/index.tsx",
-          "pages/Login.tsx",
-          "pages/ResetPassword.tsx",
-          "pages/DeveloperTools.tsx",
-          "pages/ForgotPassword.tsx",
-          "pages/RBACEditor.tsx",
-          "pages/UserSettings.tsx",
-          "pages/Employees.tsx",
-          "pages/ManualEntry.tsx",
-          "pages/Integrations.tsx",
-          "pages/PrivacyPolicy.tsx",
-          "pages/CookiePolicy.tsx",
-          "pages/Maintenance.test.tsx",
-          "pages/DatabaseViewer.tsx",
-          "pages/Dashboard.tsx",
-          "pages/Maintenance.tsx",
-          "pages/Chat.tsx",
-          "pages/EmployeeDetail.tsx",
-          "pages/WorkflowEditor.tsx",
-          "pages/Admin.tsx",
-          "pages/Features.tsx",
-          "pages/UserManagement.tsx",
-          "pages/ITDashboard.tsx",
-          "pages/Docs.tsx",
-          "pages/HRDashboard.tsx",
-          "pages/Profile.tsx",
-          "components/OfflineModeBanner.tsx",
-          "components/Avatar.tsx",
-          "components/SourcesModal.tsx",
-          "components/DemoModeBanner.tsx",
-          "components/IntegrationConfigModal.tsx",
-          "components/Toast.tsx",
-          "components/MobileAppBanner.tsx",
-          "components/IntegrationInfoModal.tsx",
-          "components/WidgetsHelper.tsx",
-          "components/Layout.tsx",
           "components/ConsentManager.tsx",
-          "components/DemoControlPanel.tsx",
-          "components/IntegrationConfigUI.tsx",
-          "components/NotificationBar.tsx",
-          "components/DevWarningBanner.tsx",
-          "components/OfflineBanner.tsx",
+          "components/SourcesModal.tsx",
           "components/MaintenanceGuard.tsx",
-          "components/AiAssistant.tsx",
-          "components/InteractiveBackground.tsx",
+          "components/DemoModeBanner.tsx",
+          "components/IntegrationInfoModal.tsx",
           "components/OfflineDisabledButton.tsx",
-          "components/MaintenanceGuard.test.tsx",
-          "components/IntegrationUpdates.tsx",
+          "components/DevWarningBanner.tsx",
+          "components/IntegrationConfigModal.tsx",
+          "components/Avatar.tsx",
+          "components/MobileAppBanner.tsx",
+          "components/IntegrationConfigUI.tsx",
           "components/LicenseModal.tsx",
-          "components/admin/PluginManager.tsx",
-          "components/admin/UserManagement.tsx",
+          "components/DemoControlPanel.tsx",
+          "components/OfflineModeBanner.tsx",
+          "components/IntegrationUpdates.tsx",
+          "components/AiAssistant.tsx",
+          "components/MaintenanceGuard.test.tsx",
+          "components/Toast.tsx",
+          "components/OfflineBanner.tsx",
+          "components/NotificationBar.tsx",
+          "components/InteractiveBackground.tsx",
+          "components/Layout.tsx",
+          "components/WidgetsHelper.tsx",
           "components/ui/PageTransition.tsx",
+          "components/widgets/Widget.tsx",
           "components/widgets/DraggableWidgetGrid.tsx",
           "components/widgets/WidgetGrid.tsx",
-          "components/widgets/Widget.tsx",
-          "components/chat/SupportChat.tsx",
+          "components/admin/PluginManager.tsx",
+          "components/admin/UserManagement.tsx",
           "components/chat/ChatList.tsx",
-          "components/chat/ChatWindow.tsx",
           "components/chat/InternalAIChat.tsx",
-          "contexts/NotificationContext.tsx",
-          "contexts/ThemeContext.tsx"
+          "components/chat/ChatWindow.tsx",
+          "components/chat/SupportChat.tsx",
+          "pages/DeveloperTools.tsx",
+          "pages/Integrations.tsx",
+          "pages/Features.tsx",
+          "pages/WorkflowEditor.tsx",
+          "pages/Chat.tsx",
+          "pages/Docs.tsx",
+          "pages/RBACEditor.tsx",
+          "pages/Dashboard.tsx",
+          "pages/PrivacyPolicy.tsx",
+          "pages/CookiePolicy.tsx",
+          "pages/Maintenance.tsx",
+          "pages/EmployeeDetail.tsx",
+          "pages/Profile.tsx",
+          "pages/ResetPassword.tsx",
+          "pages/ForgotPassword.tsx",
+          "pages/UserManagement.tsx",
+          "pages/Maintenance.test.tsx",
+          "pages/DatabaseViewer.tsx",
+          "pages/Employees.tsx",
+          "pages/UserSettings.tsx",
+          "pages/ManualEntry.tsx",
+          "pages/ITDashboard.tsx",
+          "pages/HRDashboard.tsx",
+          "pages/Login.tsx",
+          "pages/Admin.tsx",
+          "router/index.tsx",
+          "contexts/ThemeContext.tsx",
+          "contexts/NotificationContext.tsx"
         ],
         "routes": [
-          "/login",
-          "/privacy",
-          "admin/users",
-          "admin/workflows",
-          "it",
-          "employees",
-          "/",
-          "employees/:id",
-          "chat",
           "/features",
-          "/reset-password/:token",
-          "/cookies",
-          "/forgot-password",
-          "integrations",
-          "entry",
+          "admin/workflows",
           "settings",
-          "admin",
-          "admin/database",
+          "/privacy",
+          "/",
           "developer",
-          "docs",
-          "hr/database",
+          "it",
+          "integrations",
           "admin/rbac",
-          "hr"
+          "entry",
+          "hr/database",
+          "admin/database",
+          "admin",
+          "/reset-password/:token",
+          "employees",
+          "chat",
+          "/cookies",
+          "/login",
+          "hr",
+          "admin/users",
+          "docs",
+          "/forgot-password",
+          "employees/:id"
         ]
       }
     },
